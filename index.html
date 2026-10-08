@@ -16,7 +16,7 @@
 <body>
 
   <!-- ========================================================
-       CABEÇALHO COMPACTO: LOGO À ESQUERDA + ABAS AO LADO
+       CABEÇALHO: LOGO VISÍVEL E LEGÍVEL À ESQUERDA + ABAS AO LADO
        ======================================================== -->
   <header class="topo-header">
     <div class="wrap topo-container">
@@ -31,7 +31,7 @@
         <span></span>
       </button>
 
-      <!-- Navegação ao Lado da Logo -->
+      <!-- Navegação ao Lado da Logo: Patologia na Frente de Judicial -->
       <nav class="nav-menu" id="navMenu">
         <a href="#inicio" class="nav-item">Início</a>
         <a href="#patologia" class="nav-item destaque">Aba Patologia</a>
@@ -47,9 +47,9 @@
   <!-- ========================================================
        SEÇÃO 1: HERO (BIOGRAFIA OFICIAL SOLICITADA)
        ======================================================== -->
-  <section class="hero anima-fade" id="inicio">
+  <section class="hero reveal" id="inicio">
     <div class="wrap hero-grid">
-      <div class="hero-texto anima-subir delay-1">
+      <div class="hero-texto reveal-left">
         <span class="olho">Arquitetura Técnica, Diagnóstica e Pericial</span>
         <h1>Precisão técnica. Segurança patrimonial. <em class="dest">Decisões fundamentadas.</em></h1>
         
@@ -62,8 +62,8 @@
             <svg class="ico" viewBox="0 0 24 24"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.76-1.66-2.06-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.01-1.04 2.47s1.06 2.86 1.21 3.06c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.42-.07-.13-.27-.2-.57-.35M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2"/></svg>
             Solicitar Análise no WhatsApp
           </a>
-          <a class="btn btn-out" href="#judicial">
-            Ver Área Judicial
+          <a class="btn btn-out" href="#patologia">
+            Acessar Patologia
           </a>
         </div>
 
@@ -76,14 +76,14 @@
         <p class="hero-nota">Ambas as frentes de atendimento são centralizadas no mesmo canal com triagem direta e ágil.</p>
       </div>
 
-      <!-- Card Visual Hero -->
-      <div class="hero-visual anima-subir delay-2">
+      <!-- Card Visual Hero (Sem 'PERITA') -->
+      <div class="hero-visual reveal-right">
         <div class="perfil-card-clean">
           <div class="perfil-foto-clean-wrap">
             <img src="assets/judicial_1.jpg" alt="Giovanna Arieta - Arquiteta Patologista" class="perfil-foto-clean">
           </div>
           <div class="perfil-info-clean">
-            <span class="perfil-cargo-clean">Arquiteta Patologista &middot; Perita</span>
+            <span class="perfil-cargo-clean">Arquiteta Patologista</span>
             <h3 class="perfil-nome-clean">Giovanna Arieta</h3>
             <p class="perfil-resumo-clean">Rigor na investigação, clareza no diagnóstico e força probatória para respaldar decisões técnicas e processos judiciais.</p>
           </div>
@@ -95,7 +95,7 @@
   <!-- ========================================================
        FAIXA DE NÚMEROS / CREDENCIAIS
        ======================================================== -->
-  <section class="numeros anima-subir delay-3">
+  <section class="numeros reveal">
     <div class="wrap">
       <div class="num-grid">
         <div class="num-item">
@@ -119,89 +119,325 @@
   </section>
 
   <!-- ========================================================
-       ABA 1: ÁREA JUDICIAL & IMOBILIÁRIA (FOTOS COM BLUSA ROXA)
+       1. ÁREA DE PATOLOGIA DAS EDIFICAÇÕES (NA FRENTE DA JUDICIAL)
        ======================================================== -->
-  <section class="sec sec-tom-alternado anima-subir" id="judicial">
+  <section class="sec sec-tom-alternado reveal" id="patologia">
     <div class="wrap">
-      <div class="judicial-hero-grid">
-        <div>
-          <span class="olho">Aba Especializada</span>
-          <h2>Área Imobiliária <em class="dest">&amp; Suporte Judicial</em></h2>
-          <p class="lead">Atuação técnica estratégica em litígios imobiliários, perícias e suporte probatório. Traduzimos anomalias construtivas e divergências documentais em laudos periciais com rigor científico e peso comprobatório perante o juízo.</p>
+      <div class="secao-header-centro">
+        <span class="olho meio">Área Especializada</span>
+        <h2>1. ÁREA DE PATOLOGIA DAS EDIFICAÇÕES</h2>
+        <p class="secao-subtitulo">Inspeções, Diagnósticos e Avaliações Técnicas</p>
+      </div>
 
-          <div class="det-cols" style="grid-template-columns: 1fr; margin-bottom: 24px;">
-            <div class="det-box">
-              <h4>Serviços em Destaque na Área Judicial</h4>
-              <ul>
-                <li><strong>Assistência Técnica Judicial:</strong> Formulação de quesitos estratégicos, acompanhamento presencial do perito do juiz e emissão de Parecer Técnico Divergente ou Concordante.</li>
-                <li><strong>Ações de Vício Construtivo e Danos:</strong> Investigação do nexo causal e quantificação do dano material para embasar pedidos indenizatórios.</li>
-                <li><strong>Regularização Imobiliária &amp; Usucapião:</strong> Levantamento técnico, caracterização física do imóvel, plantas e memorial descritivo para via judicial e extrajudicial em cartório.</li>
-                <li><strong>Vistoria Cautelar de Vizinhança:</strong> Registro do estado de conservação dos imóveis confrontantes antes do início de obras vizinhas, evitando litígios futuros.</li>
-              </ul>
-            </div>
-          </div>
-
-          <a class="btn btn-destaque" href="https://wa.me/5531995618646?text=Ol%C3%A1%2C%20Giovanna!%20Preciso%20de%20assist%C3%AAncia%20t%C3%A9cnica%20ou%20suporte%20na%20%C3%81rea%20Judicial%20%2F%20Imobili%C3%A1ria." target="_blank" rel="noopener noreferrer">
-            <svg class="ico" viewBox="0 0 24 24"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.76-1.66-2.06-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.01-1.04 2.47s1.06 2.86 1.21 3.06c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.42-.07-.13-.27-.2-.57-.35M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2"/></svg>
-            Consultar Área Judicial
-          </a>
+      <!-- Galeria de Fotos de Campo (Capacete, Obra e Nova Inspeção de Parede) -->
+      <div class="patologia-fotos-trio reveal">
+        <div class="foto-card-dupla">
+          <img src="assets/patologia_parede.jpg" alt="Giovanna em inspeção de fissura e armadura de concreto em muro" loading="lazy">
+          <div class="foto-card-legenda">Inspeção Detalhada de Patologias</div>
         </div>
-
-        <!-- Fotos com Blusa Roxa Alocadas Aqui -->
-        <div class="judicial-fotos-dupla">
-          <div class="foto-card-dupla">
-            <img src="assets/judicial_1.jpg" alt="Giovanna Arieta em atuação de perícia e consultoria judicial imobiliária" loading="lazy">
-            <div class="foto-card-legenda">Perícia &amp; Assistência Técnica</div>
-          </div>
-          <div class="foto-card-dupla">
-            <img src="assets/judicial_2.jpg" alt="Giovanna Arieta em fundamentação de laudo técnico judicial" loading="lazy">
-            <div class="foto-card-legenda">Regularização &amp; Suporte Jurídico</div>
-          </div>
+        <div class="foto-card-dupla">
+          <img src="assets/patologia_obra.jpg" alt="Giovanna em vistoria diagnóstica de campo em obra" loading="lazy">
+          <div class="foto-card-legenda">Vistoria Técnica In Loco</div>
         </div>
+        <div class="foto-card-dupla">
+          <img src="assets/patologia_capacete.jpg" alt="Giovanna com equipamento de proteção em inspeção predial" loading="lazy">
+          <div class="foto-card-legenda">Investigação Diagnóstica</div>
+        </div>
+      </div>
+
+      <!-- Serviços Estruturados de Patologia -->
+      <div class="cards-servicos-grid">
+        <!-- 1. INSPEÇÃO PREDIAL -->
+        <article class="card-servico reveal">
+          <div class="card-servico-head">
+            <span class="card-servico-num">1.1</span>
+            <h3>INSPEÇÃO PREDIAL</h3>
+          </div>
+          <p class="card-servico-desc">Avaliação das condições de conservação, manutenção e segurança das edificações, identificando anomalias e falhas que necessitam de atenção.</p>
+          <div class="card-servico-entregaveis">
+            <strong>O que será entregue:</strong>
+            <ul>
+              <li>Inspeção técnica da edificação;</li>
+              <li>Identificação e classificação das irregularidades;</li>
+              <li>Relatório fotográfico;</li>
+              <li>Tratativas Recomendadas;</li>
+              <li>Prioridades de intervenção;</li>
+              <li>Laudo de Inspeção Predial com RRT.</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- 2. VISTORIA DE RECEBIMENTO -->
+        <article class="card-servico reveal">
+          <div class="card-servico-head">
+            <span class="card-servico-num">1.2</span>
+            <h3>VISTORIA DE RECEBIMENTO DE EDIFICAÇÃO E DE CHAVES</h3>
+          </div>
+          <p class="card-servico-desc">Avaliação técnica de edificações novas e unidades privativas para identificar vícios construtivos e inconformidades antes do recebimento.</p>
+          <div class="card-servico-entregaveis">
+            <strong>O que será entregue:</strong>
+            <ul>
+              <li>Vistoria dos elementos construtivos;</li>
+              <li>Identificação de defeitos e inconformidades;</li>
+              <li>Registro fotográfico;</li>
+              <li>Relatório técnico para solicitação de correções;</li>
+              <li>RRT.</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- 3. AVALIAÇÃO DE MANIFESTAÇÕES PATOLÓGICAS -->
+        <article class="card-servico reveal">
+          <div class="card-servico-head">
+            <span class="card-servico-num">1.3</span>
+            <h3>AVALIAÇÃO DE MANIFESTAÇÕES PATOLÓGICAS E ANOMALIAS</h3>
+          </div>
+          <p class="card-servico-desc">Investigação técnica de fissuras, trincas, corrosões, desplacamentos e outras manifestações que comprometem o desempenho das edificações.</p>
+          <div class="card-servico-entregaveis">
+            <strong>O que será entregue:</strong>
+            <ul>
+              <li>Inspeção e levantamento das manifestações;</li>
+              <li>Análise das possíveis causas e mecanismos;</li>
+              <li>Avaliação da criticidade;</li>
+              <li>Relatório fotográfico;</li>
+              <li>Tratativas Recomendadas;</li>
+              <li>Laudo técnico com recomendações e RRT.</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- 4. DIAGNÓSTICO DE INFILTRAÇÃO -->
+        <article class="card-servico reveal">
+          <div class="card-servico-head">
+            <span class="card-servico-num">1.4</span>
+            <h3>DIAGNÓSTICO DE INFILTRAÇÃO</h3>
+          </div>
+          <p class="card-servico-desc">Investigação técnica para identificar a origem e os mecanismos das infiltrações, direcionando intervenções precisas e evitando soluções paliativas.</p>
+          <div class="card-servico-entregaveis">
+            <strong>O que será entregue:</strong>
+            <ul>
+              <li>Inspeção e mapeamento das infiltrações;</li>
+              <li>Testes e ensaios técnicos;</li>
+              <li>Identificação das causas;</li>
+              <li>Relatório fotográfico;</li>
+              <li>Tratativas Recomendadas;</li>
+              <li>Laudo de diagnóstico com recomendações e RRT.</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- 5. AVALIAÇÃO ESTRUTURAL -->
+        <article class="card-servico card-destaque-span reveal">
+          <div class="card-servico-head">
+            <span class="card-servico-num">1.5</span>
+            <h3>AVALIAÇÃO ESTRUTURAL</h3>
+          </div>
+          <p class="card-servico-desc">Análise técnica das condições de elementos estruturais para identificar manifestações de deterioração e possíveis comprometimentos da segurança.</p>
+          <div class="card-servico-entregaveis">
+            <strong>O que será entregue:</strong>
+            <ul>
+              <li>Inspeção dos elementos estruturais;</li>
+              <li>Identificação de fissuras, deformações e deteriorações;</li>
+              <li>Avaliação preliminar da criticidade;</li>
+              <li>Relatório fotográfico;</li>
+              <li>Laudo técnico com recomendações;</li>
+              <li>RRT.</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+
+      <div class="centro-cta reveal">
+        <a class="btn btn-destaque" href="https://wa.me/5531995618646?text=Ol%C3%A1%2C%20Giovanna!%20Gostaria%20de%20solicitar%20uma%20avalia%C3%A7%C3%A3o%20na%20%C3%81rea%20de%20Patologia%20das%20Edifica%C3%A7%C3%B5es." target="_blank" rel="noopener noreferrer">
+          <svg class="ico" viewBox="0 0 24 24"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.76-1.66-2.06-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.01-1.04 2.47s1.06 2.86 1.21 3.06c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.42-.07-.13-.27-.2-.57-.35M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2"/></svg>
+          Solicitar Atendimento em Patologia
+        </a>
       </div>
     </div>
   </section>
 
   <!-- ========================================================
-       ABA 2: PATOLOGIA DAS CONSTRUÇÕES (FOTOS DE CAMPO / OBRA)
+       2. ÁREA JUDICIAL E IMOBILIÁRIA (FOTOS COM BLUSA ROXA)
        ======================================================== -->
-  <section class="sec anima-subir" id="patologia">
+  <section class="sec reveal" id="judicial">
     <div class="wrap">
-      <div class="patologia-hero-grid">
-        <!-- Fotos de Campo (Capacete e Obra) Alocadas Aqui -->
-        <div class="patologia-fotos-dupla">
-          <div class="foto-card-dupla">
-            <img src="assets/patologia_obra.jpg" alt="Giovanna em vistoria diagnóstica de campo em obra" loading="lazy">
-            <div class="foto-card-legenda">Vistoria Técnica In Loco</div>
-          </div>
-          <div class="foto-card-dupla">
-            <img src="assets/patologia_capacete.jpg" alt="Giovanna com equipamento de proteção em inspeção predial" loading="lazy">
-            <div class="foto-card-legenda">Investigação Diagnóstica</div>
-          </div>
+      <div class="secao-header-centro">
+        <span class="olho meio">Área Especializada</span>
+        <h2>2. ÁREA JUDICIAL E IMOBILIÁRIA</h2>
+        <p class="secao-subtitulo">Perícias, Laudos e Regularização Imobiliária</p>
+      </div>
+
+      <!-- Fotos com Blusa Roxa Alocadas Aqui -->
+      <div class="judicial-fotos-dupla reveal">
+        <div class="foto-card-dupla">
+          <img src="assets/judicial_1.jpg" alt="Giovanna Arieta em atuação de perícia e consultoria judicial imobiliária" loading="lazy">
+          <div class="foto-card-legenda">Perícia &amp; Assistência Técnica</div>
         </div>
-
-        <div>
-          <span class="olho">Aba Especializada</span>
-          <h2>Patologia das Construções <em class="dest">&amp; Inspeção Predial</em></h2>
-          <p class="lead">Diagnóstico científico que investiga os sintomas patológicos até encontrar sua origem física ou química. Soluções definitivas para vícios construtivos ocultos, falhas de impermeabilização e anomalias estruturais.</p>
-
-          <div class="det-cols" style="grid-template-columns: 1fr; margin-bottom: 24px;">
-            <div class="det-box">
-              <h4>Escopo de Atuação em Patologia</h4>
-              <ul>
-                <li><strong>Fissuras, Trincas e Deformações:</strong> Mapeamento do padrão de fissuramento e determinação de risco estrutural.</li>
-                <li><strong>Infiltrações e Umidade Ascendente:</strong> Identificação precisa dos pontos de infiltração sem quebra-quebra desnecessário.</li>
-                <li><strong>Desplacamento e Corrosão de Armaduras:</strong> Laudo do estado de conservação de fachadas e elementos em concreto armado.</li>
-                <li><strong>Vistoria de Recebimento de Obras:</strong> Inspeção minuciosa na entrega de unidades para assegurar o cumprimento do memorial descritivo.</li>
-              </ul>
-            </div>
-          </div>
-
-          <a class="btn btn-destaque" href="https://wa.me/5531995618646?text=Ol%C3%A1%2C%20Giovanna!%20Gostaria%20de%20um%20diagn%C3%B3stico%20de%20Patologia%20das%20Constru%C3%A7%C3%B5es%20no%20meu%20im%C3%B3vel." target="_blank" rel="noopener noreferrer">
-            <svg class="ico" viewBox="0 0 24 24"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.76-1.66-2.06-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.01-1.04 2.47s1.06 2.86 1.21 3.06c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.42-.07-.13-.27-.2-.57-.35M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2"/></svg>
-            Consultar Patologia
-          </a>
+        <div class="foto-card-dupla">
+          <img src="assets/judicial_2.jpg" alt="Giovanna Arieta em fundamentação de laudo técnico judicial" loading="lazy">
+          <div class="foto-card-legenda">Regularização &amp; Suporte Jurídico</div>
         </div>
+      </div>
+
+      <!-- Serviços Estruturados da Área Judicial -->
+      <div class="cards-servicos-grid">
+        <!-- 1. PERÍCIAS TÉCNICAS -->
+        <article class="card-servico reveal">
+          <div class="card-servico-head">
+            <span class="card-servico-num">2.1</span>
+            <h3>PERÍCIAS TÉCNICAS</h3>
+          </div>
+          <p class="card-servico-desc">Investigação e análise técnica de edificações, obras e imóveis para esclarecer questões e subsidiar demandas judiciais ou extrajudiciais.</p>
+          <div class="card-servico-entregaveis">
+            <strong>O que será entregue:</strong>
+            <ul>
+              <li>Inspeção e levantamento técnico;</li>
+              <li>Diagnóstico de anomalias;</li>
+              <li>Análise documental e registro fotográfico;</li>
+              <li>Laudo pericial fundamentado;</li>
+              <li>RRT.</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- 2. ASSISTÊNCIA TÉCNICA JUDICIAL -->
+        <article class="card-servico reveal">
+          <div class="card-servico-head">
+            <span class="card-servico-num">2.2</span>
+            <h3>ASSISTÊNCIA TÉCNICA JUDICIAL</h3>
+          </div>
+          <p class="card-servico-desc">Acompanhamento técnico especializado em processos judiciais, oferecendo suporte às partes e aos advogados na análise de questões construtivas e imobiliárias.</p>
+          <div class="card-servico-entregaveis">
+            <strong>O que será entregue:</strong>
+            <ul>
+              <li>Análise técnica do processo;</li>
+              <li>Elaboração de quesitos periciais;</li>
+              <li>Acompanhamento da perícia judicial;</li>
+              <li>Parecer técnico e análise do laudo pericial;</li>
+              <li>Impugnação Técnica ao Laudo Pericial, quando necessário.</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- 3. LAUDOS TÉCNICOS -->
+        <article class="card-servico reveal">
+          <div class="card-servico-head">
+            <span class="card-servico-num">2.3</span>
+            <h3>LAUDOS TÉCNICOS</h3>
+          </div>
+          <p class="card-servico-desc">Avaliação especializada para identificar, documentar e analisar condições, irregularidades e ocorrências em edificações e imóveis.</p>
+          <div class="card-servico-entregaveis">
+            <strong>O que será entregue:</strong>
+            <ul>
+              <li>Inspeção e levantamento técnico;</li>
+              <li>Relatório fotográfico;</li>
+              <li>Análise e conclusões fundamentadas;</li>
+              <li>Laudo técnico com RRT.</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- 4. USUCAPIÃO -->
+        <article class="card-servico reveal">
+          <div class="card-servico-head">
+            <span class="card-servico-num">2.4</span>
+            <h3>USUCAPIÃO</h3>
+          </div>
+          <p class="card-servico-desc">Elaboração da documentação técnica necessária à identificação e delimitação de imóveis para processos de reconhecimento de propriedade.</p>
+          <div class="card-servico-entregaveis">
+            <strong>O que será entregue:</strong>
+            <ul>
+              <li>Levantamento planimétrico e georreferenciamento em SIRGAS 2000;</li>
+              <li>Planta de delimitação e confrontantes;</li>
+              <li>Memorial descritivo;</li>
+              <li>Relatório fotográfico;</li>
+              <li>RRT.</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- 5. RETIFICAÇÃO DE ÁREA -->
+        <article class="card-servico reveal">
+          <div class="card-servico-head">
+            <span class="card-servico-num">2.5</span>
+            <h3>RETIFICAÇÃO DE ÁREA</h3>
+          </div>
+          <p class="card-servico-desc">Levantamento e elaboração de documentação técnica para correção de divergências nas dimensões e nos limites de imóveis.</p>
+          <div class="card-servico-entregaveis">
+            <strong>O que será entregue:</strong>
+            <ul>
+              <li>Levantamento planimétrico do imóvel;</li>
+              <li>Planta técnica com perímetro, dimensões e confrontações;</li>
+              <li>Quadro comparativo entre a área registrada e a área levantada;</li>
+              <li>Memorial descritivo atualizado;</li>
+              <li>Registro de Responsabilidade Técnica (RRT).</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- 6. AVALIAÇÃO MERCADOLÓGICA -->
+        <article class="card-servico reveal">
+          <div class="card-servico-head">
+            <span class="card-servico-num">2.6</span>
+            <h3>AVALIAÇÃO MERCADOLÓGICA</h3>
+          </div>
+          <p class="card-servico-desc">Avaliação técnica para determinação do valor de mercado de imóveis, considerando características construtivas, localização e dados imobiliários.</p>
+          <div class="card-servico-entregaveis">
+            <strong>O que será entregue:</strong>
+            <ul>
+              <li>Vistoria e levantamento das características do imóvel;</li>
+              <li>Pesquisa e análise mercadológica;</li>
+              <li>Laudo de avaliação com valor estimado;</li>
+              <li>RRT.</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- 7. DESMEMBRAMENTO E REMEMBRAMENTO -->
+        <article class="card-servico reveal">
+          <div class="card-servico-head">
+            <span class="card-servico-num">2.7</span>
+            <h3>DESMEMBRAMENTO E REMEMBRAMENTO</h3>
+          </div>
+          <p class="card-servico-desc">Elaboração de documentação técnica para divisão ou unificação de terrenos, conforme as exigências urbanísticas e registrais aplicáveis.</p>
+          <div class="card-servico-entregaveis">
+            <strong>O que será entregue:</strong>
+            <ul>
+              <li>Estudo de viabilidade técnica e urbanística;</li>
+              <li>Levantamento das áreas existentes;</li>
+              <li>Projeto de desmembramento ou remembramento;</li>
+              <li>Planta técnica e quadro de áreas;</li>
+              <li>Memoriais descritivos;</li>
+              <li>Registro de Responsabilidade Técnica (RRT).</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- 8. HABITE-SE -->
+        <article class="card-servico reveal">
+          <div class="card-servico-head">
+            <span class="card-servico-num">2.8</span>
+            <h3>HABITE-SE</h3>
+          </div>
+          <p class="card-servico-desc">Assessoria técnica para regularização de edificações e obtenção da documentação municipal de conclusão de obra.</p>
+          <div class="card-servico-entregaveis">
+            <strong>O que será entregue:</strong>
+            <ul>
+              <li>Análise documental e vistoria técnica;</li>
+              <li>Levantamento arquitetônico;</li>
+              <li>Plantas e projetos necessários;</li>
+              <li>Documentação técnica para regularização;</li>
+              <li>RRT.</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+
+      <div class="centro-cta reveal">
+        <a class="btn btn-destaque" href="https://wa.me/5531995618646?text=Ol%C3%A1%2C%20Giovanna!%20Gostaria%20de%20solicitar%20atendimento%20na%20%C3%81rea%20Judicial%20e%20Imobili%C3%A1ria." target="_blank" rel="noopener noreferrer">
+          <svg class="ico" viewBox="0 0 24 24"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.76-1.66-2.06-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.01-1.04 2.47s1.06 2.86 1.21 3.06c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.42-.07-.13-.27-.2-.57-.35M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2"/></svg>
+          Solicitar Atendimento na Área Judicial
+        </a>
       </div>
     </div>
   </section>
@@ -209,13 +445,13 @@
   <!-- ========================================================
        SEÇÃO: QUEM É A GIOVANNA ARIETA
        ======================================================== -->
-  <section class="sec sec-tom-alternado anima-subir" id="sobre">
+  <section class="sec sec-tom-alternado reveal" id="sobre">
     <div class="wrap sobre-grid">
-      <div>
+      <div class="reveal-left">
         <span class="olho">Quem Lidera</span>
         <h2>Giovanna Arieta: <em class="dest">olhar técnico apurado e presença em campo</em>.</h2>
-        <p class="lead" style="margin-bottom:18px">Com formação em Arquitetura e especialização em Patologia das Construções e Perícia Judicial, Giovanna une a vivência prática dos canteiros de obras à precisão na confecção de pareceres técnicos irrefutáveis.</p>
-        <p class="lead">Seu trabalho é fundamentado na busca pela causa real das anomalias, garantindo que proprietários, condomínios e operadores do direito tenham total segurança técnica ao tomar decisões que envolvem o patrimônio edificado.</p>
+        <p class="lead" style="margin-bottom:18px">Com formação em Arquitetura e atuação consolidada em Patologia das Construções e Perícia Judicial, Giovanna une a vivência prática dos canteiros de obras à precisão na confecção de pareceres técnicos e laudos fundamentados.</p>
+        <p class="lead">Seu trabalho é guiado pela identificação científica da causa real das anomalias, garantindo que proprietários, condomínios e operadores do direito tenham total segurança técnica ao tomar decisões que envolvem o patrimônio edificado.</p>
 
         <div class="chips">
           <span class="chip">Arquiteta Patologista</span>
@@ -226,7 +462,7 @@
         </div>
       </div>
 
-      <div>
+      <div class="reveal-right">
         <div class="perfil-card-clean">
           <div class="perfil-foto-clean-wrap">
             <img src="assets/giovanna.jpg" alt="Giovanna Arieta em vistoria de campo" class="perfil-foto-clean" loading="lazy">
@@ -239,7 +475,7 @@
   <!-- ========================================================
        SEÇÃO: METODOLOGIA DE ATENDIMENTO
        ======================================================== -->
-  <section class="sec anima-subir" id="metodologia">
+  <section class="sec reveal" id="metodologia">
     <div class="wrap">
       <div class="centro" style="margin-bottom:44px">
         <span class="olho meio">Como Funciona</span>
@@ -247,17 +483,17 @@
       </div>
 
       <div class="passos">
-        <div class="passo">
+        <div class="passo reveal">
           <h3>1. Alinhamento &amp; Triagem Inicial</h3>
           <p>Você entra em contato pelo WhatsApp único <strong>(31) 99561-8646</strong>, informa se a demanda é de Patologia Predial ou Perícia Imobiliária/Judicial e envia os primeiros registros e dados do imóvel.</p>
         </div>
-        <div class="passo">
+        <div class="passo reveal">
           <h3>2. Vistoria Técnica In Loco</h3>
           <p>Inspeção minuciosa com levantamento métrico, ensaios não destrutivos, mapeamento fotográfico e correlação técnica com as normas vigentes (ABNT e IBAPE).</p>
         </div>
-        <div class="passo">
+        <div class="passo reveal">
           <h3>3. Emissão do Laudo &amp; Parecer</h3>
-          <p>Entrega do Laudo Técnico Pericial fundamentado com RRT/ART, com força jurídica para negociações amigáveis ou respaldo probatório irrefutável em ações judiciais.</p>
+          <p>Entrega do Laudo Técnico Pericial fundamentado com RRT, com força jurídica para negociações amigáveis ou respaldo probatório irrefutável em ações judiciais.</p>
         </div>
       </div>
     </div>
@@ -266,7 +502,7 @@
   <!-- ========================================================
        SEÇÃO: DÚVIDAS FREQUENTES (FAQ)
        ======================================================== -->
-  <section class="sec sec-tom-alternado anima-subir" id="faq">
+  <section class="sec sec-tom-alternado reveal" id="faq">
     <div class="wrap">
       <span class="olho">Dúvidas Frequentes</span>
       <h2>Perguntas frequentes <em class="dest">sobre o atendimento</em>.</h2>
@@ -289,7 +525,7 @@
       <details class="faq">
         <summary>Como a Giovanna atua como Assistente Técnica de advogados?</summary>
         <div class="faq-c">
-          A atuação inclui a formulação de quesitos estratégicos (iniciais e suplementares), o acompanhamento in loco da perícia oficial e a confecção de Parecer Técnico Crítico, municiando a peça do advogado com fundamentação de alto nível.
+          A atuação inclui a formulação de quesitos estratégicos (iniciais e suplementares), o acompanhamento in loco da perícia oficial e a confecção de Parecer Técnico Crítico ou Impugnação Técnica ao Laudo Pericial, municiando o processo com fundamentação de alto nível.
         </div>
       </details>
 
@@ -305,14 +541,14 @@
   <!-- ========================================================
        SEÇÃO: CONTATO OFICIAL
        ======================================================== -->
-  <section class="sec anima-subir" id="contato">
+  <section class="sec reveal" id="contato">
     <div class="wrap">
       <span class="olho">Contato Oficial</span>
       <h2>Fale diretamente com a <em class="dest">Giovanna Arieta</em>.</h2>
       <p class="lead">Descreva seu caso ou a etapa do seu processo para um primeiro direcionamento técnico.</p>
 
       <div class="ct-grid">
-        <div>
+        <div class="reveal-left">
           <div class="aviso">
             <b>Canal verificado:</b> Atendimento técnico para patologia e perícia imobiliária centralizado no número oficial abaixo.
           </div>
@@ -340,7 +576,7 @@
           </a>
         </div>
 
-        <div class="ct-lado-box">
+        <div class="ct-lado-box reveal-right">
           <h3>Como preparar o contato</h3>
           <p>Para agilizar o entendimento da sua demanda:</p>
           <ul class="ct-lista">
@@ -356,7 +592,7 @@
   </section>
 
   <!-- ========================================================
-       RODAPÉ
+       RODAPÉ (COM A OBSERVAÇÃO OFICIAL SOLICITADA)
        ======================================================== -->
   <footer class="rodape">
     <div class="wrap rod-grid">
@@ -375,14 +611,17 @@
       <div>
         <strong>Serviços</strong>
         <p>
-          <a href="#patologia">Patologia das Construções</a><br>
+          <a href="#patologia">Patologia das Edificações</a><br>
           <a href="#judicial">Assistência Técnica Judicial</a><br>
-          <a href="#judicial">Regularização de Imóveis</a><br>
-          <a href="#patologia">Vistoria de Recebimento de Obras</a>
+          <a href="#judicial">Usucapião &amp; Retificação de Área</a><br>
+          <a href="#patologia">Inspeção Predial &amp; Laudos</a>
         </p>
       </div>
+      <div class="rod-observacao">
+        <strong>Observação:</strong> Os serviços, procedimentos e documentos entregues são definidos conforme as necessidades de cada demanda e o escopo da proposta técnica. Ensaios complementares, aprovações e acompanhamentos administrativos poderão ser contratados separadamente.
+      </div>
       <div class="rod-legal">
-        Informações técnicas em conformidade com as diretrizes do CAU/CREA, IBAPE e Normas ABNT aplicáveis. Todos os serviços são prestados com responsabilidade técnica e emissão de RRT/ART.
+        Informações técnicas em conformidade com as diretrizes do CAU/CREA, IBAPE e Normas ABNT aplicáveis. Todos os serviços são prestados com responsabilidade técnica e emissão de Registro de Responsabilidade Técnica (RRT).
       </div>
     </div>
   </footer>
@@ -400,8 +639,9 @@
     </a>
   </div>
 
-  <!-- Script Menu Mobile Interativo -->
+  <!-- Scripts: Menu Mobile & Animações de Scroll (Intersection Observer) -->
   <script>
+    // Menu Mobile
     const menuToggle = document.getElementById('menuToggle');
     const navMenu = document.getElementById('navMenu');
 
@@ -410,12 +650,30 @@
       navMenu.classList.toggle('active');
     });
 
-    // Fecha o menu ao clicar em qualquer item
     document.querySelectorAll('.nav-item').forEach(link => {
       link.addEventListener('click', () => {
         menuToggle.classList.remove('active');
         navMenu.classList.remove('active');
       });
+    });
+
+    // Animação de Scroll (Intersection Observer)
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.12
+    };
+
+    const scrollObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => {
+      scrollObserver.observe(el);
     });
   </script>
 </body>

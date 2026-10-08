@@ -1,8 +1,8 @@
 /* ========================================================
    GIOVANNA ARIETA - ARQUITETA PATOLOGISTA
    Design System: Uniforme (#75545F)
-   Cabeçalho Compacto (Logo à Esquerda + Abas ao Lado)
-   Animações de Entrada (Page Load Reveal) & Mobile Otimizado
+   Cabeçalho Otimizado com Logo Nítida e Legível à Esquerda
+   Animações de Rolagem (Scroll Reveal) & Mobile Responsivo
    ======================================================== */
 
 :root {
@@ -14,6 +14,7 @@
   --roxo-pastel: #b4939f;        /* Tom pastel para detalhes e ícones */
   --roxo-claro: #d8c4cb;         /* Roxo bem claro para linhas e bordas */
   --roxo-fundo-card: #61434d;    /* Fundo de cards sobre roxo */
+  --roxo-card-hover: #694a55;    /* Hover de cards */
   --roxo-destaque: #f5eaee;      /* Quase branco rosado/roxo */
   
   /* Textos */
@@ -72,61 +73,65 @@ a {
 
 .wrap {
   width: 100%;
-  max-width: 1180px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
 }
 
 [id] {
-  scroll-margin-top: 90px;
+  scroll-margin-top: 105px;
 }
 
 /* ========================================================
-   ANIMAÇÃO DE CARREGAMENTO / ENTRADA SUAVE (PAGE LOAD)
+   ANIMAÇÕES DE ROLAGEM (SCROLL REVEAL CSS)
    ======================================================== */
-@keyframes pageFadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
+.reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
 }
 
-@keyframes slideUpFade {
-  0% {
-    opacity: 0;
-    transform: translateY(28px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-.anima-fade {
-  animation: pageFadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-35px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
 }
 
-.anima-subir {
-  animation: slideUpFade 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
+.reveal-left.visible {
+  opacity: 1;
+  transform: translateX(0);
 }
 
-.delay-1 { animation-delay: 0.15s; }
-.delay-2 { animation-delay: 0.3s; }
-.delay-3 { animation-delay: 0.45s; }
+.reveal-right {
+  opacity: 0;
+  transform: translateX(35px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
 
 /* ========================================================
-   CABEÇALHO COMPACTO: LOGO À ESQUERDA + ABAS AO LADO
+   CABEÇALHO OTIMIZADO: LOGO À ESQUERDA BEM LEGÍVEL + ABAS
    ======================================================== */
 .topo-header {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(117, 84, 95, 0.97);
-  backdrop-filter: blur(12px);
+  background: rgba(117, 84, 95, 0.98);
+  backdrop-filter: blur(14px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.14);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.18);
   transition: all 0.3s ease;
 }
 
@@ -134,11 +139,11 @@ a {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px 20px;
-  min-height: 72px;
+  padding: 12px 20px;
+  min-height: 84px;
 }
 
-/* Logo à Esquerda Compacta e Elegante */
+/* Logo Aumentada e Nítida à Esquerda */
 .logo-link {
   display: inline-flex;
   align-items: center;
@@ -146,7 +151,7 @@ a {
 }
 
 .logo-img {
-  height: 54px;
+  height: 74px;
   width: auto;
   object-fit: contain;
   background: transparent;
@@ -155,10 +160,10 @@ a {
 }
 
 .logo-link:hover .logo-img {
-  transform: scale(1.03);
+  transform: scale(1.02);
 }
 
-/* Menu de Navegação Horizontal ao Lado */
+/* Menu de Navegação Horizontal */
 .nav-menu {
   display: flex;
   align-items: center;
@@ -169,7 +174,7 @@ a {
 .nav-item {
   display: inline-flex;
   align-items: center;
-  padding: 7px 14px;
+  padding: 7px 15px;
   border-radius: 20px;
   font-size: 0.74rem;
   font-weight: 600;
@@ -181,18 +186,18 @@ a {
 
 .nav-item:hover {
   color: #fff;
-  background: rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.16);
 }
 
 .nav-item.destaque {
   color: #fff;
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.35);
   background: rgba(255, 255, 255, 0.08);
 }
 
 .nav-item.destaque:hover {
   border-color: #fff;
-  background: rgba(255, 255, 255, 0.22);
+  background: rgba(255, 255, 255, 0.24);
 }
 
 /* Botão Mobile Hambúrguer */
@@ -209,14 +214,13 @@ a {
 
 .menu-mobile-btn span {
   display: block;
-  width: 24px;
+  width: 25px;
   height: 2px;
   background: #ffffff;
   border-radius: 2px;
   transition: all 0.3s ease;
 }
 
-/* Estado Ativo do Hambúrguer (X) */
 .menu-mobile-btn.active span:nth-child(1) {
   transform: translateY(7px) rotate(45deg);
 }
@@ -270,7 +274,7 @@ h1, h2, h3 {
 }
 
 h1 {
-  font-size: 2.1rem;
+  font-size: 2.15rem;
   line-height: 1.2;
   margin-bottom: 18px;
 }
@@ -278,7 +282,7 @@ h1 {
 h2 {
   font-size: 1.85rem;
   line-height: 1.25;
-  margin-bottom: 16px;
+  margin-bottom: 14px;
 }
 
 em.dest {
@@ -303,6 +307,19 @@ em.dest {
 .centro .lead {
   margin-left: auto;
   margin-right: auto;
+}
+
+.secao-header-centro {
+  text-align: center;
+  margin-bottom: 38px;
+}
+
+.secao-subtitulo {
+  font-size: 1.1rem;
+  font-family: var(--serif);
+  font-style: italic;
+  color: var(--roxo-destaque);
+  letter-spacing: 0.02em;
 }
 
 /* ========================================================
@@ -369,13 +386,13 @@ em.dest {
    ======================================================== */
 .hero {
   background: linear-gradient(180deg, var(--roxo-base) 0%, var(--roxo-escuro) 100%);
-  padding: 44px 0 56px;
+  padding: 48px 0 60px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .hero-grid {
   display: grid;
-  gap: 36px;
+  gap: 40px;
   align-items: center;
 }
 
@@ -431,7 +448,7 @@ em.dest {
   line-height: 1.6;
 }
 
-/* Card Visual Hero */
+/* Card Visual Hero (Sem 'PERITA') */
 .perfil-card-clean {
   background: var(--roxo-fundo-card);
   border: 1px solid rgba(255, 255, 255, 0.15);
@@ -443,7 +460,7 @@ em.dest {
 .perfil-foto-clean-wrap {
   position: relative;
   background: var(--roxo-escuro);
-  max-height: 460px;
+  max-height: 480px;
   overflow: hidden;
 }
 
@@ -464,7 +481,7 @@ em.dest {
 }
 
 .perfil-cargo-clean {
-  font-size: 0.68rem;
+  font-size: 0.7rem;
   font-weight: 700;
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -474,13 +491,13 @@ em.dest {
 }
 
 .perfil-nome-clean {
-  font-size: 1.4rem;
+  font-size: 1.45rem;
   color: #fff;
   margin-bottom: 8px;
 }
 
 .perfil-resumo-clean {
-  font-size: 0.86rem;
+  font-size: 0.88rem;
   color: var(--texto-suave);
   font-weight: 300;
   line-height: 1.6;
@@ -493,7 +510,7 @@ em.dest {
   background: var(--roxo-escuro);
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 32px 0;
+  padding: 34px 0;
 }
 
 .num-grid {
@@ -505,7 +522,7 @@ em.dest {
 
 .num-v {
   font-family: var(--serif);
-  font-size: 2rem;
+  font-size: 2.1rem;
   font-weight: 600;
   color: var(--roxo-destaque);
   line-height: 1;
@@ -525,7 +542,7 @@ em.dest {
    SEÇÕES GERAIS
    ======================================================== */
 .sec {
-  padding: 60px 0;
+  padding: 72px 0;
 }
 
 .sec-tom-alternado {
@@ -535,19 +552,20 @@ em.dest {
 }
 
 /* ========================================================
-   SEÇÕES JUDICIAL & PATOLOGIA
+   FOTOS DUPLAS E TRIOS
    ======================================================== */
-.judicial-hero-grid, .patologia-hero-grid {
-  display: grid;
-  gap: 32px;
-  align-items: center;
-  margin-bottom: 26px;
-}
-
-.judicial-fotos-dupla, .patologia-fotos-dupla {
+.judicial-fotos-dupla {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 14px;
+  gap: 16px;
+  margin-bottom: 36px;
+}
+
+.patologia-fotos-trio {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 38px;
 }
 
 .foto-card-dupla {
@@ -578,66 +596,112 @@ em.dest {
   right: 0;
   background: linear-gradient(transparent, rgba(40, 24, 32, 0.95));
   color: #fff;
-  padding: 20px 10px 8px;
-  font-size: 0.7rem;
+  padding: 22px 10px 8px;
+  font-size: 0.72rem;
   font-weight: 500;
   text-align: center;
 }
 
-/* Boxes de Conteúdo */
-.det-cols {
+/* ========================================================
+   GRID DE SERVIÇOS & ENTREGÁVEIS (CARDS COMPLETOS)
+   ======================================================== */
+.cards-servicos-grid {
   display: grid;
+  grid-template-columns: 1fr;
   gap: 20px;
-  margin-bottom: 22px;
+  margin-bottom: 34px;
 }
 
-.det-box {
+.card-servico {
   background: var(--roxo-fundo-card);
-  border-left: 3px solid var(--roxo-destaque);
-  border-radius: 0 4px 4px 0;
-  padding: 22px 20px;
-  border-top: 1px solid rgba(255, 255, 255, 0.12);
-  border-right: 1px solid rgba(255, 255, 255, 0.12);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 8px;
+  padding: 28px 24px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+  box-shadow: var(--sombra-card);
 }
 
-.det-box h4 {
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--roxo-destaque);
+.card-servico:hover {
+  transform: translateY(-3px);
+  background: var(--roxo-card-hover);
+  box-shadow: var(--sombra-hover);
+}
+
+.card-servico-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
   margin-bottom: 12px;
 }
 
-.det-box ul {
-  list-style: none;
-  display: grid;
-  gap: 10px;
+.card-servico-num {
+  font-family: var(--serif);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--roxo-destaque);
+  background: rgba(255, 255, 255, 0.1);
+  padding: 3px 9px;
+  border-radius: 4px;
 }
 
-.det-box li {
-  position: relative;
-  padding-left: 18px;
-  font-size: 0.86rem;
+.card-servico h3 {
+  font-size: 1.15rem;
+  color: #ffffff;
+  margin: 0;
+}
+
+.card-servico-desc {
+  font-size: 0.9rem;
   color: var(--texto-suave);
   font-weight: 300;
-  line-height: 1.6;
+  line-height: 1.65;
+  margin-bottom: 18px;
 }
 
-.det-box li strong {
-  color: #ffffff;
+.card-servico-entregaveis {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 16px;
 }
 
-.det-box li::before {
+.card-servico-entregaveis strong {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--roxo-destaque);
+  margin-bottom: 10px;
+}
+
+.card-servico-entregaveis ul {
+  list-style: none;
+  display: grid;
+  gap: 7px;
+}
+
+.card-servico-entregaveis li {
+  position: relative;
+  padding-left: 18px;
+  font-size: 0.85rem;
+  color: var(--texto-suave);
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+.card-servico-entregaveis li::before {
   content: "";
   position: absolute;
   left: 0;
-  top: 0.6em;
-  width: 6px;
-  height: 6px;
+  top: 0.55em;
+  width: 5px;
+  height: 5px;
   border-radius: 50%;
   background: var(--roxo-pastel);
+}
+
+.centro-cta {
+  text-align: center;
+  margin-top: 24px;
 }
 
 /* ========================================================
@@ -885,7 +949,7 @@ details.faq .faq-c {
 }
 
 /* ========================================================
-   RODAPÉ
+   RODAPÉ (COM OBSERVAÇÃO TÉCNICA)
    ======================================================== */
 .rodape {
   background: var(--roxo-escuro);
@@ -919,10 +983,28 @@ details.faq .faq-c {
   color: #fff;
 }
 
+.rod-observacao {
+  grid-column: 1 / -1;
+  background: rgba(255, 255, 255, 0.05);
+  border-left: 3px solid var(--roxo-destaque);
+  padding: 16px 20px;
+  border-radius: 0 4px 4px 0;
+  font-size: 0.82rem;
+  line-height: 1.7;
+  color: var(--texto-suave);
+}
+
+.rod-observacao strong {
+  display: inline;
+  color: #fff;
+  margin-right: 4px;
+}
+
 .rod-legal {
+  grid-column: 1 / -1;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
-  margin-top: 10px;
-  padding-top: 20px;
+  margin-top: 4px;
+  padding-top: 18px;
   font-size: 0.74rem;
   line-height: 1.75;
   color: var(--texto-muted);
@@ -1003,7 +1085,7 @@ details.faq .faq-c {
 }
 
 /* ========================================================
-   OTIMIZAÇÃO MOBILE RESPONSIVA
+   RESPONSIVIDADE & MOBILE
    ======================================================== */
 @media (max-width: 900px) {
   .menu-mobile-btn {
@@ -1044,18 +1126,18 @@ details.faq .faq-c {
   }
 
   .topo-container {
-    padding: 8px 16px;
-    min-height: 64px;
+    padding: 10px 16px;
+    min-height: 72px;
   }
 
   .logo-img {
-    height: 46px;
+    height: 58px;
   }
 
   h1 { font-size: 1.85rem; }
   h2 { font-size: 1.55rem; }
 
-  .judicial-fotos-dupla, .patologia-fotos-dupla {
+  .judicial-fotos-dupla, .patologia-fotos-trio {
     grid-template-columns: 1fr;
   }
 }
@@ -1071,18 +1153,27 @@ details.faq .faq-c {
   }
 }
 
+@media (min-width: 768px) {
+  .cards-servicos-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .card-destaque-span {
+    grid-column: 1 / -1;
+  }
+}
+
 @media (min-width: 901px) {
   .topo-container {
     padding: 12px 24px;
   }
   .logo-img {
-    height: 58px;
+    height: 74px;
   }
   .hero-grid {
     grid-template-columns: 1.15fr 0.85fr;
     gap: 52px;
   }
-  .judicial-hero-grid, .patologia-hero-grid, .sobre-grid {
+  .sobre-grid {
     grid-template-columns: 1fr 1fr;
     gap: 52px;
   }
@@ -1093,17 +1184,11 @@ details.faq .faq-c {
   .num-grid {
     grid-template-columns: repeat(4, 1fr);
   }
-  .det-cols {
-    grid-template-columns: 1fr 1fr;
-  }
   .passos {
     grid-template-columns: repeat(3, 1fr);
   }
   .rod-grid {
     grid-template-columns: repeat(3, 1fr);
-  }
-  .rod-legal {
-    grid-column: 1 / -1;
   }
   .hero-acoes {
     flex-direction: row;
