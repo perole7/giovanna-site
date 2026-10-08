@@ -1,7 +1,8 @@
 /* ========================================================
    GIOVANNA ARIETA - ARQUITETA PATOLOGISTA
-   Design System: Uniforme com a cor exata da logo (#75545F)
-   Cabeçalho 100% integrado sem bordas aparentes na imagem da logo
+   Design System: Uniforme (#75545F)
+   Cabeçalho Compacto (Logo à Esquerda + Abas ao Lado)
+   Animações de Entrada (Page Load Reveal) & Mobile Otimizado
    ======================================================== */
 
 :root {
@@ -52,7 +53,6 @@ body {
   line-height: 1.7;
   font-size: 16px;
   overflow-x: hidden;
-  padding-bottom: 74px; /* Barra mobile */
 }
 
 img {
@@ -74,107 +74,157 @@ a {
   width: 100%;
   max-width: 1180px;
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 20px;
 }
 
 [id] {
-  scroll-margin-top: 170px;
+  scroll-margin-top: 90px;
 }
 
 /* ========================================================
-   CABEÇALHO 100% UNIFORME COM A LOGO (MESMA COR #75545F)
+   ANIMAÇÃO DE CARREGAMENTO / ENTRADA SUAVE (PAGE LOAD)
    ======================================================== */
-.topo-centralizado {
+@keyframes pageFadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUpFade {
+  0% {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.anima-fade {
+  animation: pageFadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.anima-subir {
+  animation: slideUpFade 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.delay-1 { animation-delay: 0.15s; }
+.delay-2 { animation-delay: 0.3s; }
+.delay-3 { animation-delay: 0.45s; }
+
+/* ========================================================
+   CABEÇALHO COMPACTO: LOGO À ESQUERDA + ABAS AO LADO
+   ======================================================== */
+.topo-header {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: #75545F;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(117, 84, 95, 0.97);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-  text-align: center;
+  transition: all 0.3s ease;
 }
 
-.topo-logo-row {
+.topo-container {
   display: flex;
   align-items: center;
-  justify-content: center;
-  padding: 24px 20px 18px;
-  max-width: 1200px;
-  margin: 0 auto;
-  background: #75545F;
+  justify-content: space-between;
+  padding: 10px 20px;
+  min-height: 72px;
 }
 
-.logo-centro-link {
+/* Logo à Esquerda Compacta e Elegante */
+.logo-link {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
-  background: #75545F;
+  flex: none;
 }
 
-/* Logo Aumentada Bastante e 100% Uniforme com o Fundo */
 .logo-img {
-  height: 140px;
-  max-width: 90vw;
+  height: 54px;
   width: auto;
   object-fit: contain;
-  background: #75545F;
-  border: none;
-  outline: none;
-  box-shadow: none;
+  background: transparent;
   display: block;
   transition: transform 0.25s ease;
 }
 
-.logo-centro-link:hover .logo-img {
-  transform: scale(1.02);
+.logo-link:hover .logo-img {
+  transform: scale(1.03);
 }
 
-/* Linha de Abas Centralizada Abaixo da Logo */
-.topo-nav-row {
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  background: rgba(90, 61, 71, 0.6);
-  backdrop-filter: blur(8px);
-}
-
-.nav-abas {
+/* Menu de Navegação Horizontal ao Lado */
+.nav-menu {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 12px;
-  padding: 10px 16px;
-  overflow-x: auto;
-  white-space: nowrap;
-  -webkit-overflow-scrolling: touch;
+  gap: 8px;
+  flex-wrap: wrap;
 }
 
-.nav-aba-link {
+.nav-item {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  padding: 7px 18px;
+  padding: 7px 14px;
   border-radius: 20px;
-  font-size: 0.76rem;
+  font-size: 0.74rem;
   font-weight: 600;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--texto-suave);
   transition: all 0.2s ease;
 }
 
-.nav-aba-link:hover {
+.nav-item:hover {
   color: #fff;
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.14);
 }
 
-.nav-aba-link.destaque-aba {
+.nav-item.destaque {
   color: #fff;
-  border: 1px solid rgba(255, 255, 255, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.3);
   background: rgba(255, 255, 255, 0.08);
 }
 
-.nav-aba-link.destaque-aba:hover {
+.nav-item.destaque:hover {
   border-color: #fff;
   background: rgba(255, 255, 255, 0.22);
+}
+
+/* Botão Mobile Hambúrguer */
+.menu-mobile-btn {
+  display: none;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  flex-direction: column;
+  gap: 5px;
+  z-index: 110;
+}
+
+.menu-mobile-btn span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: #ffffff;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Estado Ativo do Hambúrguer (X) */
+.menu-mobile-btn.active span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.menu-mobile-btn.active span:nth-child(2) {
+  opacity: 0;
+}
+.menu-mobile-btn.active span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
 }
 
 /* ========================================================
@@ -220,13 +270,13 @@ h1, h2, h3 {
 }
 
 h1 {
-  font-size: 2.25rem;
+  font-size: 2.1rem;
   line-height: 1.2;
-  margin-bottom: 20px;
+  margin-bottom: 18px;
 }
 
 h2 {
-  font-size: 1.9rem;
+  font-size: 1.85rem;
   line-height: 1.25;
   margin-bottom: 16px;
 }
@@ -238,12 +288,12 @@ em.dest {
 }
 
 .lead {
-  font-size: 1.02rem;
+  font-size: 0.98rem;
   color: var(--texto-suave);
   font-weight: 300;
-  line-height: 1.8;
+  line-height: 1.75;
   max-width: 66ch;
-  margin-bottom: 26px;
+  margin-bottom: 24px;
 }
 
 .centro {
@@ -268,7 +318,7 @@ em.dest {
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  padding: 15px 28px;
+  padding: 14px 26px;
   border-radius: 4px;
   border: 0;
   cursor: pointer;
@@ -307,28 +357,6 @@ em.dest {
   width: 100%;
 }
 
-.link-seta {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--roxo-destaque);
-  transition: gap 0.2s;
-}
-
-.link-seta::after {
-  content: "→";
-  font-size: 1.1rem;
-  transition: transform 0.2s;
-}
-
-.link-seta:hover::after {
-  transform: translateX(4px);
-}
-
 .ico {
   width: 17px;
   height: 17px;
@@ -341,19 +369,19 @@ em.dest {
    ======================================================== */
 .hero {
   background: linear-gradient(180deg, var(--roxo-base) 0%, var(--roxo-escuro) 100%);
-  padding: 50px 0 64px;
+  padding: 44px 0 56px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .hero-grid {
   display: grid;
-  gap: 40px;
+  gap: 36px;
   align-items: center;
 }
 
 .hero-sub-slogan {
   font-family: var(--serif);
-  font-size: 1.2rem;
+  font-size: 1.15rem;
   font-style: italic;
   color: var(--roxo-destaque);
   margin-bottom: 16px;
@@ -371,7 +399,7 @@ em.dest {
   list-style: none;
   display: flex;
   flex-wrap: wrap;
-  gap: 8px 20px;
+  gap: 8px 18px;
   margin: 16px 0;
   padding: 0;
 }
@@ -403,7 +431,7 @@ em.dest {
   line-height: 1.6;
 }
 
-/* Card Visual Hero Sem Nenhuma Tag Sobreposta */
+/* Card Visual Hero */
 .perfil-card-clean {
   background: var(--roxo-fundo-card);
   border: 1px solid rgba(255, 255, 255, 0.15);
@@ -415,7 +443,7 @@ em.dest {
 .perfil-foto-clean-wrap {
   position: relative;
   background: var(--roxo-escuro);
-  max-height: 480px;
+  max-height: 460px;
   overflow: hidden;
 }
 
@@ -432,7 +460,7 @@ em.dest {
 }
 
 .perfil-info-clean {
-  padding: 24px;
+  padding: 22px;
 }
 
 .perfil-cargo-clean {
@@ -446,13 +474,13 @@ em.dest {
 }
 
 .perfil-nome-clean {
-  font-size: 1.45rem;
+  font-size: 1.4rem;
   color: #fff;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 
 .perfil-resumo-clean {
-  font-size: 0.88rem;
+  font-size: 0.86rem;
   color: var(--texto-suave);
   font-weight: 300;
   line-height: 1.6;
@@ -465,19 +493,19 @@ em.dest {
   background: var(--roxo-escuro);
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 36px 0;
+  padding: 32px 0;
 }
 
 .num-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 22px 18px;
+  gap: 20px 16px;
   text-align: center;
 }
 
 .num-v {
   font-family: var(--serif);
-  font-size: 2.1rem;
+  font-size: 2rem;
   font-weight: 600;
   color: var(--roxo-destaque);
   line-height: 1;
@@ -497,7 +525,7 @@ em.dest {
    SEÇÕES GERAIS
    ======================================================== */
 .sec {
-  padding: 68px 0;
+  padding: 60px 0;
 }
 
 .sec-tom-alternado {
@@ -507,19 +535,19 @@ em.dest {
 }
 
 /* ========================================================
-   SEÇÕES JUDICIAL & PATOLOGIA (GRIDS E FOTOS)
+   SEÇÕES JUDICIAL & PATOLOGIA
    ======================================================== */
 .judicial-hero-grid, .patologia-hero-grid {
   display: grid;
-  gap: 36px;
+  gap: 32px;
   align-items: center;
-  margin-bottom: 30px;
+  margin-bottom: 26px;
 }
 
 .judicial-fotos-dupla, .patologia-fotos-dupla {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 16px;
+  gap: 14px;
 }
 
 .foto-card-dupla {
@@ -550,8 +578,8 @@ em.dest {
   right: 0;
   background: linear-gradient(transparent, rgba(40, 24, 32, 0.95));
   color: #fff;
-  padding: 24px 12px 10px;
-  font-size: 0.72rem;
+  padding: 20px 10px 8px;
+  font-size: 0.7rem;
   font-weight: 500;
   text-align: center;
 }
@@ -559,15 +587,15 @@ em.dest {
 /* Boxes de Conteúdo */
 .det-cols {
   display: grid;
-  gap: 22px;
-  margin-bottom: 24px;
+  gap: 20px;
+  margin-bottom: 22px;
 }
 
 .det-box {
   background: var(--roxo-fundo-card);
   border-left: 3px solid var(--roxo-destaque);
   border-radius: 0 4px 4px 0;
-  padding: 24px 22px;
+  padding: 22px 20px;
   border-top: 1px solid rgba(255, 255, 255, 0.12);
   border-right: 1px solid rgba(255, 255, 255, 0.12);
   border-bottom: 1px solid rgba(255, 255, 255, 0.12);
@@ -579,7 +607,7 @@ em.dest {
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--roxo-destaque);
-  margin-bottom: 14px;
+  margin-bottom: 12px;
 }
 
 .det-box ul {
@@ -590,8 +618,8 @@ em.dest {
 
 .det-box li {
   position: relative;
-  padding-left: 20px;
-  font-size: 0.88rem;
+  padding-left: 18px;
+  font-size: 0.86rem;
   color: var(--texto-suave);
   font-weight: 300;
   line-height: 1.6;
@@ -617,7 +645,7 @@ em.dest {
    ======================================================== */
 .sobre-grid {
   display: grid;
-  gap: 40px;
+  gap: 36px;
   align-items: center;
 }
 
@@ -625,14 +653,14 @@ em.dest {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  margin-top: 22px;
+  margin-top: 20px;
 }
 
 .chip {
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 20px;
-  padding: 7px 15px;
-  font-size: 0.7rem;
+  padding: 6px 14px;
+  font-size: 0.68rem;
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -645,14 +673,14 @@ em.dest {
    ======================================================== */
 .passos {
   display: grid;
-  gap: 24px;
+  gap: 22px;
   counter-reset: p;
   text-align: left;
 }
 
 .passo {
   position: relative;
-  padding-top: 24px;
+  padding-top: 22px;
   border-top: 1px solid rgba(255, 255, 255, 0.15);
 }
 
@@ -660,24 +688,24 @@ em.dest {
   counter-increment: p;
   content: "0" counter(p);
   font-family: var(--serif);
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   color: var(--roxo-destaque);
   display: block;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
   line-height: 1;
 }
 
 .passo h3 {
-  font-size: 1.15rem;
+  font-size: 1.1rem;
   color: #ffffff;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 
 .passo p {
-  font-size: 0.88rem;
+  font-size: 0.86rem;
   color: var(--texto-suave);
   font-weight: 300;
-  line-height: 1.7;
+  line-height: 1.65;
 }
 
 /* ========================================================
@@ -690,9 +718,9 @@ details.faq {
 details.faq summary {
   list-style: none;
   cursor: pointer;
-  padding: 22px 46px 22px 0;
+  padding: 20px 42px 20px 0;
   font-family: var(--serif);
-  font-size: 1.08rem;
+  font-size: 1.04rem;
   font-weight: 500;
   position: relative;
   color: #ffffff;
@@ -708,7 +736,7 @@ details.faq summary::after {
   right: 6px;
   top: 50%;
   transform: translateY(-50%);
-  font-size: 1.4rem;
+  font-size: 1.35rem;
   color: var(--roxo-destaque);
   font-family: var(--sans);
   font-weight: 300;
@@ -720,11 +748,11 @@ details.faq[open] summary::after {
 }
 
 details.faq .faq-c {
-  padding: 0 0 24px;
-  font-size: 0.92rem;
+  padding: 0 0 22px;
+  font-size: 0.9rem;
   color: var(--texto-suave);
   font-weight: 300;
-  line-height: 1.8;
+  line-height: 1.75;
   max-width: 76ch;
 }
 
@@ -733,19 +761,19 @@ details.faq .faq-c {
    ======================================================== */
 .ct-grid {
   display: grid;
-  gap: 34px;
+  gap: 30px;
 }
 
 .aviso {
   background: var(--roxo-fundo-card);
   border-left: 3px solid var(--roxo-destaque);
   border-radius: 0 4px 4px 0;
-  padding: 18px 20px;
-  font-size: 0.86rem;
+  padding: 16px 18px;
+  font-size: 0.84rem;
   color: var(--texto-suave);
   font-weight: 300;
-  line-height: 1.7;
-  margin-bottom: 22px;
+  line-height: 1.65;
+  margin-bottom: 20px;
   border-top: 1px solid rgba(255, 255, 255, 0.12);
   border-right: 1px solid rgba(255, 255, 255, 0.12);
   border-bottom: 1px solid rgba(255, 255, 255, 0.12);
@@ -758,18 +786,18 @@ details.faq .faq-c {
 
 .infos-contato-row {
   display: grid;
-  gap: 16px;
-  margin: 24px 0;
+  gap: 14px;
+  margin: 20px 0;
 }
 
 .info-item {
   display: flex;
-  gap: 14px;
+  gap: 12px;
 }
 
 .info-ico {
-  width: 38px;
-  height: 38px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(255, 255, 255, 0.15);
@@ -780,8 +808,8 @@ details.faq .faq-c {
 }
 
 .info-ico svg {
-  width: 16px;
-  height: 16px;
+  width: 15px;
+  height: 15px;
   fill: var(--roxo-destaque);
 }
 
@@ -792,52 +820,52 @@ details.faq .faq-c {
   letter-spacing: 0.15em;
   text-transform: uppercase;
   color: var(--texto-muted);
-  margin-bottom: 3px;
+  margin-bottom: 2px;
 }
 
 .info-tx p {
-  font-size: 0.88rem;
+  font-size: 0.86rem;
   color: #ffffff;
   font-weight: 300;
-  line-height: 1.6;
+  line-height: 1.55;
 }
 
 .ct-lado-box {
   background: var(--roxo-escuro);
   border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 6px;
-  padding: 34px 28px;
+  padding: 30px 24px;
   color: #fff;
 }
 
 .ct-lado-box h3 {
   color: #fff;
-  font-size: 1.35rem;
-  margin-bottom: 14px;
+  font-size: 1.3rem;
+  margin-bottom: 12px;
 }
 
 .ct-lado-box p {
-  font-size: 0.9rem;
+  font-size: 0.88rem;
   color: var(--texto-suave);
   font-weight: 300;
-  line-height: 1.75;
-  margin-bottom: 22px;
+  line-height: 1.7;
+  margin-bottom: 20px;
 }
 
 .ct-lista {
   list-style: none;
   display: grid;
-  gap: 12px;
-  margin-bottom: 22px;
+  gap: 10px;
+  margin-bottom: 20px;
 }
 
 .ct-lista li {
   position: relative;
-  padding-left: 24px;
-  font-size: 0.88rem;
+  padding-left: 22px;
+  font-size: 0.86rem;
   color: var(--texto-suave);
   font-weight: 300;
-  line-height: 1.6;
+  line-height: 1.55;
 }
 
 .ct-lista li strong {
@@ -862,15 +890,15 @@ details.faq .faq-c {
 .rodape {
   background: var(--roxo-escuro);
   color: var(--texto-muted);
-  padding: 48px 0 32px;
-  font-size: 0.84rem;
+  padding: 44px 0 30px;
+  font-size: 0.82rem;
   font-weight: 300;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .rod-grid {
   display: grid;
-  gap: 26px;
+  gap: 24px;
 }
 
 .rodape strong {
@@ -880,11 +908,11 @@ details.faq .faq-c {
   font-size: 0.7rem;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
 
 .rodape p {
-  line-height: 1.8;
+  line-height: 1.75;
 }
 
 .rodape a:hover {
@@ -893,31 +921,30 @@ details.faq .faq-c {
 
 .rod-legal {
   border-top: 1px solid rgba(255, 255, 255, 0.08);
-  margin-top: 12px;
-  padding-top: 22px;
-  font-size: 0.75rem;
-  line-height: 1.8;
+  margin-top: 10px;
+  padding-top: 20px;
+  font-size: 0.74rem;
+  line-height: 1.75;
   color: var(--texto-muted);
 }
 
 /* ========================================================
-   ÍCONES FLUTUANTES NO CANTO INFERIOR DIREITO COM ANIMAÇÃO
+   ÍCONES FLUTUANTES NO CANTO INFERIOR DIREITO
    ======================================================== */
 .flutuantes-container {
   position: fixed;
-  right: 22px;
-  bottom: 26px;
+  right: 18px;
+  bottom: 20px;
   z-index: 120;
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 12px;
   align-items: center;
 }
 
-/* Botão Flutuante Base */
 .flut-btn {
-  width: 58px;
-  height: 58px;
+  width: 52px;
+  height: 52px;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -929,12 +956,11 @@ details.faq .faq-c {
 }
 
 .flut-btn svg {
-  width: 32px;
-  height: 32px;
+  width: 28px;
+  height: 28px;
   fill: #ffffff;
 }
 
-/* Efeito Pulsante de Onda Atrás do Botão */
 .flut-btn::before {
   content: "";
   position: absolute;
@@ -948,100 +974,144 @@ details.faq .faq-c {
   animation: pulse-ring 2.8s infinite;
 }
 
-/* WhatsApp Flutuante */
 .flut-zap {
   background: var(--zap-cor);
   animation: float-soft 3s ease-in-out infinite;
 }
+.flut-zap::before { background: var(--zap-cor); }
 
-.flut-zap::before {
-  background: var(--zap-cor);
-}
-
-/* Instagram Flutuante */
 .flut-insta {
   background: var(--insta-gradient);
   animation: float-soft 3s ease-in-out infinite 1.5s;
 }
-
-.flut-insta::before {
-  background: #cc2366;
-}
+.flut-insta::before { background: #cc2366; }
 
 .flut-btn:hover {
   transform: scale(1.14) translateY(-3px);
   box-shadow: 0 14px 32px rgba(0, 0, 0, 0.5);
 }
 
-/* Animações CSS */
 @keyframes float-soft {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-6px);
-  }
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
 }
 
 @keyframes pulse-ring {
-  0% {
-    transform: scale(0.9);
-    opacity: 0.6;
-  }
-  50% {
-    opacity: 0.25;
-  }
-  100% {
-    transform: scale(1.4);
-    opacity: 0;
-  }
+  0% { transform: scale(0.9); opacity: 0.6; }
+  50% { opacity: 0.25; }
+  100% { transform: scale(1.4); opacity: 0; }
 }
 
 /* ========================================================
-   RESPONSIVIDADE
+   OTIMIZAÇÃO MOBILE RESPONSIVA
    ======================================================== */
-@media (min-width: 640px) {
-  h1 { font-size: 2.75rem; }
-  h2 { font-size: 2.15rem; }
-  .logo-img { height: 160px; }
-  .hero { padding: 64px 0 74px; }
-  .hero-acoes {
-    flex-direction: row;
-    align-items: center;
-    gap: 18px;
+@media (max-width: 900px) {
+  .menu-mobile-btn {
+    display: flex;
   }
-  .num-grid { grid-template-columns: repeat(4, 1fr); }
-  .num-v { font-size: 2.4rem; }
-  .det-cols { grid-template-columns: 1fr 1fr; }
-  .passos { grid-template-columns: repeat(3, 1fr); }
-  .rod-grid { grid-template-columns: repeat(3, 1fr); }
-  .rod-legal { grid-column: 1 / -1; }
+
+  .nav-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #5a3d47;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    flex-direction: column;
+    padding: 16px 20px 22px;
+    gap: 8px;
+    align-items: stretch;
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.35);
+    display: none;
+    transform-origin: top;
+    animation: menuSlideDown 0.25s ease forwards;
+  }
+
+  .nav-menu.active {
+    display: flex;
+  }
+
+  .nav-item {
+    padding: 12px 18px;
+    border-radius: 8px;
+    font-size: 0.82rem;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  .nav-item.destaque {
+    background: rgba(255, 255, 255, 0.12);
+  }
+
+  .topo-container {
+    padding: 8px 16px;
+    min-height: 64px;
+  }
+
+  .logo-img {
+    height: 46px;
+  }
+
+  h1 { font-size: 1.85rem; }
+  h2 { font-size: 1.55rem; }
+
+  .judicial-fotos-dupla, .patologia-fotos-dupla {
+    grid-template-columns: 1fr;
+  }
 }
 
-@media (min-width: 1024px) {
-  .sec { padding: 88px 0; }
-  .hero { padding: 80px 0 90px; }
-  h1 { font-size: 3.15rem; }
-  h2 { font-size: 2.35rem; }
-  .lead { font-size: 1.06rem; }
-  .logo-img { height: 180px; }
+@keyframes menuSlideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (min-width: 901px) {
+  .topo-container {
+    padding: 12px 24px;
+  }
+  .logo-img {
+    height: 58px;
+  }
   .hero-grid {
     grid-template-columns: 1.15fr 0.85fr;
-    gap: 56px;
+    gap: 52px;
   }
   .judicial-hero-grid, .patologia-hero-grid, .sobre-grid {
     grid-template-columns: 1fr 1fr;
-    gap: 56px;
+    gap: 52px;
   }
   .ct-grid {
     grid-template-columns: 1.15fr 0.85fr;
-    gap: 48px;
+    gap: 44px;
   }
-  body { padding-bottom: 0; }
-  .numeros { padding: 46px 0; }
+  .num-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .det-cols {
+    grid-template-columns: 1fr 1fr;
+  }
+  .passos {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .rod-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .rod-legal {
+    grid-column: 1 / -1;
+  }
+  .hero-acoes {
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+  }
 }
 
 @media print {
-  .flutuantes-container, .topo-centralizado { display: none !important; }
-  body { padding-bottom: 0; }
+  .flutuantes-container, .topo-header { display: none !important; }
 }
