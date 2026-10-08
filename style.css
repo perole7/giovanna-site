@@ -1,26 +1,28 @@
 /* ========================================================
    GIOVANNA ARIETA - ARQUITETA PATOLOGISTA
-   Design System: Uniforme (#75545F)
-   Cabeçalho Otimizado com Logo Nítida e Legível à Esquerda
-   Animações de Rolagem (Scroll Reveal) & Mobile Responsivo
+   Design System: Paleta Oficial Exata da Marca
+   - Malva Original:    #70555F (RGB 112, 85, 95)
+   - Malva Claro:       #B69DA5 (RGB 182, 157, 165)
+   - Bege Rosado:       #D8C8C0 (RGB 216, 200, 192)
+   - Bege Champagne:    #EDE5DA (RGB 237, 229, 218)
+   - Off-White Quente:  #F8F5F0 (RGB 248, 245, 240)
+   - Grafite Sofistic.: #302B2D (RGB 48, 43, 45)
    ======================================================== */
 
 :root {
-  /* Cor Exata Amostrada da Logo Original */
-  --roxo-base: #75545F;          /* Cor exata de fundo da logo */
-  --roxo-escuro: #5a3d47;        /* Roxo mais profundo para contrastes e rodapé */
-  --roxo-medio: #6a4b55;         /* Tom intermediário elegante */
-  --roxo-suave: #8b6874;         /* Tom suave */
-  --roxo-pastel: #b4939f;        /* Tom pastel para detalhes e ícones */
-  --roxo-claro: #d8c4cb;         /* Roxo bem claro para linhas e bordas */
-  --roxo-fundo-card: #61434d;    /* Fundo de cards sobre roxo */
-  --roxo-card-hover: #694a55;    /* Hover de cards */
-  --roxo-destaque: #f5eaee;      /* Quase branco rosado/roxo */
+  /* Cores Oficiais da Paleta */
+  --malva-original: #70555F;
+  --malva-claro: #B69DA5;
+  --bege-rosado: #D8C8C0;
+  --bege-champagne: #EDE5DA;
+  --off-white: #F8F5F0;
+  --grafite: #302B2D;
   
-  /* Textos */
-  --texto-branco: #ffffff;
-  --texto-suave: #f2e7eb;
-  --texto-muted: #cdb7bf;
+  /* Cores Derivadas e Aplicações */
+  --texto-principal: #302B2D;
+  --texto-suave: #5d4a52;
+  --texto-muted: #8c767e;
+  --texto-claro: #F8F5F0;
   
   /* Acentos de Aplicativos */
   --zap-cor: #25d366;
@@ -30,9 +32,9 @@
   --serif: 'Playfair Display', Georgia, serif;
   --sans: 'Sora', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 
-  /* Sombras */
-  --sombra-card: 0 10px 32px rgba(0, 0, 0, 0.22);
-  --sombra-hover: 0 16px 44px rgba(0, 0, 0, 0.32);
+  /* Sombras Elegantes */
+  --sombra-card: 0 8px 30px rgba(48, 43, 45, 0.08);
+  --sombra-hover: 0 16px 40px rgba(48, 43, 45, 0.14);
 }
 
 /* Reset Base */
@@ -49,34 +51,35 @@ html {
 
 body {
   font-family: var(--sans);
-  color: var(--texto-suave);
-  background: var(--roxo-base);
+  color: var(--texto-principal);
+  background: var(--off-white);
   line-height: 1.7;
   font-size: 16px;
   overflow-x: hidden;
   position: relative;
 }
 
-/* Marca d'água da logo fixa em 2º plano acompanhando a rolagem, deslocada um pouco para a direita */
-body::before {
-  content: "";
+/* ========================================================
+   MARCA D'ÁGUA DA LOGO VISÍVEL NO SITE TODO
+   Fixa na tela, acompanhando a rolagem em 2º plano sem ser coberta
+   ======================================================== */
+.marca-dagua-fixa {
   position: fixed;
-  top: 52%;
+  top: 50%;
   left: 20px;
   transform: translateY(-50%);
   width: 520px;
   height: 520px;
-  max-width: 48vw;
-  max-height: 48vw;
+  max-width: 46vw;
+  max-height: 46vw;
   background-image: url('assets/logo.jpg');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  opacity: 0.085;
-  filter: contrast(115%);
+  opacity: 0.12;
+  mix-blend-mode: multiply;
   pointer-events: none;
-  z-index: 0;
-  transition: opacity 0.3s ease;
+  z-index: 1; /* Fica acima dos fundos de seção e atrás do conteúdo */
 }
 
 img {
@@ -99,10 +102,12 @@ a {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
+  position: relative;
+  z-index: 2; /* Garante que o texto fique 100% nítido sobre a logo */
 }
 
 [id] {
-  scroll-margin-top: 105px;
+  scroll-margin-top: 100px;
 }
 
 /* ========================================================
@@ -110,7 +115,7 @@ a {
    ======================================================== */
 .reveal {
   opacity: 0;
-  transform: translateY(32px);
+  transform: translateY(28px);
   transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
   will-change: opacity, transform;
 }
@@ -122,7 +127,7 @@ a {
 
 .reveal-left {
   opacity: 0;
-  transform: translateX(-35px);
+  transform: translateX(-30px);
   transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
   will-change: opacity, transform;
 }
@@ -134,7 +139,7 @@ a {
 
 .reveal-right {
   opacity: 0;
-  transform: translateX(35px);
+  transform: translateX(30px);
   transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
   will-change: opacity, transform;
 }
@@ -145,17 +150,15 @@ a {
 }
 
 /* ========================================================
-   CABEÇALHO OTIMIZADO: LOGO À ESQUERDA BEM LEGÍVEL + ABAS
+   CABEÇALHO: MALVA ORIGINAL (#70555F) COM LOGO NÍTIDA
    ======================================================== */
 .topo-header {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(117, 84, 95, 0.98);
-  backdrop-filter: blur(14px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.18);
-  transition: all 0.3s ease;
+  background: var(--malva-original);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 4px 20px rgba(48, 43, 45, 0.2);
 }
 
 .topo-container {
@@ -166,7 +169,6 @@ a {
   min-height: 84px;
 }
 
-/* Logo Aumentada e Nítida à Esquerda */
 .logo-link {
   display: inline-flex;
   align-items: center;
@@ -186,7 +188,7 @@ a {
   transform: scale(1.02);
 }
 
-/* Menu de Navegação Horizontal */
+/* Menu de Navegação */
 .nav-menu {
   display: flex;
   align-items: center;
@@ -203,7 +205,7 @@ a {
   font-weight: 600;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: var(--texto-suave);
+  color: var(--bege-champagne);
   transition: all 0.2s ease;
 }
 
@@ -214,8 +216,8 @@ a {
 
 .nav-item.destaque {
   color: #fff;
-  border: 1px solid rgba(255, 255, 255, 0.35);
-  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--bege-rosado);
+  background: rgba(255, 255, 255, 0.1);
 }
 
 .nav-item.destaque:hover {
@@ -244,15 +246,9 @@ a {
   transition: all 0.3s ease;
 }
 
-.menu-mobile-btn.active span:nth-child(1) {
-  transform: translateY(7px) rotate(45deg);
-}
-.menu-mobile-btn.active span:nth-child(2) {
-  opacity: 0;
-}
-.menu-mobile-btn.active span:nth-child(3) {
-  transform: translateY(-7px) rotate(-45deg);
-}
+.menu-mobile-btn.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.menu-mobile-btn.active span:nth-child(2) { opacity: 0; }
+.menu-mobile-btn.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
 /* ========================================================
    TIPOGRAFIA & LINHAS EDITORIAIS
@@ -265,15 +261,15 @@ a {
   font-weight: 700;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--roxo-destaque);
+  color: var(--malva-original);
   margin-bottom: 16px;
 }
 
 .olho::before {
   content: "";
   width: 32px;
-  height: 1.5px;
-  background: var(--roxo-pastel);
+  height: 2px;
+  background: var(--malva-claro);
   flex: none;
 }
 
@@ -284,8 +280,8 @@ a {
 .olho.meio::after {
   content: "";
   width: 32px;
-  height: 1.5px;
-  background: var(--roxo-pastel);
+  height: 2px;
+  background: var(--malva-claro);
   flex: none;
 }
 
@@ -293,11 +289,11 @@ h1, h2, h3 {
   font-family: var(--serif);
   font-weight: 600;
   letter-spacing: -0.01em;
-  color: #ffffff;
+  color: var(--grafite);
 }
 
 h1 {
-  font-size: 2.15rem;
+  font-size: 2.2rem;
   line-height: 1.2;
   margin-bottom: 18px;
 }
@@ -310,15 +306,15 @@ h2 {
 
 em.dest {
   font-style: italic;
-  color: var(--roxo-destaque);
+  color: var(--malva-original);
   font-weight: 500;
 }
 
 .lead {
-  font-size: 0.98rem;
+  font-size: 1rem;
   color: var(--texto-suave);
   font-weight: 300;
-  line-height: 1.75;
+  line-height: 1.8;
   max-width: 66ch;
   margin-bottom: 24px;
 }
@@ -341,7 +337,7 @@ em.dest {
   font-size: 1.1rem;
   font-family: var(--serif);
   font-style: italic;
-  color: var(--roxo-destaque);
+  color: var(--malva-original);
   letter-spacing: 0.02em;
 }
 
@@ -358,7 +354,7 @@ em.dest {
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  padding: 14px 26px;
+  padding: 14px 28px;
   border-radius: 4px;
   border: 0;
   cursor: pointer;
@@ -372,25 +368,25 @@ em.dest {
 }
 
 .btn-destaque {
-  background: #ffffff;
-  color: var(--roxo-escuro);
-  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.18);
+  background: var(--malva-original);
+  color: #ffffff;
+  box-shadow: 0 4px 18px rgba(112, 85, 95, 0.3);
 }
 
 .btn-destaque:hover {
-  background: var(--roxo-destaque);
-  box-shadow: 0 8px 26px rgba(0, 0, 0, 0.28);
+  background: var(--grafite);
+  box-shadow: 0 8px 26px rgba(48, 43, 45, 0.35);
 }
 
 .btn-out {
-  background: transparent;
-  color: #ffffff;
-  border: 1px solid rgba(255, 255, 255, 0.4);
+  background: #ffffff;
+  color: var(--malva-original);
+  border: 1px solid var(--bege-rosado);
 }
 
 .btn-out:hover {
-  background: rgba(255, 255, 255, 0.12);
-  border-color: #ffffff;
+  background: var(--bege-champagne);
+  border-color: var(--malva-original);
 }
 
 .btn-full {
@@ -405,34 +401,27 @@ em.dest {
 }
 
 /* ========================================================
-   HERO SECTION
+   HERO SECTION (BEGE CHAMPAGNE SUAVE COM CONTRASTE EDITORIAL)
    ======================================================== */
 .hero {
   position: relative;
-  background: linear-gradient(180deg, rgba(117, 84, 95, 0.95) 0%, rgba(90, 61, 71, 0.95) 100%);
-  padding: 48px 0 60px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  background: linear-gradient(180deg, var(--bege-champagne) 0%, var(--off-white) 100%);
+  padding: 50px 0 64px;
+  border-bottom: 1px solid var(--bege-rosado);
   overflow: hidden;
 }
 
 .hero-grid {
-  position: relative;
-  z-index: 2;
   display: grid;
   gap: 40px;
   align-items: center;
 }
 
-.hero-texto {
-  position: relative;
-  z-index: 2;
-}
-
 .hero-sub-slogan {
   font-family: var(--serif);
-  font-size: 1.15rem;
+  font-size: 1.18rem;
   font-style: italic;
-  color: var(--roxo-destaque);
+  color: var(--malva-original);
   margin-bottom: 16px;
   letter-spacing: 0.02em;
 }
@@ -458,7 +447,7 @@ em.dest {
   padding-left: 18px;
   font-size: 0.8rem;
   font-weight: 600;
-  color: #ffffff;
+  color: var(--grafite);
 }
 
 .hero-prova li::before {
@@ -468,8 +457,8 @@ em.dest {
   top: 0.4em;
   width: 9px;
   height: 5px;
-  border-left: 2px solid var(--roxo-destaque);
-  border-bottom: 2px solid var(--roxo-destaque);
+  border-left: 2px solid var(--malva-original);
+  border-bottom: 2px solid var(--malva-original);
   transform: rotate(-45deg);
 }
 
@@ -480,10 +469,10 @@ em.dest {
   line-height: 1.6;
 }
 
-/* Card Visual Hero (Sem 'PERITA') */
+/* Card Visual Hero */
 .perfil-card-clean {
-  background: var(--roxo-fundo-card);
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: #ffffff;
+  border: 1px solid var(--bege-rosado);
   border-radius: 8px;
   overflow: hidden;
   box-shadow: var(--sombra-card);
@@ -491,7 +480,7 @@ em.dest {
 
 .perfil-foto-clean-wrap {
   position: relative;
-  background: var(--roxo-escuro);
+  background: var(--bege-champagne);
   max-height: 480px;
   overflow: hidden;
 }
@@ -509,7 +498,7 @@ em.dest {
 }
 
 .perfil-info-clean {
-  padding: 22px;
+  padding: 24px;
 }
 
 .perfil-cargo-clean {
@@ -517,14 +506,14 @@ em.dest {
   font-weight: 700;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--roxo-destaque);
+  color: var(--malva-original);
   display: block;
   margin-bottom: 4px;
 }
 
 .perfil-nome-clean {
   font-size: 1.45rem;
-  color: #fff;
+  color: var(--grafite);
   margin-bottom: 8px;
 }
 
@@ -536,13 +525,13 @@ em.dest {
 }
 
 /* ========================================================
-   FAIXA DE NÚMEROS / CREDENCIAIS
+   FAIXA DE NÚMEROS / CREDENCIAIS (BEGE CHAMPAGNE)
    ======================================================== */
 .numeros {
-  background: var(--roxo-escuro);
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 34px 0;
+  background: var(--bege-champagne);
+  border-top: 1px solid var(--bege-rosado);
+  border-bottom: 1px solid var(--bege-rosado);
+  padding: 36px 0;
 }
 
 .num-grid {
@@ -556,7 +545,7 @@ em.dest {
   font-family: var(--serif);
   font-size: 2.1rem;
   font-weight: 600;
-  color: var(--roxo-destaque);
+  color: var(--malva-original);
   line-height: 1;
   margin-bottom: 6px;
 }
@@ -575,12 +564,13 @@ em.dest {
    ======================================================== */
 .sec {
   padding: 72px 0;
+  background: var(--off-white);
 }
 
 .sec-tom-alternado {
-  background: var(--roxo-escuro);
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  background: linear-gradient(180deg, var(--bege-champagne) 0%, rgba(237, 229, 218, 0.65) 100%);
+  border-top: 1px solid var(--bege-rosado);
+  border-bottom: 1px solid var(--bege-rosado);
 }
 
 /* ========================================================
@@ -605,8 +595,8 @@ em.dest {
   border-radius: 6px;
   overflow: hidden;
   box-shadow: var(--sombra-card);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  background: var(--roxo-fundo-card);
+  border: 1px solid var(--bege-rosado);
+  background: #ffffff;
 }
 
 .foto-card-dupla img {
@@ -626,7 +616,7 @@ em.dest {
   bottom: 0;
   left: 0;
   right: 0;
-  background: linear-gradient(transparent, rgba(40, 24, 32, 0.95));
+  background: linear-gradient(transparent, rgba(48, 43, 45, 0.92));
   color: #fff;
   padding: 22px 10px 8px;
   font-size: 0.72rem;
@@ -635,27 +625,27 @@ em.dest {
 }
 
 /* ========================================================
-   GRID DE SERVIÇOS & ENTREGÁVEIS (CARDS COMPLETOS)
+   CARDS DE SERVIÇOS & ENTREGÁVEIS (BEGE CHAMPAGNE & OFF-WHITE)
    ======================================================== */
 .cards-servicos-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 20px;
+  gap: 22px;
   margin-bottom: 34px;
 }
 
 .card-servico {
-  background: var(--roxo-fundo-card);
-  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: #ffffff;
+  border: 1px solid var(--bege-rosado);
   border-radius: 8px;
   padding: 28px 24px;
-  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
   box-shadow: var(--sombra-card);
 }
 
 .card-servico:hover {
   transform: translateY(-3px);
-  background: var(--roxo-card-hover);
+  border-color: var(--malva-claro);
   box-shadow: var(--sombra-hover);
 }
 
@@ -670,20 +660,20 @@ em.dest {
   font-family: var(--serif);
   font-size: 0.95rem;
   font-weight: 700;
-  color: var(--roxo-destaque);
-  background: rgba(255, 255, 255, 0.1);
+  color: var(--malva-original);
+  background: var(--bege-champagne);
   padding: 3px 9px;
   border-radius: 4px;
 }
 
 .card-servico h3 {
   font-size: 1.15rem;
-  color: #ffffff;
+  color: var(--grafite);
   margin: 0;
 }
 
 .card-servico-desc {
-  font-size: 0.9rem;
+  font-size: 0.92rem;
   color: var(--texto-suave);
   font-weight: 300;
   line-height: 1.65;
@@ -691,7 +681,7 @@ em.dest {
 }
 
 .card-servico-entregaveis {
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid var(--bege-champagne);
   padding-top: 16px;
 }
 
@@ -701,7 +691,7 @@ em.dest {
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--roxo-destaque);
+  color: var(--malva-original);
   margin-bottom: 10px;
 }
 
@@ -714,7 +704,7 @@ em.dest {
 .card-servico-entregaveis li {
   position: relative;
   padding-left: 18px;
-  font-size: 0.85rem;
+  font-size: 0.86rem;
   color: var(--texto-suave);
   font-weight: 300;
   line-height: 1.5;
@@ -728,7 +718,7 @@ em.dest {
   width: 5px;
   height: 5px;
   border-radius: 50%;
-  background: var(--roxo-pastel);
+  background: var(--malva-claro);
 }
 
 .centro-cta {
@@ -753,15 +743,15 @@ em.dest {
 }
 
 .chip {
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid var(--bege-rosado);
   border-radius: 20px;
   padding: 6px 14px;
   font-size: 0.68rem;
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: #ffffff;
-  background: rgba(255, 255, 255, 0.08);
+  color: var(--malva-original);
+  background: #ffffff;
 }
 
 /* ========================================================
@@ -777,28 +767,28 @@ em.dest {
 .passo {
   position: relative;
   padding-top: 22px;
-  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  border-top: 1px solid var(--bege-rosado);
 }
 
 .passo::before {
   counter-increment: p;
   content: "0" counter(p);
   font-family: var(--serif);
-  font-size: 1.5rem;
-  color: var(--roxo-destaque);
+  font-size: 1.6rem;
+  color: var(--malva-original);
   display: block;
   margin-bottom: 8px;
   line-height: 1;
 }
 
 .passo h3 {
-  font-size: 1.1rem;
-  color: #ffffff;
+  font-size: 1.15rem;
+  color: var(--grafite);
   margin-bottom: 8px;
 }
 
 .passo p {
-  font-size: 0.86rem;
+  font-size: 0.88rem;
   color: var(--texto-suave);
   font-weight: 300;
   line-height: 1.65;
@@ -808,7 +798,7 @@ em.dest {
    FAQ
    ======================================================== */
 details.faq {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  border-bottom: 1px solid var(--bege-rosado);
 }
 
 details.faq summary {
@@ -816,10 +806,10 @@ details.faq summary {
   cursor: pointer;
   padding: 20px 42px 20px 0;
   font-family: var(--serif);
-  font-size: 1.04rem;
+  font-size: 1.06rem;
   font-weight: 500;
   position: relative;
-  color: #ffffff;
+  color: var(--grafite);
 }
 
 details.faq summary::-webkit-details-marker {
@@ -832,8 +822,8 @@ details.faq summary::after {
   right: 6px;
   top: 50%;
   transform: translateY(-50%);
-  font-size: 1.35rem;
-  color: var(--roxo-destaque);
+  font-size: 1.4rem;
+  color: var(--malva-original);
   font-family: var(--sans);
   font-weight: 300;
   line-height: 1;
@@ -845,7 +835,7 @@ details.faq[open] summary::after {
 
 details.faq .faq-c {
   padding: 0 0 22px;
-  font-size: 0.9rem;
+  font-size: 0.92rem;
   color: var(--texto-suave);
   font-weight: 300;
   line-height: 1.75;
@@ -861,22 +851,22 @@ details.faq .faq-c {
 }
 
 .aviso {
-  background: var(--roxo-fundo-card);
-  border-left: 3px solid var(--roxo-destaque);
+  background: #ffffff;
+  border-left: 3px solid var(--malva-original);
   border-radius: 0 4px 4px 0;
   padding: 16px 18px;
-  font-size: 0.84rem;
+  font-size: 0.86rem;
   color: var(--texto-suave);
   font-weight: 300;
   line-height: 1.65;
   margin-bottom: 20px;
-  border-top: 1px solid rgba(255, 255, 255, 0.12);
-  border-right: 1px solid rgba(255, 255, 255, 0.12);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  border-top: 1px solid var(--bege-rosado);
+  border-right: 1px solid var(--bege-rosado);
+  border-bottom: 1px solid var(--bege-rosado);
 }
 
 .aviso b {
-  color: #ffffff;
+  color: var(--grafite);
   font-weight: 600;
 }
 
@@ -892,11 +882,11 @@ details.faq .faq-c {
 }
 
 .info-ico {
-  width: 36px;
-  height: 36px;
+  width: 38px;
+  height: 38px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: var(--bege-champagne);
+  border: 1px solid var(--bege-rosado);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -904,9 +894,9 @@ details.faq .faq-c {
 }
 
 .info-ico svg {
-  width: 15px;
-  height: 15px;
-  fill: var(--roxo-destaque);
+  width: 16px;
+  height: 16px;
+  fill: var(--malva-original);
 }
 
 .info-tx span {
@@ -920,29 +910,28 @@ details.faq .faq-c {
 }
 
 .info-tx p {
-  font-size: 0.86rem;
-  color: #ffffff;
+  font-size: 0.88rem;
+  color: var(--grafite);
   font-weight: 300;
   line-height: 1.55;
 }
 
 .ct-lado-box {
-  background: var(--roxo-escuro);
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: var(--grafite);
   border-radius: 6px;
-  padding: 30px 24px;
+  padding: 32px 26px;
   color: #fff;
 }
 
 .ct-lado-box h3 {
   color: #fff;
-  font-size: 1.3rem;
+  font-size: 1.35rem;
   margin-bottom: 12px;
 }
 
 .ct-lado-box p {
   font-size: 0.88rem;
-  color: var(--texto-suave);
+  color: var(--bege-rosado);
   font-weight: 300;
   line-height: 1.7;
   margin-bottom: 20px;
@@ -959,7 +948,7 @@ details.faq .faq-c {
   position: relative;
   padding-left: 22px;
   font-size: 0.86rem;
-  color: var(--texto-suave);
+  color: var(--bege-champagne);
   font-weight: 300;
   line-height: 1.55;
 }
@@ -975,21 +964,20 @@ details.faq .faq-c {
   top: 0.5em;
   width: 10px;
   height: 5px;
-  border-left: 2px solid var(--roxo-destaque);
-  border-bottom: 2px solid var(--roxo-destaque);
+  border-left: 2px solid var(--malva-claro);
+  border-bottom: 2px solid var(--malva-claro);
   transform: rotate(-45deg);
 }
 
 /* ========================================================
-   RODAPÉ (COM OBSERVAÇÃO TÉCNICA)
+   RODAPÉ (GRAFITE SOFISTICADO COM DETALHES MALVA)
    ======================================================== */
 .rodape {
-  background: var(--roxo-escuro);
-  color: var(--texto-muted);
-  padding: 44px 0 30px;
-  font-size: 0.82rem;
+  background: var(--grafite);
+  color: var(--bege-rosado);
+  padding: 48px 0 32px;
+  font-size: 0.84rem;
   font-weight: 300;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .rod-grid {
@@ -1001,7 +989,7 @@ details.faq .faq-c {
   display: block;
   color: #ffffff;
   font-weight: 600;
-  font-size: 0.7rem;
+  font-size: 0.72rem;
   letter-spacing: 0.15em;
   text-transform: uppercase;
   margin-bottom: 10px;
@@ -1018,12 +1006,12 @@ details.faq .faq-c {
 .rod-observacao {
   grid-column: 1 / -1;
   background: rgba(255, 255, 255, 0.05);
-  border-left: 3px solid var(--roxo-destaque);
+  border-left: 3px solid var(--malva-claro);
   padding: 16px 20px;
   border-radius: 0 4px 4px 0;
   font-size: 0.82rem;
   line-height: 1.7;
-  color: var(--texto-suave);
+  color: var(--bege-champagne);
 }
 
 .rod-observacao strong {
@@ -1034,12 +1022,12 @@ details.faq .faq-c {
 
 .rod-legal {
   grid-column: 1 / -1;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
   margin-top: 4px;
   padding-top: 18px;
   font-size: 0.74rem;
   line-height: 1.75;
-  color: var(--texto-muted);
+  color: var(--bege-rosado);
 }
 
 /* ========================================================
@@ -1057,13 +1045,13 @@ details.faq .faq-c {
 }
 
 .flut-btn {
-  width: 52px;
-  height: 52px;
+  width: 54px;
+  height: 54px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 8px 24px rgba(48, 43, 45, 0.3);
   position: relative;
   cursor: pointer;
   transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
@@ -1102,7 +1090,7 @@ details.faq .faq-c {
 
 .flut-btn:hover {
   transform: scale(1.14) translateY(-3px);
-  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 14px 32px rgba(48, 43, 45, 0.45);
 }
 
 @keyframes float-soft {
@@ -1120,6 +1108,10 @@ details.faq .faq-c {
    RESPONSIVIDADE & MOBILE
    ======================================================== */
 @media (max-width: 900px) {
+  .marca-dagua-fixa {
+    display: none; /* No mobile evita sobrepor telas estreitas */
+  }
+
   .menu-mobile-btn {
     display: flex;
   }
@@ -1129,13 +1121,13 @@ details.faq .faq-c {
     top: 100%;
     left: 0;
     right: 0;
-    background: #5a3d47;
+    background: var(--grafite);
     border-bottom: 1px solid rgba(255, 255, 255, 0.15);
     flex-direction: column;
     padding: 16px 20px 22px;
     gap: 8px;
     align-items: stretch;
-    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.35);
+    box-shadow: 0 16px 32px rgba(48, 43, 45, 0.4);
     display: none;
     transform-origin: top;
     animation: menuSlideDown 0.25s ease forwards;
@@ -1151,10 +1143,12 @@ details.faq .faq-c {
     font-size: 0.82rem;
     justify-content: center;
     background: rgba(255, 255, 255, 0.05);
+    color: var(--bege-champagne);
   }
 
   .nav-item.destaque {
-    background: rgba(255, 255, 255, 0.12);
+    background: rgba(255, 255, 255, 0.15);
+    border-color: var(--malva-claro);
   }
 
   .topo-container {
@@ -1230,5 +1224,5 @@ details.faq .faq-c {
 }
 
 @media print {
-  .flutuantes-container, .topo-header { display: none !important; }
+  .flutuantes-container, .topo-header, .marca-dagua-fixa { display: none !important; }
 }
