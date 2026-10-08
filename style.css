@@ -1,24 +1,24 @@
 /* ========================================================
    GIOVANNA ARIETA - ARQUITETA PATOLOGISTA
-   Design System: Todo em Roxo Pastel / Mauve Dusty
-   Cabeçalho 100% Roxo, Centralizado, Animações Flutuantes
+   Design System: Uniforme com a cor exata da logo (#75545F)
+   Cabeçalho 100% integrado sem bordas aparentes na imagem da logo
    ======================================================== */
 
 :root {
-  /* Paleta Roxo Pastel da Logo */
-  --roxo-base: #5a3c48;          /* Cor exata de fundo da logo */
-  --roxo-escuro: #462c37;        /* Roxo mais profundo para contrastes e rodapé */
-  --roxo-medio: #6e4b58;         /* Tom médio elegante */
-  --roxo-suave: #86616f;         /* Tom suave */
-  --roxo-pastel: #a27b8a;        /* Tom pastel para detalhes */
-  --roxo-claro: #d2bcc4;         /* Roxo bem claro para linhas e bordas */
-  --roxo-fundo-card: #4e333e;    /* Fundo de cards sobre roxo */
-  --roxo-destaque: #ebd9df;      /* Quase branco rosado/roxo */
+  /* Cor Exata Amostrada da Logo Original */
+  --roxo-base: #75545F;          /* Cor exata de fundo da logo */
+  --roxo-escuro: #5a3d47;        /* Roxo mais profundo para contrastes e rodapé */
+  --roxo-medio: #6a4b55;         /* Tom intermediário elegante */
+  --roxo-suave: #8b6874;         /* Tom suave */
+  --roxo-pastel: #b4939f;        /* Tom pastel para detalhes e ícones */
+  --roxo-claro: #d8c4cb;         /* Roxo bem claro para linhas e bordas */
+  --roxo-fundo-card: #61434d;    /* Fundo de cards sobre roxo */
+  --roxo-destaque: #f5eaee;      /* Quase branco rosado/roxo */
   
   /* Textos */
   --texto-branco: #ffffff;
-  --texto-suave: #eedfe4;
-  --texto-muted: #cbb4bc;
+  --texto-suave: #f2e7eb;
+  --texto-muted: #cdb7bf;
   
   /* Acentos de Aplicativos */
   --zap-cor: #25d366;
@@ -29,8 +29,8 @@
   --sans: 'Sora', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 
   /* Sombras */
-  --sombra-card: 0 10px 32px rgba(0, 0, 0, 0.25);
-  --sombra-hover: 0 16px 44px rgba(0, 0, 0, 0.35);
+  --sombra-card: 0 10px 32px rgba(0, 0, 0, 0.22);
+  --sombra-hover: 0 16px 44px rgba(0, 0, 0, 0.32);
 }
 
 /* Reset Base */
@@ -78,19 +78,19 @@ a {
 }
 
 [id] {
-  scroll-margin-top: 150px;
+  scroll-margin-top: 170px;
 }
 
 /* ========================================================
-   CABEÇALHO 100% ROXO CENTRALIZADO
+   CABEÇALHO 100% UNIFORME COM A LOGO (MESMA COR #75545F)
    ======================================================== */
 .topo-centralizado {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: var(--roxo-base);
-  border-bottom: 1px solid rgba(210, 188, 196, 0.25);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  background: #75545F;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
   text-align: center;
 }
 
@@ -98,33 +98,41 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 16px 20px 10px;
+  padding: 24px 20px 18px;
   max-width: 1200px;
   margin: 0 auto;
+  background: #75545F;
 }
 
 .logo-centro-link {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  background: #75545F;
 }
 
+/* Logo Aumentada Bastante e 100% Uniforme com o Fundo */
 .logo-img {
-  height: 72px;
+  height: 140px;
+  max-width: 90vw;
   width: auto;
   object-fit: contain;
+  background: #75545F;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  display: block;
   transition: transform 0.25s ease;
-  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.15));
 }
 
 .logo-centro-link:hover .logo-img {
   transform: scale(1.02);
 }
 
-/* Linha de Abas 100% Centralizada */
+/* Linha de Abas Centralizada Abaixo da Logo */
 .topo-nav-row {
-  border-top: 1px solid rgba(210, 188, 196, 0.18);
-  background: rgba(70, 44, 55, 0.65);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(90, 61, 71, 0.6);
   backdrop-filter: blur(8px);
 }
 
@@ -133,7 +141,7 @@ a {
   align-items: center;
   justify-content: center;
   gap: 12px;
-  padding: 9px 16px;
+  padding: 10px 16px;
   overflow-x: auto;
   white-space: nowrap;
   -webkit-overflow-scrolling: touch;
@@ -143,7 +151,7 @@ a {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  padding: 6px 16px;
+  padding: 7px 18px;
   border-radius: 20px;
   font-size: 0.76rem;
   font-weight: 600;
@@ -155,18 +163,18 @@ a {
 
 .nav-aba-link:hover {
   color: #fff;
-  background: rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.15);
 }
 
 .nav-aba-link.destaque-aba {
   color: #fff;
-  border: 1px solid rgba(235, 217, 223, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.35);
   background: rgba(255, 255, 255, 0.08);
 }
 
 .nav-aba-link.destaque-aba:hover {
   border-color: #fff;
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.22);
 }
 
 /* ========================================================
@@ -275,13 +283,13 @@ em.dest {
 
 .btn-destaque {
   background: #ffffff;
-  color: var(--roxo-base);
-  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.2);
+  color: var(--roxo-escuro);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.18);
 }
 
 .btn-destaque:hover {
   background: var(--roxo-destaque);
-  box-shadow: 0 8px 26px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 8px 26px rgba(0, 0, 0, 0.28);
 }
 
 .btn-out {
@@ -334,7 +342,7 @@ em.dest {
 .hero {
   background: linear-gradient(180deg, var(--roxo-base) 0%, var(--roxo-escuro) 100%);
   padding: 50px 0 64px;
-  border-bottom: 1px solid rgba(210, 188, 196, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .hero-grid {
@@ -395,10 +403,10 @@ em.dest {
   line-height: 1.6;
 }
 
-/* Card Visual Hero */
+/* Card Visual Hero Sem Nenhuma Tag Sobreposta */
 .perfil-card-clean {
   background: var(--roxo-fundo-card);
-  border: 1px solid rgba(210, 188, 196, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 8px;
   overflow: hidden;
   box-shadow: var(--sombra-card);
@@ -421,31 +429,6 @@ em.dest {
 
 .perfil-card-clean:hover .perfil-foto-clean {
   transform: scale(1.02);
-}
-
-.perfil-tag-flutuante {
-  position: absolute;
-  top: 14px;
-  right: 14px;
-  background: rgba(30, 18, 24, 0.85);
-  backdrop-filter: blur(6px);
-  color: #fff;
-  border-radius: 20px;
-  padding: 6px 14px;
-  font-size: 0.7rem;
-  font-weight: 600;
-  display: flex;
-  align-items: center;
-  gap: 7px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.dot-verde {
-  width: 8px;
-  height: 8px;
-  background: #25d366;
-  border-radius: 50%;
-  box-shadow: 0 0 6px #25d366;
 }
 
 .perfil-info-clean {
@@ -480,8 +463,8 @@ em.dest {
    ======================================================== */
 .numeros {
   background: var(--roxo-escuro);
-  border-top: 1px solid rgba(210, 188, 196, 0.15);
-  border-bottom: 1px solid rgba(210, 188, 196, 0.15);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   padding: 36px 0;
 }
 
@@ -519,8 +502,8 @@ em.dest {
 
 .sec-tom-alternado {
   background: var(--roxo-escuro);
-  border-top: 1px solid rgba(210, 188, 196, 0.12);
-  border-bottom: 1px solid rgba(210, 188, 196, 0.12);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 /* ========================================================
@@ -544,7 +527,7 @@ em.dest {
   border-radius: 6px;
   overflow: hidden;
   box-shadow: var(--sombra-card);
-  border: 1px solid rgba(210, 188, 196, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   background: var(--roxo-fundo-card);
 }
 
@@ -585,9 +568,9 @@ em.dest {
   border-left: 3px solid var(--roxo-destaque);
   border-radius: 0 4px 4px 0;
   padding: 24px 22px;
-  border-top: 1px solid rgba(210, 188, 196, 0.2);
-  border-right: 1px solid rgba(210, 188, 196, 0.2);
-  border-bottom: 1px solid rgba(210, 188, 196, 0.2);
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  border-right: 1px solid rgba(255, 255, 255, 0.12);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 .det-box h4 {
@@ -646,7 +629,7 @@ em.dest {
 }
 
 .chip {
-  border: 1px solid rgba(210, 188, 196, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 20px;
   padding: 7px 15px;
   font-size: 0.7rem;
@@ -654,7 +637,7 @@ em.dest {
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: #ffffff;
-  background: rgba(255, 255, 255, 0.06);
+  background: rgba(255, 255, 255, 0.08);
 }
 
 /* ========================================================
@@ -670,7 +653,7 @@ em.dest {
 .passo {
   position: relative;
   padding-top: 24px;
-  border-top: 1px solid rgba(210, 188, 196, 0.2);
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .passo::before {
@@ -701,7 +684,7 @@ em.dest {
    FAQ
    ======================================================== */
 details.faq {
-  border-bottom: 1px solid rgba(210, 188, 196, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 details.faq summary {
@@ -763,9 +746,9 @@ details.faq .faq-c {
   font-weight: 300;
   line-height: 1.7;
   margin-bottom: 22px;
-  border-top: 1px solid rgba(210, 188, 196, 0.2);
-  border-right: 1px solid rgba(210, 188, 196, 0.2);
-  border-bottom: 1px solid rgba(210, 188, 196, 0.2);
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  border-right: 1px solid rgba(255, 255, 255, 0.12);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 .aviso b {
@@ -789,7 +772,7 @@ details.faq .faq-c {
   height: 38px;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(210, 188, 196, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -821,7 +804,7 @@ details.faq .faq-c {
 
 .ct-lado-box {
   background: var(--roxo-escuro);
-  border: 1px solid rgba(210, 188, 196, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 6px;
   padding: 34px 28px;
   color: #fff;
@@ -882,7 +865,7 @@ details.faq .faq-c {
   padding: 48px 0 32px;
   font-size: 0.84rem;
   font-weight: 300;
-  border-top: 1px solid rgba(210, 188, 196, 0.15);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .rod-grid {
@@ -909,7 +892,7 @@ details.faq .faq-c {
 }
 
 .rod-legal {
-  border-top: 1px solid rgba(210, 188, 196, 0.1);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
   margin-top: 12px;
   padding-top: 22px;
   font-size: 0.75rem;
@@ -933,8 +916,8 @@ details.faq .faq-c {
 
 /* Botão Flutuante Base */
 .flut-btn {
-  width: 56px;
-  height: 56px;
+  width: 58px;
+  height: 58px;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -946,8 +929,8 @@ details.faq .faq-c {
 }
 
 .flut-btn svg {
-  width: 30px;
-  height: 30px;
+  width: 32px;
+  height: 32px;
   fill: #ffffff;
 }
 
@@ -1014,18 +997,13 @@ details.faq .faq-c {
   }
 }
 
-/* Barra Mobile Opcional */
-.barra-mobile-clean {
-  display: none;
-}
-
 /* ========================================================
    RESPONSIVIDADE
    ======================================================== */
 @media (min-width: 640px) {
   h1 { font-size: 2.75rem; }
   h2 { font-size: 2.15rem; }
-  .logo-img { height: 82px; }
+  .logo-img { height: 160px; }
   .hero { padding: 64px 0 74px; }
   .hero-acoes {
     flex-direction: row;
@@ -1046,7 +1024,7 @@ details.faq .faq-c {
   h1 { font-size: 3.15rem; }
   h2 { font-size: 2.35rem; }
   .lead { font-size: 1.06rem; }
-  .logo-img { height: 92px; }
+  .logo-img { height: 180px; }
   .hero-grid {
     grid-template-columns: 1.15fr 0.85fr;
     gap: 56px;
