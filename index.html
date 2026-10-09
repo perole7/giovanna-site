@@ -36,11 +36,11 @@
       <!-- Navegação no Cabeçalho Organizada -->
       <nav class="nav-menu" id="navMenu">
         <a href="#inicio" class="nav-item">Início</a>
-        <a href="#direcionamento" class="nav-item">Serviços</a>
+        <a href="#direcionamento" class="nav-item">Serviços &amp; Dúvidas</a>
         <a href="patologia.html" class="nav-item destaque">Patologia</a>
         <a href="judicial.html" class="nav-item destaque">Judicial &amp; Imob.</a>
+        <a href="#depoimentos" class="nav-item">Depoimentos</a>
         <a href="#sobre" class="nav-item">Sobre Giovanna</a>
-        <a href="#faq" class="nav-item">Dúvidas</a>
         <a href="#contato" class="nav-item">Contato</a>
       </nav>
     </div>
@@ -89,11 +89,28 @@
           </a>
         </div>
 
+        <!-- Links Rápidos dos 03 Serviços -->
         <ul class="hero-prova">
-          <li>Patologia das Edificações</li>
-          <li>Laudos Judiciais</li>
-          <li>Regularização Imobiliária</li>
+          <li><a href="#direcionamento" onclick="ativarAba('tab-patologia')" style="color:inherit; text-decoration:none;">Patologia e Diagnóstico</a></li>
+          <li><a href="#direcionamento" onclick="ativarAba('tab-judicial')" style="color:inherit; text-decoration:none;">Laudos Judiciais</a></li>
+          <li><a href="#direcionamento" onclick="ativarAba('tab-imobiliario')" style="color:inherit; text-decoration:none;">Regularização Imobiliária</a></li>
         </ul>
+
+        <!-- Chamada Interativa WhatsApp -->
+        <div style="margin-top: 14px; background: rgba(255,255,255,0.7); border: 1px dashed var(--malva-claro); border-radius: 8px; padding: 12px 16px;">
+          <strong style="font-size: 0.85rem; color: var(--grafite); display: block; margin-bottom: 8px;">Como podemos solucionar o seu problema hoje?</strong>
+          <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+            <a class="chip" href="https://wa.me/5531995618646?text=Ol%C3%A1%2C%20Giovanna!%20Preciso%20de%20atendimento%20em%20Laudos%20Judiciais." target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 4px;">
+              ✓ Laudos Judiciais
+            </a>
+            <a class="chip" href="https://wa.me/5531995618646?text=Ol%C3%A1%2C%20Giovanna!%20Preciso%20de%20atendimento%20em%20Regulariza%C3%A7%C3%A3o%20Imobili%C3%A1ria." target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 4px;">
+              ✓ Regularização Imobiliária
+            </a>
+            <a class="chip" href="https://wa.me/5531995618646?text=Ol%C3%A1%2C%20Giovanna!%20Preciso%20de%20atendimento%20em%20Patologia%20e%20Diagn%C3%B3stico." target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 4px;">
+              ✓ Patologia e Diagnóstico
+            </a>
+          </div>
+        </div>
       </div>
 
       <!-- Card Visual Hero -->
@@ -183,386 +200,404 @@
       <!-- Seletor Interativo de 3 Abas Dentro do Site -->
       <div class="hub-direcionamento">
         <div class="abas-direcionamento" role="tablist">
-          <button type="button" class="aba-btn active" id="tabBtnPatologia" data-tab="tab-patologia" role="tab" aria-selected="true">
+          <button type="button" class="aba-btn active" id="tabBtnJudicial" data-tab="tab-judicial" role="tab" aria-selected="true">
             <span class="aba-badge">Área 01</span>
-            <span class="aba-titulo">Patologia das Edificações</span>
-            <span class="aba-sub">Fissuras, infiltrações, inspeção predial e diagnósticos</span>
-          </button>
-          
-          <button type="button" class="aba-btn" id="tabBtnJudicial" data-tab="tab-judicial" role="tab" aria-selected="false">
-            <span class="aba-badge">Área 02</span>
             <span class="aba-titulo">Laudos Judiciais</span>
             <span class="aba-sub">Perícias, assistência técnica judicial e pareceres</span>
           </button>
 
           <button type="button" class="aba-btn" id="tabBtnImobiliario" data-tab="tab-imobiliario" role="tab" aria-selected="false">
-            <span class="aba-badge">Área 03</span>
+            <span class="aba-badge">Área 02</span>
             <span class="aba-titulo">Regularização Imobiliária</span>
             <span class="aba-sub">Usucapião, retificação, desmembramento e habite-se</span>
+          </button>
+          
+          <button type="button" class="aba-btn" id="tabBtnPatologia" data-tab="tab-patologia" role="tab" aria-selected="false">
+            <span class="aba-badge">Área 03</span>
+            <span class="aba-titulo">Patologia e Diagnóstico</span>
+            <span class="aba-sub">Fissuras, infiltrações, inspeção predial e diagnósticos</span>
           </button>
         </div>
       </div>
 
-      <!-- PAINEL 1: PATOLOGIA DAS EDIFICAÇÕES -->
-      <div class="painel-aba active" id="tab-patologia" role="tabpanel">
-        <div class="painel-intro">
-          <div class="painel-intro-texto">
-            <span class="olho">Área Técnica 01</span>
-            <h3>Patologia das Edificações &middot; Inspeções &amp; Diagnósticos</h3>
-            <p class="lead">Inspeção Predial | Vistoria de Recebimento de Edificação e de Unidades Privativas | Avaliação de Patologias e Anomalias | Diagnóstico de Infiltração | Vistoria Cautelar | Avaliação Estrutural</p>
+      <!-- PAINEL 1: LAUDOS JUDICIAIS (2 COLUNAS: ESQUERDA DESCRITIVO / DIREITA PERGUNTAS) -->
+      <div class="painel-aba active" id="tab-judicial" role="tabpanel">
+        <div class="painel-duas-colunas">
+          <!-- Coluna Esquerda: Texto, Serviços e Descritivo -->
+          <div class="painel-coluna-conteudo">
+            <span class="olho">01. Laudos Judiciais</span>
+            <h3 class="painel-coluna-titulo">Laudos Judiciais</h3>
+            <p style="font-size:1.02rem; color:var(--malva-original); font-style:italic; margin-bottom:14px;">Perícias, provas técnicas e assistência técnica em processos judiciais.</p>
+            
+            <div class="painel-servicos-bloco">
+              <strong>Serviços Especializados:</strong>
+              <p>Perícias e Produção Antecipada de Provas | Assistência Técnica Judicial | Laudos e Pareceres Técnicos | Auditoria Técnica de Obras | Infrações Urbanísticas | Vícios Construtivos</p>
+            </div>
+
+            <p class="painel-descritivo-texto">
+              Atuação especializada em demandas judiciais e extrajudiciais, oferecendo suporte técnico para investigação de irregularidades, avaliação de condições construtivas e produção de provas técnicas. Por meio de perícias, auditorias, laudos e pareceres fundamentados, auxiliamos na análise de conflitos e na tomada de decisões, com precisão, imparcialidade e respaldo normativo.
+            </p>
+
+            <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:8px;">
+              <a class="btn btn-destaque" href="https://wa.me/5531995618646?text=Ol%C3%A1%2C%20Giovanna!%20Gostaria%20de%20solicitar%20atendimento%20na%20%C3%81rea%20de%20Laudos%20Judiciais." target="_blank" rel="noopener noreferrer">
+                <svg class="ico" viewBox="0 0 24 24"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.76-1.66-2.06-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.01-1.04 2.47s1.06 2.86 1.21 3.06c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.42-.07-.13-.27-.2-.57-.35M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2"/></svg>
+                Solicitar Laudo Judicial
+              </a>
+              <a class="btn btn-out" href="judicial.html">Subsite Judicial &rarr;</a>
+            </div>
           </div>
-          <div class="painel-intro-acoes">
-            <a class="btn btn-out" href="patologia.html">
-              Abrir Subsite de Patologia &rarr;
-            </a>
-            <a class="btn btn-destaque" href="https://wa.me/5531995618646?text=Ol%C3%A1%2C%20Giovanna!%20Gostaria%20de%20solicitar%20uma%20avalia%C3%A7%C3%A3o%20na%20%C3%81rea%20de%20Patologia%20das%20Edifica%C3%A7%C3%B5es." target="_blank" rel="noopener noreferrer">
-              <svg class="ico" viewBox="0 0 24 24"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.76-1.66-2.06-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.01-1.04 2.47s1.06 2.86 1.21 3.06c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.42-.07-.13-.27-.2-.57-.35M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2"/></svg>
-              Solicitar em Patologia
-            </a>
+
+          <!-- Coluna Direita: Perguntas da Área -->
+          <div class="painel-coluna-faq">
+            <h4 class="painel-faq-titulo">Perguntas Frequentes &middot; Laudos Judiciais</h4>
+            
+            <details class="faq">
+              <summary>1. Qual a importância de um laudo técnico em uma ação judicial?</summary>
+              <div class="faq-c">O laudo técnico apresenta análises fundamentadas que auxiliam na comprovação de fatos, identificação de irregularidades e esclarecimento de questões técnicas. Ele pode ser utilizado como elemento de prova, contribuindo para a fundamentação de processos judiciais.</div>
+            </details>
+
+            <details class="faq">
+              <summary>2. Posso contratar um laudo técnico antes de entrar com uma ação judicial?</summary>
+              <div class="faq-c">Sim. A elaboração de um laudo técnico antes do ajuizamento de uma ação permite identificar irregularidades, documentar evidências e reunir informações que podem auxiliar o advogado na definição da estratégia jurídica.</div>
+            </details>
+
+            <details class="faq">
+              <summary>3. Qual a diferença entre um Perito Judicial e um Assistente Técnico?</summary>
+              <div class="faq-c">O Perito Judicial é nomeado pelo juiz para realizar uma análise técnica imparcial. Já o Assistente Técnico é contratado por uma das partes para acompanhar a perícia, formular quesitos, analisar o laudo pericial e elaborar pareceres técnicos que auxiliem na defesa dos interesses do contratante.</div>
+            </details>
+
+            <details class="faq">
+              <summary>4. É possível contestar um laudo elaborado pelo Perito Judicial?</summary>
+              <div class="faq-c">Sim. Quando são identificadas inconsistências, omissões ou divergências técnicas, o Assistente Técnico pode elaborar um parecer fundamentado, oferecendo subsídios para que o advogado solicite esclarecimentos ou apresente sua manifestação sobre o laudo pericial.</div>
+            </details>
+
+            <details class="faq">
+              <summary>5. Em quais situações um laudo técnico pode ser utilizado judicialmente?</summary>
+              <div class="faq-c">Os laudos técnicos podem ser utilizados em disputas envolvendo vícios construtivos, obras abandonadas, descumprimentos contratuais, infiltrações, danos estruturais, conflitos entre vizinhos, irregularidades em edificações e outras questões que necessitem de comprovação técnica.</div>
+            </details>
+
+            <details class="faq">
+              <summary>6. Um laudo técnico garante o resultado favorável de uma ação judicial?</summary>
+              <div class="faq-c">Não. O laudo técnico fornece elementos fundamentados que podem contribuir para o esclarecimento dos fatos, mas a decisão judicial depende da análise do conjunto de provas e dos aspectos jurídicos envolvidos no processo.</div>
+            </details>
           </div>
-        </div>
-
-        <!-- Serviços Estruturados de Patologia -->
-        <div class="cards-servicos-grid">
-          <!-- 1. INSPEÇÃO PREDIAL -->
-          <article class="card-servico">
-            <div class="card-servico-head">
-              <span class="card-servico-num">1.1</span>
-              <h3>INSPEÇÃO PREDIAL</h3>
-            </div>
-            <p class="card-servico-desc">Avaliação das condições de conservação, manutenção e segurança das edificações, identificando anomalias e falhas que necessitam de atenção.</p>
-            <div class="card-servico-entregaveis">
-              <strong>O que será entregue:</strong>
-              <ul>
-                <li>Inspeção técnica da edificação;</li>
-                <li>Identificação e classificação das irregularidades;</li>
-                <li>Relatório fotográfico;</li>
-                <li>Tratativas Recomendadas;</li>
-                <li>Prioridades de intervenção;</li>
-                <li>Laudo de Inspeção Predial com RRT.</li>
-              </ul>
-            </div>
-          </article>
-
-          <!-- 2. VISTORIA DE RECEBIMENTO -->
-          <article class="card-servico">
-            <div class="card-servico-head">
-              <span class="card-servico-num">1.2</span>
-              <h3>VISTORIA DE RECEBIMENTO DE EDIFICAÇÃO E DE CHAVES</h3>
-            </div>
-            <p class="card-servico-desc">Avaliação técnica de edificações novas e unidades privativas para identificar vícios construtivos e inconformidades antes do recebimento.</p>
-            <div class="card-servico-entregaveis">
-              <strong>O que será entregue:</strong>
-              <ul>
-                <li>Vistoria dos elementos construtivos;</li>
-                <li>Identificação de defeitos e inconformidades;</li>
-                <li>Registro fotográfico;</li>
-                <li>Relatório técnico para solicitação de correções;</li>
-                <li>RRT.</li>
-              </ul>
-            </div>
-          </article>
-
-          <!-- 3. AVALIAÇÃO DE MANIFESTAÇÕES PATOLÓGICAS -->
-          <article class="card-servico">
-            <div class="card-servico-head">
-              <span class="card-servico-num">1.3</span>
-              <h3>AVALIAÇÃO DE PATOLOGIAS E ANOMALIAS</h3>
-            </div>
-            <p class="card-servico-desc">Investigação técnica de fissuras, trincas, corrosões, desplacamentos e outras manifestações que comprometem o desempenho das edificações.</p>
-            <div class="card-servico-entregaveis">
-              <strong>O que será entregue:</strong>
-              <ul>
-                <li>Inspeção e levantamento das manifestações;</li>
-                <li>Análise das possíveis causas e mecanismos;</li>
-                <li>Avaliação da criticidade;</li>
-                <li>Relatório fotográfico;</li>
-                <li>Tratativas Recomendadas;</li>
-                <li>Laudo técnico com recomendações e RRT.</li>
-              </ul>
-            </div>
-          </article>
-
-          <!-- 4. DIAGNÓSTICO DE INFILTRAÇÃO -->
-          <article class="card-servico">
-            <div class="card-servico-head">
-              <span class="card-servico-num">1.4</span>
-              <h3>DIAGNÓSTICO DE INFILTRAÇÃO</h3>
-            </div>
-            <p class="card-servico-desc">Investigação técnica para identificar a origem e os mecanismos das infiltrações, direcionando intervenções precisas e evitando soluções paliativas.</p>
-            <div class="card-servico-entregaveis">
-              <strong>O que será entregue:</strong>
-              <ul>
-                <li>Inspeção e mapeamento das infiltrações;</li>
-                <li>Testes e ensaios técnicos;</li>
-                <li>Identificação das causas;</li>
-                <li>Relatório fotográfico;</li>
-                <li>Tratativas Recomendadas;</li>
-                <li>Laudo de diagnóstico com recomendações e RRT.</li>
-              </ul>
-            </div>
-          </article>
-
-          <!-- 5. AVALIAÇÃO ESTRUTURAL -->
-          <article class="card-servico card-destaque-span">
-            <div class="card-servico-head">
-              <span class="card-servico-num">1.5</span>
-              <h3>AVALIAÇÃO ESTRUTURAL &amp; VISTORIA CAUTELAR</h3>
-            </div>
-            <p class="card-servico-desc">Análise técnica das condições de elementos estruturais e vistoria cautelar de vizinhança para salvaguarda de integridade física e patrimonial.</p>
-            <div class="card-servico-entregaveis">
-              <strong>O que será entregue:</strong>
-              <ul>
-                <li>Inspeção dos elementos estruturais e imóveis lindeiros;</li>
-                <li>Identificação de fissuras, deformações e deteriorações;</li>
-                <li>Avaliação preliminar da criticidade e estabilidade;</li>
-                <li>Relatório fotográfico completo;</li>
-                <li>Laudo técnico fundamentado com RRT.</li>
-              </ul>
-            </div>
-          </article>
-        </div>
-
-        <div class="centro-cta">
-          <a class="btn btn-destaque" href="https://wa.me/5531995618646?text=Ol%C3%A1%2C%20Giovanna!%20Gostaria%20de%20solicitar%20uma%20avalia%C3%A7%C3%A3o%20na%20%C3%81rea%20de%20Patologia%20das%20Edifica%C3%A7%C3%B5es." target="_blank" rel="noopener noreferrer">
-            <svg class="ico" viewBox="0 0 24 24"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.76-1.66-2.06-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.01-1.04 2.47s1.06 2.86 1.21 3.06c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.42-.07-.13-.27-.2-.57-.35M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2"/></svg>
-            Solicitar Atendimento em Patologia
-          </a>
         </div>
       </div>
 
-      <!-- PAINEL 2: LAUDOS JUDICIAIS -->
-      <div class="painel-aba" id="tab-judicial" role="tabpanel">
-        <div class="painel-intro">
-          <div class="painel-intro-texto">
-            <span class="olho">Área Técnica 02</span>
-            <h3>Laudos Judiciais &middot; Perícias &amp; Assistência Técnica</h3>
-            <p class="lead">Perícias e Produção Antecipada de Provas | Assistência Técnica Judicial | Laudos e Pareceres Técnicos | Auditoria Técnica de Obras | Infrações Urbanísticas | Vícios Construtivos</p>
-          </div>
-          <div class="painel-intro-acoes">
-            <a class="btn btn-out" href="judicial.html">
-              Abrir Subsite Judicial &rarr;
-            </a>
-            <a class="btn btn-destaque" href="https://wa.me/5531995618646?text=Ol%C3%A1%2C%20Giovanna!%20Gostaria%20de%20solicitar%20atendimento%20na%20%C3%81rea%20de%20Laudos%20Judiciais." target="_blank" rel="noopener noreferrer">
-              <svg class="ico" viewBox="0 0 24 24"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.76-1.66-2.06-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.01-1.04 2.47s1.06 2.86 1.21 3.06c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.42-.07-.13-.27-.2-.57-.35M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2"/></svg>
-              Solicitar em Laudos Judiciais
-            </a>
-          </div>
-        </div>
-
-        <!-- Serviços Estruturados da Área Judicial -->
-        <div class="cards-servicos-grid">
-          <!-- 1. PERÍCIAS E PRODUÇÃO ANTECIPADA -->
-          <article class="card-servico">
-            <div class="card-servico-head">
-              <span class="card-servico-num">2.1</span>
-              <h3>PERÍCIAS E PRODUÇÃO ANTECIPADA DE PROVAS</h3>
-            </div>
-            <p class="card-servico-desc">Constatação técnica e urgente de danos e vícios para produção antecipada probatória com respaldo pericial robusto.</p>
-            <div class="card-servico-entregaveis">
-              <strong>O que será entregue:</strong>
-              <ul>
-                <li>Inspeção técnica e levantamento in loco;</li>
-                <li>Mapeamento de vícios construtivos urgentes;</li>
-                <li>Relatório fotográfico documentado;</li>
-                <li>Parecer pericial fundamentado com RRT.</li>
-              </ul>
-            </div>
-          </article>
-
-          <!-- 2. ASSISTÊNCIA TÉCNICA JUDICIAL -->
-          <article class="card-servico">
-            <div class="card-servico-head">
-              <span class="card-servico-num">2.2</span>
-              <h3>ASSISTÊNCIA TÉCNICA JUDICIAL</h3>
-            </div>
-            <p class="card-servico-desc">Acompanhamento técnico especializado em processos judiciais, oferecendo suporte estratégico a advogados e partes.</p>
-            <div class="card-servico-entregaveis">
-              <strong>O que será entregue:</strong>
-              <ul>
-                <li>Análise técnica dos autos processuais;</li>
-                <li>Elaboração de quesitos técnicos estratégicos;</li>
-                <li>Acompanhamento de perícias judiciais in loco;</li>
-                <li>Parecer técnico e manifestação crítica;</li>
-                <li>Impugnação e apontamentos técnicos fundamentados.</li>
-              </ul>
-            </div>
-          </article>
-
-          <!-- 3. LAUDOS E PARECERES TÉCNICOS -->
-          <article class="card-servico">
-            <div class="card-servico-head">
-              <span class="card-servico-num">2.3</span>
-              <h3>LAUDOS E PARECERES TÉCNICOS</h3>
-            </div>
-            <p class="card-servico-desc">Avaliação especializada para identificar, documentar e analisar condições, responsabilidades e ocorrências em edificações.</p>
-            <div class="card-servico-entregaveis">
-              <strong>O que será entregue:</strong>
-              <ul>
-                <li>Inspeção e levantamento técnico detalhado;</li>
-                <li>Relatório fotográfico completo;</li>
-                <li>Análise do nexo causal e conclusões fundamentadas;</li>
-                <li>Laudo técnico pericial com RRT.</li>
-              </ul>
-            </div>
-          </article>
-
-          <!-- 4. AUDITORIA TÉCNICA DE OBRAS & VÍCIOS CONSTRUTIVOS -->
-          <article class="card-servico">
-            <div class="card-servico-head">
-              <span class="card-servico-num">2.4</span>
-              <h3>AUDITORIA TÉCNICA DE OBRAS &amp; VÍCIOS CONSTRUTIVOS</h3>
-            </div>
-            <p class="card-servico-desc">Auditoria técnica de conformidade executiva e apuração de infrações urbanísticas e vícios construtivos em edificações.</p>
-            <div class="card-servico-entregaveis">
-              <strong>O que será entregue:</strong>
-              <ul>
-                <li>Auditoria de conformidade executiva frente a normas e projetos;</li>
-                <li>Identificação de vícios aparentes e ocultos;</li>
-                <li>Apuração de infrações urbanísticas;</li>
-                <li>Relatório analítico e laudo com RRT.</li>
-              </ul>
-            </div>
-          </article>
-        </div>
-
-        <div class="centro-cta">
-          <a class="btn btn-destaque" href="https://wa.me/5531995618646?text=Ol%C3%A1%2C%20Giovanna!%20Gostaria%20de%20solicitar%20atendimento%20na%20%C3%81rea%20de%20Laudos%20Judiciais." target="_blank" rel="noopener noreferrer">
-            <svg class="ico" viewBox="0 0 24 24"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.76-1.66-2.06-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.01-1.04 2.47s1.06 2.86 1.21 3.06c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.42-.07-.13-.27-.2-.57-.35M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2"/></svg>
-            Solicitar Atendimento em Laudos Judiciais
-          </a>
-        </div>
-      </div>
-
-      <!-- PAINEL 3: REGULARIZAÇÃO IMOBILIÁRIA -->
+      <!-- PAINEL 2: REGULARIZAÇÃO IMOBILIÁRIA (2 COLUNAS + PORTFÓLIO IMOBILIÁRIO) -->
       <div class="painel-aba" id="tab-imobiliario" role="tabpanel">
-        <div class="painel-intro">
-          <div class="painel-intro-texto">
-            <span class="olho">Área Técnica 03</span>
-            <h3>Regularização Imobiliária &middot; Cartorial &amp; Urbanística</h3>
-            <p class="lead">Usucapião | Retificação | Valorização Mercadológica | Desmembramento | Remembramento | Habite-se</p>
+        <div class="painel-duas-colunas">
+          <!-- Coluna Esquerda: Texto, Serviços e Descritivo -->
+          <div class="painel-coluna-conteudo">
+            <span class="olho">02. Regularização Imobiliária</span>
+            <h3 class="painel-coluna-titulo">Regularização Imobiliária</h3>
+            <p style="font-size:1.02rem; color:var(--malva-original); font-style:italic; margin-bottom:14px;">Usucapião, retificação de área, desmembramento, remembramento e regularização de edificações.</p>
+            
+            <div class="painel-servicos-bloco">
+              <strong>Serviços Especializados:</strong>
+              <p>Usucapião | Retificação | Valorização Mercadológica | Desmembramento | Remembramento | Habite-se</p>
+            </div>
+
+            <p class="painel-descritivo-texto">
+              Atuamos na regularização, adequação documental e avaliação de imóveis, desenvolvendo soluções técnicas para atender às exigências urbanísticas, legais e registrais. Elaboramos levantamentos, projetos e documentação especializada, buscando proporcionar conformidade, segurança jurídica e valorização patrimonial.
+            </p>
+
+            <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:8px;">
+              <a class="btn btn-destaque" href="https://wa.me/5531995618646?text=Ol%C3%A1%2C%20Giovanna!%20Gostaria%20de%20solicitar%20atendimento%20em%20Regulariza%C3%A7%C3%A3o%20Imobili%C3%A1ria." target="_blank" rel="noopener noreferrer">
+                <svg class="ico" viewBox="0 0 24 24"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.76-1.66-2.06-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.01-1.04 2.47s1.06 2.86 1.21 3.06c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.42-.07-.13-.27-.2-.57-.35M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2"/></svg>
+                Solicitar Regularização
+              </a>
+              <a class="btn btn-out" href="judicial.html">Subsite Imobiliário &rarr;</a>
+            </div>
           </div>
-          <div class="painel-intro-acoes">
-            <a class="btn btn-out" href="judicial.html">
-              Abrir Subsite Imobiliário &rarr;
-            </a>
-            <a class="btn btn-destaque" href="https://wa.me/5531995618646?text=Ol%C3%A1%2C%20Giovanna!%20Gostaria%20de%20solicitar%20atendimento%20em%20Regulariza%C3%A7%C3%A3o%20Imobili%C3%A1ria." target="_blank" rel="noopener noreferrer">
-              <svg class="ico" viewBox="0 0 24 24"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.76-1.66-2.06-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.01-1.04 2.47s1.06 2.86 1.21 3.06c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.42-.07-.13-.27-.2-.57-.35M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2"/></svg>
-              Solicitar em Regularização
-            </a>
+
+          <!-- Coluna Direita: Perguntas da Área -->
+          <div class="painel-coluna-faq">
+            <h4 class="painel-faq-titulo">Perguntas Frequentes &middot; Regularização</h4>
+            
+            <details class="faq">
+              <summary>1. O que é a regularização imobiliária e por que ela é importante?</summary>
+              <div class="faq-c">A regularização imobiliária consiste na adequação documental, cadastral, urbanística ou registral de um imóvel às exigências legais. Esse processo contribui para a segurança jurídica da propriedade e pode facilitar operações de compra, venda, financiamento e transferência do imóvel.</div>
+            </details>
+
+            <details class="faq">
+              <summary>2. Quais documentos técnicos são necessários para um processo de usucapião?</summary>
+              <div class="faq-c">Dependendo das características do imóvel e do tipo de procedimento, podem ser necessários levantamento planimétrico, planta de inserção, georreferenciamento em SIRGAS 2000, memorial descritivo, identificação dos confrontantes e Registro de Responsabilidade Técnica (RRT). Esses documentos auxiliam na identificação e caracterização da área objeto do processo.</div>
+            </details>
+
+            <details class="faq">
+              <summary>3. Qual a diferença entre usucapião judicial e extrajudicial?</summary>
+              <div class="faq-c">A usucapião judicial é realizada por meio de um processo perante o Poder Judiciário. Já a extrajudicial é conduzida diretamente no Cartório de Registro de Imóveis, desde que atendidos os requisitos legais. Ambas podem exigir documentação técnica elaborada por profissional habilitado.</div>
+            </details>
+
+            <details class="faq">
+              <summary>4. O que fazer quando a área do imóvel é diferente daquela registrada na matrícula?</summary>
+              <div class="faq-c">Quando existem divergências entre as dimensões reais do imóvel e as informações da matrícula, pode ser necessário realizar uma retificação de área. O procedimento envolve levantamento técnico, elaboração de planta e memorial descritivo, conforme as exigências aplicáveis.</div>
+            </details>
+
+            <details class="faq">
+              <summary>5. É possível dividir um terreno em dois ou mais lotes?</summary>
+              <div class="faq-c">Sim, desde que o imóvel atenda às exigências da legislação urbanística municipal. O procedimento, denominado desmembramento, envolve análise de viabilidade e elaboração da documentação técnica necessária para aprovação e posterior regularização registral.</div>
+            </details>
+
+            <details class="faq">
+              <summary>6. É possível regularizar um imóvel que não possui Habite-se?</summary>
+              <div class="faq-c">Sim, dependendo das condições da edificação e da legislação municipal. O processo pode envolver levantamento arquitetônico, elaboração de projetos, adequações e apresentação de documentos técnicos para obtenção da regularização perante os órgãos competentes.</div>
+            </details>
+
+            <details class="faq">
+              <summary>7. Qual a diferença entre desmembramento e remembramento?</summary>
+              <div class="faq-c">O desmembramento consiste na divisão de um terreno em lotes independentes, enquanto o remembramento corresponde à unificação de dois ou mais terrenos contíguos. Ambos dependem da análise das exigências urbanísticas e registrais aplicáveis.</div>
+            </details>
           </div>
         </div>
 
-        <!-- Serviços Estruturados de Regularização Imobiliária -->
-        <div class="cards-servicos-grid">
-          <!-- 1. USUCAPIÃO -->
-          <article class="card-servico">
-            <div class="card-servico-head">
-              <span class="card-servico-num">3.1</span>
-              <h3>USUCAPIÃO</h3>
-            </div>
-            <p class="card-servico-desc">Elaboração da documentação técnica necessária à identificação e delimitação de imóveis para processos judiciais ou extrajudiciais de reconhecimento de propriedade.</p>
-            <div class="card-servico-entregaveis">
-              <strong>O que será entregue:</strong>
-              <ul>
-                <li>Levantamento planimétrico e georreferenciamento em SIRGAS 2000;</li>
-                <li>Planta de delimitação e confrontantes;</li>
-                <li>Memorial descritivo;</li>
-                <li>Relatório fotográfico;</li>
-                <li>RRT.</li>
-              </ul>
-            </div>
-          </article>
+        <!-- Portfólio de Regularização Imobiliária (Transferido para esta aba) -->
+        <div style="margin-top: 48px; border-top: 1px solid var(--bege-rosado); padding-top: 40px;">
+          <div class="secao-header-centro">
+            <span class="olho meio">Portfólio Imobiliário</span>
+            <h2>Atuações e Serviços Imobiliários Recentes</h2>
+            <p class="secao-subtitulo">Exemplos reais de regularizações, avaliações mercadológicas e processos de usucapião conduzidos com rigor técnico</p>
+          </div>
 
-          <!-- 2. RETIFICAÇÃO DE ÁREA -->
-          <article class="card-servico">
-            <div class="card-servico-head">
-              <span class="card-servico-num">3.2</span>
-              <h3>RETIFICAÇÃO DE ÁREA</h3>
-            </div>
-            <p class="card-servico-desc">Levantamento e elaboração de documentação técnica para correção de divergências nas dimensões e nos limites de imóveis perante o Cartório de Registro de Imóveis.</p>
-            <div class="card-servico-entregaveis">
-              <strong>O que será entregue:</strong>
-              <ul>
-                <li>Levantamento planimétrico do imóvel;</li>
-                <li>Planta técnica com perímetro, dimensões e confrontações;</li>
-                <li>Quadro comparativo entre a área registrada e a área levantada;</li>
-                <li>Memorial descritivo atualizado;</li>
-                <li>Registro de Responsabilidade Técnica (RRT).</li>
-              </ul>
-            </div>
-          </article>
+          <div class="casos-imob-grid">
+            <!-- 1. Avaliação Mercadológica - Sete Lagoas / MG -->
+            <article class="card-caso-imob">
+              <div class="card-caso-thumb">
+                <img src="assets/imob_sete_lagoas.jpg" alt="Avaliação Mercadológica em Sete Lagoas / MG" loading="lazy">
+                <span class="card-caso-tag">Avaliação Imobiliária</span>
+              </div>
+              <div class="card-caso-corpo">
+                <div class="card-caso-local">
+                  <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                  <span>Sete Lagoas / MG</span>
+                </div>
+                <h3 class="card-caso-titulo">Avaliação Mercadológica</h3>
+                <p class="card-caso-detalhe">Determinação precisa do valor real de mercado com levantamento in loco, rigorosa pesquisa comparativa, caracterização construtiva e emissão de laudo técnico com RRT.</p>
+                <div class="card-caso-rodape">
+                  <span class="card-caso-status">
+                    <span class="card-caso-status-dot"></span>
+                    Concluído &middot; RRT Emitida
+                  </span>
+                </div>
+              </div>
+            </article>
 
-          <!-- 3. VALORIZAÇÃO MERCADOLÓGICA -->
-          <article class="card-servico">
-            <div class="card-servico-head">
-              <span class="card-servico-num">3.3</span>
-              <h3>VALORIZAÇÃO MERCADOLÓGICA</h3>
-            </div>
-            <p class="card-servico-desc">Avaliação técnica para determinação do valor de mercado de imóveis, considerando características construtivas, localização e dados imobiliários.</p>
-            <div class="card-servico-entregaveis">
-              <strong>O que será entregue:</strong>
-              <ul>
-                <li>Vistoria e levantamento das características do imóvel;</li>
-                <li>Pesquisa e análise mercadológica;</li>
-                <li>Laudo de avaliação com valor estimado;</li>
-                <li>RRT.</li>
-              </ul>
-            </div>
-          </article>
+            <!-- 2. Usucapião - B. Padre Eustáquio / BH -->
+            <article class="card-caso-imob">
+              <div class="card-caso-thumb">
+                <img src="assets/imob_padre_eustaquio.jpg" alt="Usucapião no Bairro Padre Eustáquio / BH" loading="lazy">
+                <span class="card-caso-tag">Regularização Fundiária</span>
+              </div>
+              <div class="card-caso-corpo">
+                <div class="card-caso-local">
+                  <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                  <span>B. Padre Eustáquio / BH</span>
+                </div>
+                <h3 class="card-caso-titulo">Usucapião</h3>
+                <p class="card-caso-detalhe">Levantamento planimétrico e georreferenciamento geodésico em SIRGAS 2000, planta de delimitação perimétrica e memorial descritivo para instrução de ação judicial de usucapião.</p>
+                <div class="card-caso-rodape">
+                  <span class="card-caso-status">
+                    <span class="card-caso-status-dot"></span>
+                    Concluído &middot; SIRGAS 2000
+                  </span>
+                </div>
+              </div>
+            </article>
 
-          <!-- 4. DESMEMBRAMENTO E REMEMBRAMENTO -->
-          <article class="card-servico">
-            <div class="card-servico-head">
-              <span class="card-servico-num">3.4</span>
-              <h3>DESMEMBRAMENTO E REMEMBRAMENTO</h3>
-            </div>
-            <p class="card-servico-desc">Elaboração de documentação técnica para divisão ou unificação de terrenos, conforme as exigências urbanísticas e registrais aplicáveis.</p>
-            <div class="card-servico-entregaveis">
-              <strong>O que será entregue:</strong>
-              <ul>
-                <li>Estudo de viabilidade técnica e urbanística;</li>
-                <li>Levantamento das áreas existentes;</li>
-                <li>Projeto de desmembramento ou remembramento;</li>
-                <li>Planta técnica e quadro de áreas;</li>
-                <li>Memoriais descritivos;</li>
-                <li>Registro de Responsabilidade Técnica (RRT).</li>
-              </ul>
-            </div>
-          </article>
+            <!-- 3. Usucapião de Edificação Multifamiliar - B. Nova Cachoeirinha -->
+            <article class="card-caso-imob">
+              <div class="card-caso-thumb">
+                <img src="assets/imob_nova_cachoeirinha.jpg" alt="Usucapião de Edificação Multifamiliar no Bairro Nova Cachoeirinha" loading="lazy">
+                <span class="card-caso-tag">Multifamiliar</span>
+              </div>
+              <div class="card-caso-corpo">
+                <div class="card-caso-local">
+                  <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                  <span>B. Nova Cachoeirinha / BH</span>
+                </div>
+                <h3 class="card-caso-titulo">Usucapião de Edificação Multifamiliar</h3>
+                <p class="card-caso-detalhe">Regularização e delimitação completa de imóvel multifamiliar comercial e residencial, com quadro de áreas, plantas das unidades privativas, memorial descritivo e RRT.</p>
+                <div class="card-caso-rodape">
+                  <span class="card-caso-status">
+                    <span class="card-caso-status-dot"></span>
+                    Concluído &middot; Documentação Integral
+                  </span>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
 
-          <!-- 5. HABITE-SE -->
-          <article class="card-servico card-destaque-span">
-            <div class="card-servico-head">
-              <span class="card-servico-num">3.5</span>
-              <h3>HABITE-SE</h3>
+      <!-- PAINEL 3: PATOLOGIA E DIAGNÓSTICO (2 COLUNAS + PORTFÓLIO DE PATOLOGIA) -->
+      <div class="painel-aba" id="tab-patologia" role="tabpanel">
+        <div class="painel-duas-colunas">
+          <!-- Coluna Esquerda: Texto, Serviços e Descritivo -->
+          <div class="painel-coluna-conteudo">
+            <span class="olho">03. Patologia e Diagnóstico</span>
+            <h3 class="painel-coluna-titulo">Patologia e Diagnóstico</h3>
+            <p style="font-size:1.02rem; color:var(--malva-original); font-style:italic; margin-bottom:14px;">Inspeções prediais, diagnósticos, infiltrações, manifestações patológicas e avaliações técnicas.</p>
+            
+            <div class="painel-servicos-bloco">
+              <strong>Serviços Especializados:</strong>
+              <p>Inspeção Predial | Vistoria de Recebimento de Edificação e de Unidades Privativas | Avaliação de Patologias e Anomalias | Diagnóstico de Infiltração | Vistoria Cautelar | Avaliação Estrutural</p>
             </div>
-            <p class="card-servico-desc">Assessoria técnica para regularização de edificações e obtenção da documentação municipal de conclusão de obra.</p>
-            <div class="card-servico-entregaveis">
-              <strong>O que será entregue:</strong>
-              <ul>
-                <li>Análise documental e vistoria técnica;</li>
-                <li>Levantamento arquitetônico;</li>
-                <li>Plantas e projetos necessários;</li>
-                <li>Documentação técnica para regularização;</li>
-                <li>RRT.</li>
-              </ul>
+
+            <p class="painel-descritivo-texto">
+              Realizamos investigações técnicas para identificar e diagnosticar manifestações patológicas, anomalias e falhas construtivas que possam comprometer a segurança, a conservação e a durabilidade das edificações. Através de inspeções, vistorias, testes e análises especializadas, buscamos compreender as possíveis causas dos problemas e orientar as tratativas adequadas, reduzindo retrabalhos, soluções paliativas e despesas desnecessárias.
+            </p>
+
+            <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:8px;">
+              <a class="btn btn-destaque" href="https://wa.me/5531995618646?text=Ol%C3%A1%2C%20Giovanna!%20Gostaria%20de%20solicitar%20uma%20avalia%C3%A7%C3%A3o%20na%20%C3%81rea%20de%20Patologia%20e%20Diagn%C3%B3stico." target="_blank" rel="noopener noreferrer">
+                <svg class="ico" viewBox="0 0 24 24"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.76-1.66-2.06-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.01-1.04 2.47s1.06 2.86 1.21 3.06c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.42-.07-.13-.27-.2-.57-.35M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2"/></svg>
+                Solicitar em Patologia
+              </a>
+              <a class="btn btn-out" href="patologia.html">Subsite de Patologia &rarr;</a>
             </div>
-          </article>
+          </div>
+
+          <!-- Coluna Direita: Perguntas da Área -->
+          <div class="painel-coluna-faq">
+            <h4 class="painel-faq-titulo">Perguntas Frequentes &middot; Patologia das Edificações</h4>
+            
+            <details class="faq">
+              <summary>1. O que é um diagnóstico técnico e qual a sua importância?</summary>
+              <div class="faq-c">O diagnóstico técnico consiste na investigação das manifestações patológicas de uma edificação, buscando identificar suas possíveis origens, causas e mecanismos de ocorrência. Por meio de inspeções, análises e ensaios específicos, é possível orientar intervenções adequadas, evitando soluções paliativas, retrabalhos e gastos desnecessários.</div>
+            </details>
+
+            <details class="faq">
+              <summary>2. Qual a periodicidade indicada para a realização da Inspeção Predial?</summary>
+              <div class="faq-c">A periodicidade da Inspeção Predial deve considerar a idade, as características, o estado de conservação e as condições de uso da edificação, além das exigências legais aplicáveis ao município. Inspeções periódicas permitem identificar anomalias, avaliar riscos e orientar ações de manutenção preventiva e corretiva.</div>
+            </details>
+
+            <details class="faq">
+              <summary>3. Por que realizar um diagnóstico antes de iniciar uma reforma?</summary>
+              <div class="faq-c">O diagnóstico permite identificar as causas dos problemas antes da execução de intervenções. Dessa forma, é possível direcionar os serviços necessários, evitar reparos inadequados e reduzir o risco de reincidência das manifestações patológicas.</div>
+            </details>
+
+            <details class="faq">
+              <summary>4. É possível identificar a origem de uma infiltração sem quebrar paredes?</summary>
+              <div class="faq-c">Sim. Dependendo das características da manifestação, podem ser utilizados ensaios e equipamentos específicos que permitem investigar a origem da infiltração por métodos não destrutivos ou minimamente invasivos, reduzindo intervenções desnecessárias.</div>
+            </details>
+
+            <details class="faq">
+              <summary>5. Toda fissura ou trinca representa um risco estrutural?</summary>
+              <div class="faq-c">Não necessariamente. Fissuras e trincas podem apresentar diferentes origens e níveis de gravidade. Uma avaliação técnica permite investigar suas características, possíveis causas e evolução, identificando a necessidade de monitoramento ou intervenção.</div>
+            </details>
+          </div>
         </div>
 
-        <div class="centro-cta">
-          <a class="btn btn-destaque" href="https://wa.me/5531995618646?text=Ol%C3%A1%2C%20Giovanna!%20Gostaria%20de%20solicitar%20atendimento%20em%20Regulariza%C3%A7%C3%A3o%20Imobili%C3%A1ria." target="_blank" rel="noopener noreferrer">
-            <svg class="ico" viewBox="0 0 24 24"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.76-1.66-2.06-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.01-1.04 2.47s1.06 2.86 1.21 3.06c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.42-.07-.13-.27-.2-.57-.35M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2"/></svg>
-            Solicitar Atendimento em Regularização Imobiliária
-          </a>
+        <!-- Portfólio de Patologia das Edificações (Fotos dos Prédios) -->
+        <div style="margin-top: 48px; border-top: 1px solid var(--bege-rosado); padding-top: 40px;">
+          <div class="secao-header-centro">
+            <span class="olho meio">Portfólio de Patologia</span>
+            <h2>Vistorias e Inspeções Prediais Realizadas</h2>
+            <p class="secao-subtitulo">Diagnósticos estruturais, mapeamento de fachadas e inspeções prediais em edifícios residenciais e comerciais</p>
+          </div>
+
+          <div class="patologia-portfolio-grid">
+            <article class="card-caso-imob">
+              <div class="card-caso-thumb">
+                <img src="assets/patologia_predio1.jpg" alt="Inspeção Predial e Avaliação Estrutural em Edifício" loading="lazy">
+                <span class="card-caso-tag">Inspeção Predial</span>
+              </div>
+              <div class="card-caso-corpo">
+                <div class="card-caso-local">
+                  <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                  <span>Belo Horizonte / MG</span>
+                </div>
+                <h3 class="card-caso-titulo">Diagnóstico e Avaliação de Fachada</h3>
+                <p class="card-caso-detalhe">Inspeção técnica vertical em edifício residencial para identificação de fissuras e diretrizes para manutenção preventiva.</p>
+                <div class="card-caso-rodape">
+                  <span class="card-caso-status"><span class="card-caso-status-dot"></span>Concluído &middot; Laudo Entregue</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="card-caso-imob">
+              <div class="card-caso-thumb">
+                <img src="assets/patologia_predio2.jpg" alt="Vistoria e Diagnóstico de Revestimento e Infiltrações" loading="lazy">
+                <span class="card-caso-tag">Patologia das Construções</span>
+              </div>
+              <div class="card-caso-corpo">
+                <div class="card-caso-local">
+                  <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                  <span>Belo Horizonte / MG</span>
+                </div>
+                <h3 class="card-caso-titulo">Inspeção Técnica de Condomínio</h3>
+                <p class="card-caso-detalhe">Levantamento de patologias em áreas comuns e pastilhas de fachada com mapeamento de anomalias e RRT.</p>
+                <div class="card-caso-rodape">
+                  <span class="card-caso-status"><span class="card-caso-status-dot"></span>Concluído &middot; RRT Emitida</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="card-caso-imob">
+              <div class="card-caso-thumb">
+                <img src="assets/patologia_predio3.jpg" alt="Vistoria Cautelar e Diagnóstico Predial" loading="lazy">
+                <span class="card-caso-tag">Vistoria Cautelar</span>
+              </div>
+              <div class="card-caso-corpo">
+                <div class="card-caso-local">
+                  <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                  <span>Belo Horizonte / MG</span>
+                </div>
+                <h3 class="card-caso-titulo">Auditoria e Inspeção Predial</h3>
+                <p class="card-caso-detalhe">Análise de conformidade executiva e recepção de condomínio edilício de alto padrão com parecer técnico.</p>
+                <div class="card-caso-rodape">
+                  <span class="card-caso-status"><span class="card-caso-status-dot"></span>Concluído &middot; Parecer Técnico</span>
+                </div>
+              </div>
+            </article>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ========================================================
-       SEÇÃO: QUEM É A GIOVANNA ARIETA
+       SEÇÃO: DEPOIMENTOS (ESTILO WHATSAPP)
+       ======================================================== -->
+  <section class="sec-depoimentos reveal" id="depoimentos">
+    <div class="wrap">
+      <div class="secao-header-centro">
+        <span class="olho meio">Reconhecimento &middot; Parcerias Estratégicas</span>
+        <h2>O que dizem os parceiros</h2>
+        <p class="secao-subtitulo">Mensagem enviada por quem confia no rigor e na precisão técnica do nosso escritório</p>
+      </div>
+
+      <div class="whatsapp-chat-container">
+        <!-- Cabeçalho do Chat estilo WhatsApp -->
+        <div class="whatsapp-chat-header">
+          <div class="whatsapp-avatar">M</div>
+          <div class="whatsapp-header-info">
+            <h4>Dra. Maria de Lourdes M. Parreiras</h4>
+            <span>Advogada &middot; Especialista em Usucapião e Direito Imobiliário</span>
+          </div>
+        </div>
+
+        <!-- Corpo do Chat com o Depoimento em Balão de Mensagem -->
+        <div class="whatsapp-chat-body">
+          <div class="whatsapp-balao">
+            <p>Olá! Eu sou Maria de Lourdes Morais Parreiras, advogada especialista em regularização de imóveis, com foco em Usucapião Judicial e Extrajudicial.</p>
+            <p>O meu objetivo é garantir a segurança jurídica do seu patrimônio, transformando a posse da sua propriedade em um registro definitivo, de forma ágil e segura.</p>
+            <p>Para oferecer o melhor serviço e total eficiência em cada etapa do processo, atuo em uma parceria estratégica com a arquiteta Giovanna Arieta. Indico o trabalho da Giovanna com total confiança, pois ela atua com excelência, grande agilidade e é extremamente receptiva com os clientes.</p>
+            <p>Ela é responsável por toda a parte técnica essencial para o sucesso do usucapião, elaborando plantas, levantamentos topográficos e memoriais descritivos rigorosamente dentro dos parâmetros legais. O grande diferencial do trabalho dela é a precisão: os documentos são feitos de maneira impecável, o que evita qualquer necessidade de retificação e acelera a aprovação do processo.</p>
+            <p>Juntas, unimos a precisão do Direito e a excelência técnica da Arquitetura para transformar o seu sonho da propriedade definitiva em realidade.</p>
+            <p style="font-weight: 500;">Se você quer regularizar a sua situação imobiliária com tranquilidade, transparência e o suporte de profissionais altamente qualificadas, a dra. Giovanna está pronta para ajudar.</p>
+            <div class="whatsapp-time">
+              <span>15:32</span>
+              <span class="whatsapp-check">✓✓</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       SEÇÃO: QUEM É A GIOVANNA ARIETA (MAIS ABAIXO NO SITE)
        ======================================================== -->
   <section class="sec sec-tom-alternado reveal" id="sobre">
     <div class="wrap sobre-grid">
@@ -588,47 +623,6 @@
           </div>
         </div>
       </div>
-    </div>
-  </section>
-
-
-
-  <!-- ========================================================
-       SEÇÃO: DÚVIDAS FREQUENTES (FAQ)
-       ======================================================== -->
-  <section class="sec sec-tom-alternado reveal" id="faq">
-    <div class="wrap">
-      <span class="olho">Dúvidas Frequentes</span>
-      <h2>Perguntas frequentes <em class="dest">sobre o atendimento</em>.</h2>
-      <p class="lead">Entenda como funciona a atuação da Giovanna em ambas as áreas.</p>
-
-      <details class="faq">
-        <summary>O mesmo número de WhatsApp atende Patologia e a Área Judicial?</summary>
-        <div class="faq-c">
-          Sim! O número <strong>(31) 99561-8646</strong> é o canal oficial e unificado da Giovanna. Ao chamar, basta indicar se você precisa de diagnóstico de patologia das construções ou de consultoria/assistência técnica judicial e imobiliária.
-        </div>
-      </details>
-
-      <details class="faq">
-        <summary>Qual é a importância de uma prova técnica antes de entrar com uma ação judicial?</summary>
-        <div class="faq-c">
-          No judiciário, alegações sem prova técnica especializada são frágeis. Um laudo prévio bem fundamentado delimita com precisão o nexo de causalidade e a extensão das anomalias, aumentando significativamente a segurança jurídica da demanda.
-        </div>
-      </details>
-
-      <details class="faq">
-        <summary>Como a Giovanna atua como Assistente Técnica de advogados?</summary>
-        <div class="faq-c">
-          A atuação inclui a formulação de quesitos estratégicos (iniciais e suplementares), o acompanhamento in loco de diligências e a confecção de Parecer Técnico Crítico ou manifestação técnica fundamentada, municiando a assessoria jurídica com embasamento de alto nível.
-        </div>
-      </details>
-
-      <details class="faq">
-        <summary>Quais cidades são atendidas?</summary>
-        <div class="faq-c">
-          Belo Horizonte e toda a Região Metropolitana (Contagem, Betim, Nova Lima, Santa Luzia, Lagoa Santa, Ribeirão das Neves, Sabará, Vespasiano, etc.). Demandas em outras cidades do estado de Minas Gerais são analisadas sob consulta.
-        </div>
-      </details>
     </div>
   </section>
 
