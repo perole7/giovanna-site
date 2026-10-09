@@ -60,26 +60,26 @@ body {
 }
 
 /* ========================================================
-   MARCA D'ÁGUA DA LOGO VISÍVEL NO SITE TODO
-   Fixa na tela, acompanhando a rolagem em 2º plano sem ser coberta
+   LOGO CENTRALIZADA NO FUNDO DA PRIMEIRA SEÇÃO (HERO)
+   Estática, sem animação de rolar para baixo, não acompanha scroll
    ======================================================== */
-.marca-dagua-fixa {
-  position: fixed;
+.hero-logo-centro-bg {
+  position: absolute;
   top: 50%;
-  right: -60px;
-  transform: translateY(-50%);
-  width: 600px;
-  height: 600px;
-  max-width: 44vw;
-  max-height: 44vw;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 580px;
+  height: 580px;
+  max-width: 90vw;
+  max-height: 90vw;
   background-image: url('assets/logo_fundo.png');
   background-size: contain;
   background-repeat: no-repeat;
-  background-position: right center;
+  background-position: center;
   opacity: 0.08;
   mix-blend-mode: multiply;
   pointer-events: none;
-  z-index: 1; /* Fica em segundo plano sem sobrepor o texto */
+  z-index: 1; /* Fica no fundo da hero atrás do conteúdo */
 }
 
 img {
@@ -528,38 +528,116 @@ em.dest {
 }
 
 /* ========================================================
-   FAIXA DE NÚMEROS / CREDENCIAIS (BEGE CHAMPAGNE)
+   FAIXA DE PILARES TÉCNICOS COM LINHA CONECTORA
+   01 INVESTIGAÇÃO -> 02 DIAGNÓSTICO -> 03 FUNDAMENTAÇÃO -> 04 SEGURANÇA
    ======================================================== */
-.numeros {
+.pilares-faixa {
   background: var(--bege-champagne);
   border-top: 1px solid var(--bege-rosado);
   border-bottom: 1px solid var(--bege-rosado);
-  padding: 36px 0;
+  padding: 48px 0 42px 0;
+  position: relative;
 }
 
-.num-grid {
+.pilares-container {
+  position: relative;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Linha horizontal conectora entre os títulos */
+.pilares-linha {
+  position: absolute;
+  top: 14px;
+  left: 6%;
+  right: 6%;
+  height: 2px;
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    var(--malva-claro) 10%, 
+    var(--malva-original) 50%, 
+    var(--malva-claro) 90%, 
+    transparent 100%
+  );
+  z-index: 1;
+}
+
+.pilares-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px 16px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  position: relative;
+  z-index: 2;
+}
+
+.pilar-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
+  padding: 0 8px;
 }
 
-.num-v {
+.pilar-ponto {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--bege-champagne);
+  border: 2px solid var(--malva-original);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+  transition: transform 0.25s ease, background-color 0.25s ease;
+}
+
+.pilar-item:hover .pilar-ponto {
+  transform: scale(1.15);
+  background: var(--malva-original);
+}
+
+.pilar-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--malva-original);
+  transition: background-color 0.25s ease;
+}
+
+.pilar-item:hover .pilar-dot {
+  background: #ffffff;
+}
+
+.pilar-num {
   font-family: var(--serif);
-  font-size: 2.1rem;
-  font-weight: 600;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
   color: var(--malva-original);
-  line-height: 1;
-  margin-bottom: 6px;
+  margin-bottom: 4px;
 }
 
-.num-l {
-  font-size: 0.68rem;
-  font-weight: 600;
-  letter-spacing: 0.12em;
+.pilar-titulo {
+  font-family: var(--sans);
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: var(--grafite);
+  margin-bottom: 8px;
   text-transform: uppercase;
+  transition: color 0.2s ease;
+}
+
+.pilar-item:hover .pilar-titulo {
+  color: var(--malva-original);
+}
+
+.pilar-desc {
+  font-size: 0.84rem;
   color: var(--texto-suave);
-  line-height: 1.45;
+  line-height: 1.5;
+  font-weight: 300;
+  max-width: 220px;
 }
 
 /* ========================================================
@@ -1308,14 +1386,24 @@ details.faq .faq-c {
     grid-template-columns: 1fr;
   }
 
-  .painel-intro {
+  .painel-intro-acoes {
+    display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    padding: 20px;
+    gap: 10px;
+    width: 100%;
   }
 
-  .painel-intro .btn {
+  .painel-intro-acoes .btn {
     width: 100%;
+  }
+
+  .pilares-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px 16px;
+  }
+
+  .pilares-linha {
+    display: none; /* No mobile evita linha distorcida em grid 2 colunas */
   }
 }
 
@@ -1336,6 +1424,11 @@ details.faq .faq-c {
   }
   .card-destaque-span {
     grid-column: 1 / -1;
+  }
+  .painel-intro-acoes {
+    display: flex;
+    align-items: center;
+    gap: 12px;
   }
 }
 
@@ -1358,7 +1451,7 @@ details.faq .faq-c {
     grid-template-columns: 1.15fr 0.85fr;
     gap: 44px;
   }
-  .num-grid {
+  .pilares-grid {
     grid-template-columns: repeat(4, 1fr);
   }
   .passos {
