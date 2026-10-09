@@ -840,6 +840,165 @@ em.dest {
 }
 
 /* ========================================================
+   CASOS E PROJETOS IMOBILIÁRIOS COM ANIMAÇÃO
+   ======================================================== */
+.casos-imob-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 36px;
+}
+
+.card-caso-imob {
+  background: #ffffff;
+  border: 1px solid var(--bege-rosado);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: var(--sombra-card);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), 
+              box-shadow 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), 
+              border-color 0.3s ease;
+  position: relative;
+}
+
+.card-caso-imob:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 38px rgba(112, 85, 95, 0.16);
+  border-color: var(--malva-claro);
+}
+
+.card-caso-thumb {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: var(--bege-champagne);
+}
+
+.card-caso-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1), filter 0.5s ease;
+  filter: brightness(0.97) contrast(1.02);
+}
+
+.card-caso-imob:hover .card-caso-thumb img {
+  transform: scale(1.08);
+  filter: brightness(1.02) contrast(1.04);
+}
+
+.card-caso-tag {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  background: rgba(48, 43, 45, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: var(--off-white);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 5px 12px;
+  border-radius: 20px;
+  border: 1px solid rgba(216, 200, 192, 0.3);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.card-caso-imob:hover .card-caso-tag {
+  transform: scale(1.05);
+  background: var(--malva-original);
+}
+
+.card-caso-corpo {
+  padding: 22px 20px 24px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.card-caso-titulo {
+  font-family: var(--serif);
+  font-size: 1.22rem;
+  line-height: 1.35;
+  color: var(--grafite);
+  margin-bottom: 10px;
+  transition: color 0.3s ease;
+}
+
+.card-caso-imob:hover .card-caso-titulo {
+  color: var(--malva-original);
+}
+
+.card-caso-local {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.86rem;
+  font-weight: 600;
+  color: var(--malva-original);
+  margin-bottom: 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px dashed var(--bege-rosado);
+}
+
+.card-caso-local svg {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  fill: currentColor;
+  transition: transform 0.3s ease;
+}
+
+.card-caso-imob:hover .card-caso-local svg {
+  transform: translateY(-2px);
+}
+
+.card-caso-detalhe {
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: var(--texto-suave);
+  margin: 0;
+}
+
+.card-caso-rodape {
+  margin-top: auto;
+  padding-top: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card-caso-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.74rem;
+  color: var(--texto-muted);
+  font-weight: 500;
+}
+
+.card-caso-status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #38a169;
+  box-shadow: 0 0 0 3px rgba(56, 161, 105, 0.2);
+  animation: pulsoStatus 2.2s infinite;
+}
+
+@keyframes pulsoStatus {
+  0% { box-shadow: 0 0 0 0 rgba(56, 161, 105, 0.45); }
+  70% { box-shadow: 0 0 0 6px rgba(56, 161, 105, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(56, 161, 105, 0); }
+}
+
+/* ========================================================
    CARDS DE SERVIÇOS & ENTREGÁVEIS (BEGE CHAMPAGNE & OFF-WHITE)
    ======================================================== */
 .cards-servicos-grid {
@@ -1378,7 +1537,7 @@ details.faq .faq-c {
   h1 { font-size: 1.85rem; }
   h2 { font-size: 1.55rem; }
 
-  .judicial-fotos-dupla, .patologia-fotos-trio {
+  .judicial-fotos-dupla, .patologia-fotos-trio, .casos-imob-grid {
     grid-template-columns: 1fr;
   }
 
