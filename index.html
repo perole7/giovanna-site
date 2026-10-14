@@ -33,12 +33,12 @@
         <span></span>
       </button>
 
-      <!-- Navegação no Cabeçalho Organizada -->
+      <!-- Navegação no Cabeçalho Organizada (focada na página principal com links internos diretos) -->
       <nav class="nav-menu" id="navMenu">
         <a href="#inicio" class="nav-item">Início</a>
-        <a href="#direcionamento" class="nav-item">Serviços &amp; Dúvidas</a>
-        <a href="patologia.html" class="nav-item destaque">Patologia</a>
-        <a href="judicial.html" class="nav-item destaque">Judicial &amp; Imob.</a>
+        <a href="#tab-patologia" class="nav-item" onclick="ativarAba('tab-patologia', true)">Patologia</a>
+        <a href="#tab-judicial" class="nav-item" onclick="ativarAba('tab-judicial', true)">Laudos Judiciais</a>
+        <a href="#tab-imobiliario" class="nav-item" onclick="ativarAba('tab-imobiliario', true)">Regularização</a>
         <a href="#depoimentos" class="nav-item">Depoimentos</a>
         <a href="#sobre" class="nav-item">Sobre Giovanna</a>
         <a href="#contato" class="nav-item">Contato</a>
@@ -50,7 +50,7 @@
        SEÇÃO 1: HERO / INÍCIO
        ======================================================== -->
   <section class="hero" id="inicio">
-    <!-- Logo centralizada na primeira seção (estática, sem acompanhar o scroll) -->
+    <!-- Logo posicionada na lateral no fundo da primeira seção (sem escrita/slogan de fundo, apenas o símbolo) -->
     <div class="hero-logo-centro-bg" aria-hidden="true"></div>
 
     <div class="wrap hero-grid">
@@ -60,7 +60,7 @@
         
         <p class="hero-sub-slogan">Atuação especializada em serviços técnicos de arquitetura, com foco em investigação de manifestações patológicas, elaboração de laudos, pareceres técnicos e regularização imobiliária.</p>
         
-        <!-- Serviços inseridos diretamente abaixo do título -->
+        <!-- Serviços inseridos diretamente abaixo do título na ordem correta: 1. Patologia, 2. Laudos Judiciais, 3. Regularização Imobiliária -->
         <div class="hero-servicos-diretos">
           <div class="hero-servico-linha">
             <strong>1. Patologia das Edificações:</strong> 
@@ -89,28 +89,12 @@
           </a>
         </div>
 
-        <!-- Links Rápidos dos 03 Serviços -->
+        <!-- Links Rápidos dos 03 Serviços na Ordem Padronizada -->
         <ul class="hero-prova">
-          <li><a href="#direcionamento" onclick="ativarAba('tab-patologia')" style="color:inherit; text-decoration:none;">Patologia e Diagnóstico</a></li>
-          <li><a href="#direcionamento" onclick="ativarAba('tab-judicial')" style="color:inherit; text-decoration:none;">Laudos Judiciais</a></li>
-          <li><a href="#direcionamento" onclick="ativarAba('tab-imobiliario')" style="color:inherit; text-decoration:none;">Regularização Imobiliária</a></li>
+          <li><a href="#tab-patologia" onclick="ativarAba('tab-patologia', true)" style="color:inherit; text-decoration:none;">1. Patologia e Diagnóstico</a></li>
+          <li><a href="#tab-judicial" onclick="ativarAba('tab-judicial', true)" style="color:inherit; text-decoration:none;">2. Laudos Judiciais</a></li>
+          <li><a href="#tab-imobiliario" onclick="ativarAba('tab-imobiliario', true)" style="color:inherit; text-decoration:none;">3. Regularização Imobiliária</a></li>
         </ul>
-
-        <!-- Chamada Interativa WhatsApp -->
-        <div style="margin-top: 14px; background: rgba(255,255,255,0.7); border: 1px dashed var(--malva-claro); border-radius: 8px; padding: 12px 16px;">
-          <strong style="font-size: 0.85rem; color: var(--grafite); display: block; margin-bottom: 8px;">Como podemos solucionar o seu problema hoje?</strong>
-          <div style="display: flex; flex-wrap: wrap; gap: 8px;">
-            <a class="chip" href="https://wa.me/5531995618646?text=Ol%C3%A1%2C%20Giovanna!%20Preciso%20de%20atendimento%20em%20Laudos%20Judiciais." target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 4px;">
-              ✓ Laudos Judiciais
-            </a>
-            <a class="chip" href="https://wa.me/5531995618646?text=Ol%C3%A1%2C%20Giovanna!%20Preciso%20de%20atendimento%20em%20Regulariza%C3%A7%C3%A3o%20Imobili%C3%A1ria." target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 4px;">
-              ✓ Regularização Imobiliária
-            </a>
-            <a class="chip" href="https://wa.me/5531995618646?text=Ol%C3%A1%2C%20Giovanna!%20Preciso%20de%20atendimento%20em%20Patologia%20e%20Diagn%C3%B3stico." target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 4px;">
-              ✓ Patologia e Diagnóstico
-            </a>
-          </div>
-        </div>
       </div>
 
       <!-- Card Visual Hero -->
@@ -184,48 +168,188 @@
     </div>
   </section>
 
-
-
   <!-- ========================================================
        SEÇÃO 4: VOCÊ PROCURA... (DIRECIONAMENTO INTEGRADO EM ABAS)
+       ORDEM UNIFICADA: 1. PATOLOGIA | 2. LAUDOS JUDICIAIS | 3. REGULARIZAÇÃO IMOBILIÁRIA
        ======================================================== -->
   <section class="sec sec-tom-alternado reveal" id="direcionamento">
     <div class="wrap">
       <div class="secao-header-centro">
         <span class="olho meio">Direcionamento Especializado</span>
         <h2>Você procura...</h2>
-        <p class="secao-subtitulo">Selecione a área técnica para ver os serviços correspondentes</p>
+        <p class="secao-subtitulo">Selecione a área técnica para ver os serviços e o portfólio correspondentes</p>
       </div>
 
-      <!-- Seletor Interativo de 3 Abas Dentro do Site -->
+      <!-- Seletor Interativo de 3 Abas em ordem rigorosamente padronizada -->
       <div class="hub-direcionamento">
         <div class="abas-direcionamento" role="tablist">
-          <button type="button" class="aba-btn active" id="tabBtnJudicial" data-tab="tab-judicial" role="tab" aria-selected="true">
+          <button type="button" class="aba-btn active" id="tabBtnPatologia" data-tab="tab-patologia" role="tab" aria-selected="true">
             <span class="aba-badge">Área 01</span>
+            <span class="aba-titulo">Patologia e Diagnóstico</span>
+            <span class="aba-sub">Fissuras, infiltrações, inspeção predial e diagnósticos</span>
+          </button>
+
+          <button type="button" class="aba-btn" id="tabBtnJudicial" data-tab="tab-judicial" role="tab" aria-selected="false">
+            <span class="aba-badge">Área 02</span>
             <span class="aba-titulo">Laudos Judiciais</span>
             <span class="aba-sub">Perícias, assistência técnica judicial e pareceres</span>
           </button>
 
           <button type="button" class="aba-btn" id="tabBtnImobiliario" data-tab="tab-imobiliario" role="tab" aria-selected="false">
-            <span class="aba-badge">Área 02</span>
+            <span class="aba-badge">Área 03</span>
             <span class="aba-titulo">Regularização Imobiliária</span>
             <span class="aba-sub">Usucapião, retificação, desmembramento e habite-se</span>
-          </button>
-          
-          <button type="button" class="aba-btn" id="tabBtnPatologia" data-tab="tab-patologia" role="tab" aria-selected="false">
-            <span class="aba-badge">Área 03</span>
-            <span class="aba-titulo">Patologia e Diagnóstico</span>
-            <span class="aba-sub">Fissuras, infiltrações, inspeção predial e diagnósticos</span>
           </button>
         </div>
       </div>
 
-      <!-- PAINEL 1: LAUDOS JUDICIAIS (2 COLUNAS: ESQUERDA DESCRITIVO / DIREITA PERGUNTAS) -->
-      <div class="painel-aba active" id="tab-judicial" role="tabpanel">
+      <!-- ========================================================
+           PAINEL 1: PATOLOGIA E DIAGNÓSTICO (ÁREA 01 - NUMERAÇÕES 1.1 A 1.6 + PORTFÓLIO COMPLETO)
+           ======================================================== -->
+      <div class="painel-aba active" id="tab-patologia" role="tabpanel">
         <div class="painel-duas-colunas">
           <!-- Coluna Esquerda: Texto, Serviços e Descritivo -->
           <div class="painel-coluna-conteudo">
-            <span class="olho">01. Laudos Judiciais</span>
+            <span class="olho">01. Patologia das Edificações</span>
+            <h3 class="painel-coluna-titulo">Patologia e Diagnóstico</h3>
+            <p style="font-size:1.02rem; color:var(--malva-original); font-style:italic; margin-bottom:14px;">Inspeções prediais, diagnósticos, infiltrações, manifestações patológicas e avaliações técnicas.</p>
+            
+            <div class="painel-servicos-bloco">
+              <strong>Serviços Especializados:</strong>
+              <div class="painel-servicos-lista">
+                <div class="painel-servico-item"><strong>1.1 Inspeção Predial:</strong> Avaliação geral de conservação, manutenção e segurança para identificar anomalias, com entrega de laudo técnico, relatório fotográfico e prioridades de intervenção.</div>
+                <div class="painel-servico-item"><strong>1.2 Vistoria de Recebimento de Edificação e de Unidades Privativas:</strong> Análise de imóveis novos e unidades privativas para detecção prévia de vícios construtivos e inconformidades estruturais.</div>
+                <div class="painel-servico-item"><strong>1.3 Avaliação de Patologias e Anomalias:</strong> Investigação técnica focada em fissuras, trincas, corrosões e deslocamentos, avaliando criticidade e causas.</div>
+                <div class="painel-servico-item"><strong>1.4 Diagnóstico de Infiltração:</strong> Investigação especializada para mapear a origem exata de infiltrações e evitar soluções paliativas ineficientes.</div>
+                <div class="painel-servico-item"><strong>1.5 Vistoria Cautelar:</strong> Constatação técnica do estado de conservação de imóveis vizinhos antes do início de obras para prevenção de litígios.</div>
+                <div class="painel-servico-item"><strong>1.6 Avaliação Estrutural:</strong> Análise técnica de elementos estruturais para identificar sinais de deterioração e riscos potenciais à segurança.</div>
+              </div>
+            </div>
+
+            <p class="painel-descritivo-texto">
+              Realizamos investigações técnicas para identificar e diagnosticar manifestações patológicas, anomalias e falhas construtivas que possam comprometer a segurança, a conservação e a durabilidade das edificações. Através de inspeções, vistorias, testes e análises especializadas, buscamos compreender as possíveis causas dos problemas e orientar as tratativas adequadas, reduzindo retrabalhos, soluções paliativas e despesas desnecessárias.
+            </p>
+
+            <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:8px;">
+              <a class="btn btn-destaque" href="https://wa.me/5531995618646?text=Ol%C3%A1%2C%20Giovanna!%20Gostaria%20de%20solicitar%20uma%20avalia%C3%A7%C3%A3o%20na%20%C3%81rea%20de%20Patologia%20e%20Diagn%C3%B3stico." target="_blank" rel="noopener noreferrer">
+                <svg class="ico" viewBox="0 0 24 24"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.76-1.66-2.06-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.01-1.04 2.47s1.06 2.86 1.21 3.06c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.42-.07-.13-.27-.2-.57-.35M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2"/></svg>
+                Solicitar em Patologia
+              </a>
+              <a class="btn btn-instagram" href="https://www.instagram.com/patologista_giovanna" target="_blank" rel="noopener noreferrer">
+                <svg class="ico" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                Instagram Oficial
+              </a>
+            </div>
+          </div>
+
+          <!-- Coluna Direita: Perguntas da Área -->
+          <div class="painel-coluna-faq">
+            <h4 class="painel-faq-titulo">Perguntas Frequentes &middot; Patologia das Edificações</h4>
+            
+            <details class="faq">
+              <summary>1. O que é um diagnóstico técnico e qual a sua importância?</summary>
+              <div class="faq-c">O diagnóstico técnico consiste na investigação das manifestações patológicas de uma edificação, buscando identificar suas possíveis origens, causas e mecanismos de ocorrência. Por meio de inspeções, análises e ensaios específicos, é possível orientar intervenções adequadas, evitando soluções paliativas, retrabalhos e gastos desnecessários.</div>
+            </details>
+
+            <details class="faq">
+              <summary>2. Qual a periodicidade indicada para a realização da Inspeção Predial?</summary>
+              <div class="faq-c">A periodicidade da Inspeção Predial deve considerar a idade, as características, o estado de conservação e as condições de uso da edificação, além das exigências legais aplicáveis ao município. Inspeções periódicas permitem identificar anomalias, avaliar riscos e orientar ações de manutenção preventiva e corretiva.</div>
+            </details>
+
+            <details class="faq">
+              <summary>3. Por que realizar um diagnóstico antes de iniciar uma reforma?</summary>
+              <div class="faq-c">O diagnóstico permite identificar as causas dos problemas antes da execução de intervenções. Dessa forma, é possível direcionar os serviços necessários, evitar reparos inadequados e reduzir o risco de reincidência das manifestações patológicas.</div>
+            </details>
+
+            <details class="faq">
+              <summary>4. É possível identificar a origem de uma infiltração sem quebrar paredes?</summary>
+              <div class="faq-c">Sim. Dependendo das características da manifestação, podem ser utilizados ensaios e equipamentos específicos que permitem investigar a origem da infiltração por métodos não destrutivos ou minimamente invasivos, reduzindo intervenções desnecessárias.</div>
+            </details>
+
+            <details class="faq">
+              <summary>5. Toda fissura ou trinca representa um risco estrutural?</summary>
+              <div class="faq-c">Não necessariamente. Fissuras e trincas podem apresentar diferentes origens e níveis de gravidade. Uma avaliação técnica permite investigar suas características, possíveis causas e evolução, identificando a necessidade de monitoramento ou intervenção.</div>
+            </details>
+          </div>
+        </div>
+
+        <!-- Portfólio de Patologia das Edificações (Status Padronizado: Concluído · Laudo Entregue) -->
+        <div style="margin-top: 48px; border-top: 1px solid var(--bege-rosado); padding-top: 40px;">
+          <div class="secao-header-centro">
+            <span class="olho meio">Portfólio de Patologia</span>
+            <h2>Vistorias e Inspeções Prediais Realizadas</h2>
+            <p class="secao-subtitulo">Diagnósticos estruturais, mapeamento de fachadas e inspeções prediais em edifícios de destaque</p>
+          </div>
+
+          <div class="portfolio-aba-grid">
+            <!-- Imagem 1: Condomínio Greenport Residences -->
+            <article class="card-caso-imob">
+              <div class="card-caso-thumb">
+                <img src="assets/patologia_predio1.jpg" alt="Condomínio Greenport Residences / B. Buritis" loading="lazy">
+                <span class="card-caso-tag">Inspeção Predial</span>
+              </div>
+              <div class="card-caso-corpo">
+                <div class="card-caso-local">
+                  <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                  <span>B. Buritis &middot; Belo Horizonte / MG</span>
+                </div>
+                <h3 class="card-caso-titulo">Condomínio Greenport Residences</h3>
+                <p class="card-caso-detalhe">Inspeção Predial + Diagnóstico de Infiltração</p>
+                <div class="card-caso-rodape">
+                  <span class="card-caso-status"><span class="card-caso-status-dot"></span>Concluído &middot; Laudo Entregue</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- Imagem 2: Ed. Piazza di Verona (Foto patologia_predio3 invertida com a 3ª) -->
+            <article class="card-caso-imob">
+              <div class="card-caso-thumb">
+                <img src="assets/patologia_predio3.jpg" alt="Ed. Piazza di Verona / B. Lourdes" loading="lazy">
+                <span class="card-caso-tag">Patologia das Construções</span>
+              </div>
+              <div class="card-caso-corpo">
+                <div class="card-caso-local">
+                  <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                  <span>B. Lourdes &middot; Belo Horizonte / MG</span>
+                </div>
+                <h3 class="card-caso-titulo">Ed. Piazza di Verona</h3>
+                <p class="card-caso-detalhe">Inspeção Predial + Diagnóstico de Infiltração</p>
+                <div class="card-caso-rodape">
+                  <span class="card-caso-status"><span class="card-caso-status-dot"></span>Concluído &middot; Laudo Entregue</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- Imagem 3: Ed. Piet Mondrian (Foto patologia_predio2 invertida com a 2ª) -->
+            <article class="card-caso-imob">
+              <div class="card-caso-thumb">
+                <img src="assets/patologia_predio2.jpg" alt="Ed. Piet Mondrian / B. Santo Agostinho" loading="lazy">
+                <span class="card-caso-tag">Diagnóstico de Infiltração</span>
+              </div>
+              <div class="card-caso-corpo">
+                <div class="card-caso-local">
+                  <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                  <span>B. Santo Agostinho &middot; Belo Horizonte / MG</span>
+                </div>
+                <h3 class="card-caso-titulo">Ed. Piet Mondrian</h3>
+                <p class="card-caso-detalhe">Diagnóstico de Infiltração no Sistema de Cobertura, Área da Piscina e Depósitos na Garagem</p>
+                <div class="card-caso-rodape">
+                  <span class="card-caso-status"><span class="card-caso-status-dot"></span>Concluído &middot; Laudo Entregue</span>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+
+      <!-- ========================================================
+           PAINEL 2: LAUDOS JUDICIAIS (ÁREA 02 - NUMERAÇÕES 2.1 A 2.6 + PORTFÓLIO JUDICIAL)
+           ======================================================== -->
+      <div class="painel-aba" id="tab-judicial" role="tabpanel">
+        <div class="painel-duas-colunas">
+          <!-- Coluna Esquerda: Texto, Serviços e Descritivo -->
+          <div class="painel-coluna-conteudo">
+            <span class="olho">02. Laudos Judiciais</span>
             <h3 class="painel-coluna-titulo">Laudos Judiciais</h3>
             <p style="font-size:1.02rem; color:var(--malva-original); font-style:italic; margin-bottom:14px;">Perícias, provas técnicas e assistência técnica em processos judiciais.</p>
             
@@ -236,7 +360,8 @@
                 <div class="painel-servico-item"><strong>2.2 Assistência Técnica Judicial:</strong> Suporte estratégico a advogados com quesitos periciais, acompanhamento de vistorias e pareceres críticos.</div>
                 <div class="painel-servico-item"><strong>2.3 Laudos e Pareceres Técnicos:</strong> Análise aprofundada com rigor metodológico e respaldo normativo para subsidiar decisões judiciais e acordos.</div>
                 <div class="painel-servico-item"><strong>2.4 Auditoria Técnica de Obras:</strong> Verificação de conformidade executiva, apuração de desvios contratuais e obras paralisadas.</div>
-                <div class="painel-servico-item"><strong>2.5 Vícios Construtivos e Infrações:</strong> Identificação e quantificação de danos materiais resultantes de falhas de projeto ou execução.</div>
+                <div class="painel-servico-item"><strong>2.5 Infrações Urbanísticas:</strong> Análise de conformidade legal de construções e desrespeito às normas de uso e ocupação do solo.</div>
+                <div class="painel-servico-item"><strong>2.6 Vícios Construtivos:</strong> Identificação e quantificação de danos materiais resultantes de falhas de projeto ou execução.</div>
               </div>
             </div>
 
@@ -253,7 +378,6 @@
                 <svg class="ico" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
                 Instagram Oficial
               </a>
-              <a class="btn btn-out" href="judicial.html">Subsite Judicial &rarr;</a>
             </div>
           </div>
 
@@ -292,14 +416,84 @@
             </details>
           </div>
         </div>
+
+        <!-- Portfólio de Atuação Judicial (Status Padronizado: Concluído · Laudo Entregue) -->
+        <div style="margin-top: 48px; border-top: 1px solid var(--bege-rosado); padding-top: 40px;">
+          <div class="secao-header-centro">
+            <span class="olho meio">Portfólio Judicial</span>
+            <h2>Perícias e Assistências Técnicas Concluídas</h2>
+            <p class="secao-subtitulo">Produção probatória robusta, auditoria de obras e pareceres técnicos homologados</p>
+          </div>
+
+          <div class="portfolio-aba-grid">
+            <!-- Caso Judicial 1 -->
+            <article class="card-caso-imob">
+              <div class="card-caso-thumb">
+                <img src="assets/judicial_1.jpg" alt="Assistência Técnica Judicial em Vícios Construtivos" loading="lazy">
+                <span class="card-caso-tag">Perícia Judicial</span>
+              </div>
+              <div class="card-caso-corpo">
+                <div class="card-caso-local">
+                  <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                  <span>Comarca de Belo Horizonte &middot; TJMG</span>
+                </div>
+                <h3 class="card-caso-titulo">Ação de Produção Antecipada de Provas</h3>
+                <p class="card-caso-detalhe">Assistência Técnica Judicial + Parecer Crítico Construtivo</p>
+                <div class="card-caso-rodape">
+                  <span class="card-caso-status"><span class="card-caso-status-dot"></span>Concluído &middot; Laudo Entregue</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- Caso Judicial 2 -->
+            <article class="card-caso-imob">
+              <div class="card-caso-thumb">
+                <img src="assets/judicial_2.jpg" alt="Auditoria Técnica de Obras e Pareceres Judiciais" loading="lazy">
+                <span class="card-caso-tag">Auditoria de Obras</span>
+              </div>
+              <div class="card-caso-corpo">
+                <div class="card-caso-local">
+                  <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                  <span>Comarca de Nova Lima / RMBH &middot; TJMG</span>
+                </div>
+                <h3 class="card-caso-titulo">Perícia Cautelar de Vícios Construtivos</h3>
+                <p class="card-caso-detalhe">Elaboração de Quesitos Técnicos + Parecer Conclusivo</p>
+                <div class="card-caso-rodape">
+                  <span class="card-caso-status"><span class="card-caso-status-dot"></span>Concluído &middot; Laudo Entregue</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- Caso Judicial 3 -->
+            <article class="card-caso-imob">
+              <div class="card-caso-thumb">
+                <img src="assets/patologia_obra.jpg" alt="Assistência Técnica em Obras e Arbitragem" loading="lazy">
+                <span class="card-caso-tag">Assistência Técnica</span>
+              </div>
+              <div class="card-caso-corpo">
+                <div class="card-caso-local">
+                  <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                  <span>Contagem &middot; Região Metropolitana / MG</span>
+                </div>
+                <h3 class="card-caso-titulo">Auditoria Técnica de Desvios Contratuais</h3>
+                <p class="card-caso-detalhe">Apuração Pericial de Danos e Inconformidades Executivas</p>
+                <div class="card-caso-rodape">
+                  <span class="card-caso-status"><span class="card-caso-status-dot"></span>Concluído &middot; Laudo Entregue</span>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
       </div>
 
-      <!-- PAINEL 2: REGULARIZAÇÃO IMOBILIÁRIA (2 COLUNAS) -->
+      <!-- ========================================================
+           PAINEL 3: REGULARIZAÇÃO IMOBILIÁRIA (ÁREA 03 - NUMERAÇÕES 3.1 A 3.6 + PORTFÓLIO IMOBILIÁRIO)
+           ======================================================== -->
       <div class="painel-aba" id="tab-imobiliario" role="tabpanel">
         <div class="painel-duas-colunas">
           <!-- Coluna Esquerda: Texto, Serviços e Descritivo -->
           <div class="painel-coluna-conteudo">
-            <span class="olho">02. Regularização Imobiliária</span>
+            <span class="olho">03. Regularização Imobiliária</span>
             <h3 class="painel-coluna-titulo">Regularização Imobiliária</h3>
             <p style="font-size:1.02rem; color:var(--malva-original); font-style:italic; margin-bottom:14px;">Usucapião, retificação de área, desmembramento, remembramento e regularização de edificações.</p>
             
@@ -310,7 +504,8 @@
                 <div class="painel-servico-item"><strong>3.2 Retificação de Área:</strong> Correção técnica de discrepâncias entre as medidas reais e o registro cartorial na matrícula.</div>
                 <div class="painel-servico-item"><strong>3.3 Valorização Mercadológica:</strong> Laudos periciais fundamentados com pesquisa científica para determinação do valor real de mercado.</div>
                 <div class="painel-servico-item"><strong>3.4 Desmembramento e Remembramento:</strong> Estudos de viabilidade técnica e projetos para divisão ou unificação de lotes e terrenos.</div>
-                <div class="painel-servico-item"><strong>3.5 Habite-se e Regularização:</strong> Levantamentos arquitetônicos e adequação documental junto à prefeitura para certidão de conclusão de obra.</div>
+                <div class="painel-servico-item"><strong>3.5 Habite-se:</strong> Assessoria técnica para regularização de edificações e certidão municipal de conclusão de obra.</div>
+                <div class="painel-servico-item"><strong>3.6 Regularização de Edificações:</strong> Levantamentos arquitetônicos e adequação documental junto à prefeitura e cartórios.</div>
               </div>
             </div>
 
@@ -327,7 +522,6 @@
                 <svg class="ico" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
                 Instagram Oficial
               </a>
-              <a class="btn btn-out" href="judicial.html">Subsite Imobiliário &rarr;</a>
             </div>
           </div>
 
@@ -371,138 +565,69 @@
             </details>
           </div>
         </div>
-      </div>
 
-      <!-- PAINEL 3: PATOLOGIA E DIAGNÓSTICO (2 COLUNAS + PORTFÓLIO DE PATOLOGIA) -->
-      <div class="painel-aba" id="tab-patologia" role="tabpanel">
-        <div class="painel-duas-colunas">
-          <!-- Coluna Esquerda: Texto, Serviços e Descritivo -->
-          <div class="painel-coluna-conteudo">
-            <span class="olho">03. Patologia e Diagnóstico</span>
-            <h3 class="painel-coluna-titulo">Patologia e Diagnóstico</h3>
-            <p style="font-size:1.02rem; color:var(--malva-original); font-style:italic; margin-bottom:14px;">Inspeções prediais, diagnósticos, infiltrações, manifestações patológicas e avaliações técnicas.</p>
-            
-            <div class="painel-servicos-bloco">
-              <strong>Serviços Especializados:</strong>
-              <div class="painel-servicos-lista">
-                <div class="painel-servico-item"><strong>1.1 Inspeção Predial:</strong> Avaliação geral de conservação, manutenção e segurança para identificar anomalias, com entrega de laudo técnico, relatório fotográfico e prioridades de intervenção.</div>
-                <div class="painel-servico-item"><strong>1.2 Vistoria de Recebimento de Edificação e Chaves:</strong> Análise de imóveis novos e unidades privativas para detecção prévia de vícios construtivos e inconformidades estruturais.</div>
-                <div class="painel-servico-item"><strong>1.3 Avaliação de Manifestações Patológicas e Anomalias:</strong> Investigação técnica focada em fissuras, trincas, corrosões e deslocamentos, avaliando criticidade e causas.</div>
-                <div class="painel-servico-item"><strong>1.4 Diagnóstico de Infiltração:</strong> Investigação especializada para mapear a origem exata de infiltrações e evitar soluções paliativas ineficientes.</div>
-                <div class="painel-servico-item"><strong>1.5 Avaliação Estrutural:</strong> Análise técnica de elementos estruturais para identificar sinais de deterioração e riscos potenciais à segurança.</div>
-              </div>
-            </div>
-
-            <p class="painel-descritivo-texto">
-              Realizamos investigações técnicas para identificar e diagnosticar manifestações patológicas, anomalias e falhas construtivas que possam comprometer a segurança, a conservação e a durabilidade das edificações. Através de inspeções, vistorias, testes e análises especializadas, buscamos compreender as possíveis causas dos problemas e orientar as tratativas adequadas, reduzindo retrabalhos, soluções paliativas e despesas desnecessárias.
-            </p>
-
-            <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:8px;">
-              <a class="btn btn-destaque" href="https://wa.me/5531995618646?text=Ol%C3%A1%2C%20Giovanna!%20Gostaria%20de%20solicitar%20uma%20avalia%C3%A7%C3%A3o%20na%20%C3%81rea%20de%20Patologia%20e%20Diagn%C3%B3stico." target="_blank" rel="noopener noreferrer">
-                <svg class="ico" viewBox="0 0 24 24"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.76-1.66-2.06-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.01-1.04 2.47s1.06 2.86 1.21 3.06c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.42-.07-.13-.27-.2-.57-.35M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2"/></svg>
-                Solicitar em Patologia
-              </a>
-              <a class="btn btn-instagram" href="https://www.instagram.com/patologista_giovanna" target="_blank" rel="noopener noreferrer">
-                <svg class="ico" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-                Instagram Oficial
-              </a>
-              <a class="btn btn-out" href="patologia.html">Subsite de Patologia &rarr;</a>
-            </div>
-          </div>
-
-          <!-- Coluna Direita: Perguntas da Área -->
-          <div class="painel-coluna-faq">
-            <h4 class="painel-faq-titulo">Perguntas Frequentes &middot; Patologia das Edificações</h4>
-            
-            <details class="faq">
-              <summary>1. O que é um diagnóstico técnico e qual a sua importância?</summary>
-              <div class="faq-c">O diagnóstico técnico consiste na investigação das manifestações patológicas de uma edificação, buscando identificar suas possíveis origens, causas e mecanismos de ocorrência. Por meio de inspeções, análises e ensaios específicos, é possível orientar intervenções adequadas, evitando soluções paliativas, retrabalhos e gastos desnecessários.</div>
-            </details>
-
-            <details class="faq">
-              <summary>2. Qual a periodicidade indicada para a realização da Inspeção Predial?</summary>
-              <div class="faq-c">A periodicidade da Inspeção Predial deve considerar a idade, as características, o estado de conservação e as condições de uso da edificação, além das exigências legais aplicáveis ao município. Inspeções periódicas permitem identificar anomalias, avaliar riscos e orientar ações de manutenção preventiva e corretiva.</div>
-            </details>
-
-            <details class="faq">
-              <summary>3. Por que realizar um diagnóstico antes de iniciar uma reforma?</summary>
-              <div class="faq-c">O diagnóstico permite identificar as causas dos problemas antes da execução de intervenções. Dessa forma, é possível direcionar os serviços necessários, evitar reparos inadequados e reduzir o risco de reincidência das manifestações patológicas.</div>
-            </details>
-
-            <details class="faq">
-              <summary>4. É possível identificar a origem de uma infiltração sem quebrar paredes?</summary>
-              <div class="faq-c">Sim. Dependendo das características da manifestação, podem ser utilizados ensaios e equipamentos específicos que permitem investigar a origem da infiltração por métodos não destrutivos ou minimamente invasivos, reduzindo intervenções desnecessárias.</div>
-            </details>
-
-            <details class="faq">
-              <summary>5. Toda fissura ou trinca representa um risco estrutural?</summary>
-              <div class="faq-c">Não necessariamente. Fissuras e trincas podem apresentar diferentes origens e níveis de gravidade. Uma avaliação técnica permite investigar suas características, possíveis causas e evolução, identificando a necessidade de monitoramento ou intervenção.</div>
-            </details>
-          </div>
-        </div>
-
-        <!-- Portfólio de Patologia das Edificações (Fotos dos Prédios com Legendas Exatas Solicitadas) -->
+        <!-- Portfólio de Regularização Imobiliária (Status Padronizado: Concluído · Laudo Entregue) -->
         <div style="margin-top: 48px; border-top: 1px solid var(--bege-rosado); padding-top: 40px;">
           <div class="secao-header-centro">
-            <span class="olho meio">Portfólio de Patologia</span>
-            <h2>Vistorias e Inspeções Prediais Realizadas</h2>
-            <p class="secao-subtitulo">Diagnósticos estruturais, mapeamento de fachadas e inspeções prediais em edifícios de destaque</p>
+            <span class="olho meio">Portfólio de Regularização</span>
+            <h2>Processos Imobiliários e Registrais Realizados</h2>
+            <p class="secao-subtitulo">Levantamentos planimétricos georreferenciados, usucapião e retificação de áreas</p>
           </div>
 
-          <div class="patologia-portfolio-grid">
-            <!-- Imagem 1: Condomínio Greenport Residences -->
+          <div class="portfolio-aba-grid">
+            <!-- Imóvel 1: Padre Eustáquio -->
             <article class="card-caso-imob">
               <div class="card-caso-thumb">
-                <img src="assets/patologia_predio1.jpg" alt="Condomínio Greenport Residences / B. Buritis" loading="lazy">
-                <span class="card-caso-tag">Inspeção Predial</span>
+                <img src="assets/imob_padre_eustaquio.jpg" alt="Regularização e Usucapião no Bairro Padre Eustáquio" loading="lazy">
+                <span class="card-caso-tag">Usucapião</span>
               </div>
               <div class="card-caso-corpo">
                 <div class="card-caso-local">
                   <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-                  <span>B. Buritis &middot; Belo Horizonte / MG</span>
+                  <span>B. Padre Eustáquio &middot; Belo Horizonte / MG</span>
                 </div>
-                <h3 class="card-caso-titulo">Condomínio Greenport Residences</h3>
-                <p class="card-caso-detalhe">Inspeção Predial + Diagnóstico de Infiltração</p>
+                <h3 class="card-caso-titulo">Regularização Fundiária &amp; Usucapião</h3>
+                <p class="card-caso-detalhe">Levantamento Planimétrico + SIRGAS 2000 + Memorial</p>
                 <div class="card-caso-rodape">
                   <span class="card-caso-status"><span class="card-caso-status-dot"></span>Concluído &middot; Laudo Entregue</span>
                 </div>
               </div>
             </article>
 
-            <!-- Imagem 2: Ed. Piazza di Verona -->
+            <!-- Imóvel 2: Nova Cachoeirinha -->
             <article class="card-caso-imob">
               <div class="card-caso-thumb">
-                <img src="assets/patologia_predio2.jpg" alt="Ed. Piazza di Verona / B. Lourdes" loading="lazy">
-                <span class="card-caso-tag">Patologia das Construções</span>
+                <img src="assets/imob_nova_cachoeirinha.jpg" alt="Retificação de Área no Bairro Nova Cachoeirinha" loading="lazy">
+                <span class="card-caso-tag">Retificação de Área</span>
               </div>
               <div class="card-caso-corpo">
                 <div class="card-caso-local">
                   <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-                  <span>B. Lourdes &middot; Belo Horizonte / MG</span>
+                  <span>B. Nova Cachoeirinha &middot; Belo Horizonte / MG</span>
                 </div>
-                <h3 class="card-caso-titulo">Ed. Piazza di Verona</h3>
-                <p class="card-caso-detalhe">Inspeção Predial + Diagnóstico de Infiltração</p>
+                <h3 class="card-caso-titulo">Retificação de Matrícula Cartorial</h3>
+                <p class="card-caso-detalhe">Adequação Técnica de Dimensões Reais de Lote</p>
                 <div class="card-caso-rodape">
-                  <span class="card-caso-status"><span class="card-caso-status-dot"></span>Concluído &middot; RRT Emitida</span>
+                  <span class="card-caso-status"><span class="card-caso-status-dot"></span>Concluído &middot; Laudo Entregue</span>
                 </div>
               </div>
             </article>
 
-            <!-- Imagem 3: Ed. Piet Mondrian -->
+            <!-- Imóvel 3: Sete Lagoas -->
             <article class="card-caso-imob">
               <div class="card-caso-thumb">
-                <img src="assets/patologia_predio3.jpg" alt="Ed. Piet Mondrian / B. Santo Agostinho" loading="lazy">
-                <span class="card-caso-tag">Diagnóstico de Infiltração</span>
+                <img src="assets/imob_sete_lagoas.jpg" alt="Desmembramento e Habite-se em Sete Lagoas" loading="lazy">
+                <span class="card-caso-tag">Habite-se &amp; Divisão</span>
               </div>
               <div class="card-caso-corpo">
                 <div class="card-caso-local">
                   <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-                  <span>B. Santo Agostinho &middot; Belo Horizonte / MG</span>
+                  <span>Sete Lagoas / MG</span>
                 </div>
-                <h3 class="card-caso-titulo">Ed. Piet Mondrian</h3>
-                <p class="card-caso-detalhe">Diagnóstico de Infiltração no Sistema de Cobertura</p>
+                <h3 class="card-caso-titulo">Estudo de Desmembramento e Habite-se</h3>
+                <p class="card-caso-detalhe">Aprovação Técnica Municipal e Registro Cartorial</p>
                 <div class="card-caso-rodape">
-                  <span class="card-caso-status"><span class="card-caso-status-dot"></span>Concluído &middot; Parecer Técnico</span>
+                  <span class="card-caso-status"><span class="card-caso-status-dot"></span>Concluído &middot; Laudo Entregue</span>
                 </div>
               </div>
             </article>
@@ -553,9 +678,10 @@
   </section>
 
   <!-- ========================================================
-       SEÇÃO: QUEM É A GIOVANNA ARIETA (COM GALERIA DE CAMPO DIVERSIFICADA)
+       SEÇÃO: QUEM É A GIOVANNA ARIETA (COM FUNDO ROXO ELEGANTE E FOTO ÚNICA COM MOLDURA)
+       Alternância de cor para descanso visual, conforme solicitado
        ======================================================== -->
-  <section class="sec sec-tom-alternado reveal" id="sobre">
+  <section class="sec sec-roxo reveal" id="sobre">
     <div class="wrap sobre-grid">
       <div class="reveal-left">
         <span class="olho">Quem Lidera</span>
@@ -573,17 +699,9 @@
       </div>
 
       <div class="reveal-right">
-        <!-- Trio de imagens de presença ativa em campo para enriquecer e diversificar a página principal -->
-        <div class="patologia-fotos-trio">
-          <div class="foto-card-dupla">
-            <img src="assets/patologia_parede.jpg" alt="Giovanna Arieta inspecionando patologia estrutural" loading="lazy">
-          </div>
-          <div class="foto-card-dupla">
-            <img src="assets/patologia_obra.jpg" alt="Giovanna Arieta em vistoria de obra e medição" loading="lazy">
-          </div>
-          <div class="foto-card-dupla">
-            <img src="assets/patologia_capacete.jpg" alt="Giovanna Arieta com equipamento de proteção em inspeção predial" loading="lazy">
-          </div>
+        <!-- Foto única com moldura sofisticada, limpa e elegante conforme orientação do cliente -->
+        <div class="sobre-foto-moldura">
+          <img src="assets/patologia_parede.jpg" alt="Giovanna Arieta - Arquiteta Patologista em inspeção técnica" loading="lazy">
         </div>
       </div>
     </div>
@@ -711,8 +829,8 @@
 
   <!-- Scripts: Menu Mobile, Abas 'Você Procura' e Animações de Scroll -->
   <script>
-    // Gerenciador de Abas "Você Procura..."
-    function ativarAba(tabId) {
+    // Gerenciador de Abas "Você Procura..." com rolagem suave até o conteúdo
+    function ativarAba(tabId, scrollAtePainel = false) {
       const tabBtns = document.querySelectorAll('.aba-btn');
       const paineis = document.querySelectorAll('.painel-aba');
 
@@ -726,11 +844,18 @@
         const ativo = painel.id === tabId;
         painel.classList.toggle('active', ativo);
       });
+
+      if (scrollAtePainel) {
+        const painelAlvo = document.getElementById(tabId);
+        if (painelAlvo) {
+          painelAlvo.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }
     }
 
     document.querySelectorAll('.aba-btn').forEach(btn => {
       btn.addEventListener('click', () => {
-        ativarAba(btn.dataset.tab);
+        ativarAba(btn.dataset.tab, true);
       });
     });
 
