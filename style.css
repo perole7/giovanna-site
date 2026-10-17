@@ -1802,7 +1802,7 @@ details.faq .faq-c {
     position: relative;
   }
   .ct-lado-box {
-    margin-top: -115px; /* Sobe o texto da direita para cima alinhando ao topo da seção */
+    margin-top: 0;
   }
   .pilares-grid {
     grid-template-columns: repeat(4, 1fr);
