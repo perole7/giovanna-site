@@ -405,7 +405,7 @@ em.dest {
    ======================================================== */
 .hero {
   position: relative;
-  background: linear-gradient(180deg, var(--bege-champagne) 0%, var(--off-white) 100%);
+  background: linear-gradient(180deg, #ffffff 0%, var(--off-white) 100%);
   padding: 50px 0 64px;
   border-bottom: 1px solid var(--bege-rosado);
   overflow: hidden;
@@ -539,6 +539,50 @@ em.dest {
   position: relative;
 }
 
+/* Faixa de Pilares Roxa Alternada */
+.pilares-faixa.pilares-faixa-roxo {
+  background: linear-gradient(135deg, #70555F 0%, #543D45 50%, #382c32 100%);
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.pilares-faixa.pilares-faixa-roxo .pilares-linha {
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    rgba(237, 229, 218, 0.25) 10%, 
+    var(--bege-champagne) 50%, 
+    rgba(237, 229, 218, 0.25) 90%, 
+    transparent 100%
+  );
+}
+
+.pilares-faixa.pilares-faixa-roxo .pilar-num {
+  color: var(--bege-champagne);
+}
+
+.pilares-faixa.pilares-faixa-roxo .pilar-titulo {
+  color: #ffffff;
+}
+
+.pilares-faixa.pilares-faixa-roxo .pilar-item:hover .pilar-titulo {
+  color: var(--bege-champagne);
+}
+
+.pilares-faixa.pilares-faixa-roxo .pilar-desc {
+  color: var(--bege-champagne);
+  opacity: 0.92;
+}
+
+.pilares-faixa.pilares-faixa-roxo .pilar-ponto {
+  background: #ffffff;
+  border-color: var(--bege-rosado);
+}
+
+.pilares-faixa.pilares-faixa-roxo .pilar-item:hover .pilar-ponto {
+  background: var(--bege-champagne);
+  border-color: #ffffff;
+}
+
 .pilares-container {
   position: relative;
   max-width: 1100px;
@@ -650,6 +694,16 @@ em.dest {
   background: var(--off-white);
 }
 
+/* Seção Branca Limpa */
+.sec-branco {
+  background: #ffffff;
+  color: var(--texto-principal);
+}
+
+.sec-branco .secao-subtitulo {
+  color: var(--malva-original);
+}
+
 .sec-tom-alternado {
   background: linear-gradient(180deg, var(--bege-champagne) 0%, rgba(248, 245, 240, 0.75) 45%, var(--off-white) 100%);
   border-top: 1px solid var(--bege-rosado);
@@ -716,31 +770,39 @@ em.dest {
   gap: 16px;
 }
 
-/* Bloco de Serviços Diretos abaixo do título */
-.hero-servicos-diretos {
-  margin: 22px 0 26px 0;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  background: rgba(255, 255, 255, 0.7);
+/* Card de Resumo de Serviços em Destaque nas Abas de "Você Procura..." */
+.tab-servico-destaque {
+  background: #ffffff;
   border: 1px solid var(--bege-rosado);
+  border-left: 3.5px solid var(--malva-original);
   border-radius: 8px;
-  padding: 18px 20px;
+  padding: 16px 18px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 16px rgba(48, 43, 45, 0.05);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
 }
 
-.hero-servico-linha {
-  font-size: 0.86rem;
-  line-height: 1.55;
-  color: var(--texto-suave);
+.tab-servico-destaque:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(112, 85, 95, 0.12);
+  border-color: var(--malva-claro);
 }
 
-.hero-servico-linha strong {
-  color: var(--grafite);
+.tab-servico-destaque strong {
+  display: block;
+  font-family: var(--sans);
+  font-size: 0.92rem;
   font-weight: 700;
-  display: inline;
+  color: var(--grafite);
+  margin-bottom: 6px;
+  letter-spacing: normal;
+  text-transform: none;
 }
 
-.hero-servico-linha span {
+.tab-servico-destaque span {
+  display: block;
+  font-size: 0.85rem;
+  line-height: 1.6;
   color: var(--texto-suave);
 }
 
@@ -1374,13 +1436,54 @@ details.faq .faq-c {
   line-height: 1.55;
 }
 
+.sec-roxo .info-item {
+  color: #ffffff;
+}
+
+.sec-roxo .info-ico {
+  background: rgba(255, 255, 255, 0.16);
+  border-color: rgba(255, 255, 255, 0.28);
+}
+
+.sec-roxo .info-ico svg {
+  fill: #ffffff;
+}
+
+.sec-roxo .info-tx span {
+  color: var(--bege-champagne);
+}
+
+.sec-roxo .info-tx p,
+.sec-roxo .info-tx p a {
+  color: #ffffff;
+}
+
+.sec-roxo .aviso {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.sec-roxo .btn-destaque {
+  background: #ffffff;
+  color: var(--malva-original);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  font-weight: 700;
+}
+
+.sec-roxo .btn-destaque:hover {
+  background: var(--bege-champagne);
+  color: var(--grafite);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+
 .ct-lado-box {
-  background: linear-gradient(145deg, var(--grafite) 0%, #43383D 60%, var(--malva-original) 100%);
+  background: linear-gradient(145deg, rgba(38, 34, 36, 0.95) 0%, rgba(56, 43, 49, 0.95) 100%);
   border-radius: 8px;
   padding: 34px 28px;
   color: #fff;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  box-shadow: 0 12px 32px rgba(48, 43, 45, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.28);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .ct-lado-box h3 {
@@ -1695,6 +1798,11 @@ details.faq .faq-c {
   .ct-grid {
     grid-template-columns: 1.15fr 0.85fr;
     gap: 44px;
+    align-items: start;
+    position: relative;
+  }
+  .ct-lado-box {
+    margin-top: -115px; /* Sobe o texto da direita para cima alinhando ao topo da seção */
   }
   .pilares-grid {
     grid-template-columns: repeat(4, 1fr);
@@ -1841,6 +1949,18 @@ details.faq .faq-c {
   border-top: 1px solid var(--bege-rosado);
   border-bottom: 1px solid var(--bege-rosado);
   padding: 64px 0;
+}
+
+/* Seção Depoimentos com Fundo Roxo Elegante */
+.sec-depoimentos.sec-roxo {
+  background: linear-gradient(145deg, #70555F 0%, #543D45 50%, #302B2D 100%);
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.sec-depoimentos.sec-roxo .whatsapp-chat-container {
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .whatsapp-chat-container {
