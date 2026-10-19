@@ -436,33 +436,61 @@ em.dest {
   max-width: 480px;
 }
 
-.hero-prova {
+/* Lista de Áreas de Atuação com Checks na Hero */
+.hero-areas-check {
   list-style: none;
   display: flex;
-  flex-wrap: wrap;
-  gap: 8px 18px;
-  margin: 16px 0;
+  flex-direction: column;
+  gap: 12px;
+  margin: 22px 0 24px 0;
   padding: 0;
 }
 
-.hero-prova li {
-  position: relative;
-  padding-left: 18px;
-  font-size: 0.8rem;
-  font-weight: 600;
-  color: var(--grafite);
+.hero-areas-check li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  background: rgba(255, 255, 255, 0.75);
+  border: 1px solid var(--bege-rosado);
+  border-radius: 8px;
+  padding: 12px 16px;
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-.hero-prova li::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0.4em;
-  width: 9px;
-  height: 5px;
-  border-left: 2px solid var(--malva-original);
-  border-bottom: 2px solid var(--malva-original);
-  transform: rotate(-45deg);
+.hero-areas-check li:hover {
+  transform: translateX(4px);
+  border-color: var(--malva-original);
+  box-shadow: 0 4px 14px rgba(112, 85, 95, 0.08);
+}
+
+.hero-check-ico {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--malva-original);
+  color: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+  flex: none;
+  margin-top: 1px;
+}
+
+.hero-areas-check li strong {
+  display: block;
+  font-size: 0.94rem;
+  color: var(--grafite);
+  font-weight: 700;
+  margin-bottom: 2px;
+}
+
+.hero-areas-check li p {
+  font-size: 0.83rem;
+  color: var(--texto-suave);
+  line-height: 1.45;
+  margin: 0;
 }
 
 .hero-nota {
@@ -472,25 +500,34 @@ em.dest {
   line-height: 1.6;
 }
 
-/* Card Visual Hero */
+/* Card Visual Hero - Ajustado para harmonizar altura e proporção */
+.hero-visual {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
 .perfil-card-clean {
   background: #ffffff;
   border: 1px solid var(--bege-rosado);
   border-radius: 8px;
   overflow: hidden;
   box-shadow: var(--sombra-card);
+  width: 100%;
+  max-width: 430px;
 }
 
 .perfil-foto-clean-wrap {
   position: relative;
   background: var(--bege-champagne);
-  max-height: 480px;
+  max-height: 380px;
   overflow: hidden;
 }
 
 .perfil-foto-clean {
   width: 100%;
   height: 100%;
+  aspect-ratio: 4/4.3;
   object-fit: cover;
   object-position: center 20%;
   transition: transform 0.4s ease;
@@ -501,7 +538,7 @@ em.dest {
 }
 
 .perfil-info-clean {
-  padding: 24px;
+  padding: 20px 22px;
 }
 
 .perfil-cargo-clean {
@@ -515,16 +552,16 @@ em.dest {
 }
 
 .perfil-nome-clean {
-  font-size: 1.45rem;
+  font-size: 1.35rem;
   color: var(--grafite);
-  margin-bottom: 8px;
+  margin-bottom: 6px;
 }
 
 .perfil-resumo-clean {
-  font-size: 0.88rem;
+  font-size: 0.85rem;
   color: var(--texto-suave);
   font-weight: 300;
-  line-height: 1.6;
+  line-height: 1.55;
 }
 
 /* ========================================================
