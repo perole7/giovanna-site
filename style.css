@@ -1402,7 +1402,7 @@ details.faq .faq-c {
    CONTATO
    ======================================================== */
 #contato .lead {
-  max-width: 520px;
+  max-width: 480px;
 }
 
 .ct-grid {
@@ -1520,7 +1520,7 @@ details.faq .faq-c {
 .ct-lado-box {
   background: linear-gradient(145deg, rgba(38, 34, 36, 0.95) 0%, rgba(56, 43, 49, 0.95) 100%);
   border-radius: 8px;
-  padding: 34px 28px;
+  padding: 38px 32px;
   color: #fff;
   border: 1px solid rgba(255, 255, 255, 0.2);
   box-shadow: 0 16px 36px rgba(0, 0, 0, 0.28);
@@ -1529,12 +1529,13 @@ details.faq .faq-c {
 
 .ct-lado-box h3 {
   color: #fff;
-  font-size: 1.35rem;
-  margin-bottom: 12px;
+  font-size: 1.45rem;
+  line-height: 1.35;
+  margin-bottom: 14px;
 }
 
 .ct-lado-box p {
-  font-size: 0.88rem;
+  font-size: 0.91rem;
   color: var(--bege-rosado);
   font-weight: 300;
   line-height: 1.7;
@@ -1967,15 +1968,16 @@ details.faq .faq-c {
     gap: 52px;
   }
   .ct-grid {
-    grid-template-columns: 1.15fr 0.85fr;
-    gap: 56px;
+    grid-template-columns: 1.08fr 0.92fr;
+    gap: 50px;
     align-items: start;
     position: relative;
   }
   .ct-lado-box {
-    margin-top: -115px; /* Sobe a coluna da direita para alinhar ao cabeçalho da seção de contato */
+    margin-top: -170px; /* Sobe o card para alinhar no topo da seção de contato */
     margin-left: auto;
     width: 100%;
+    max-width: 520px;
   }
   .pilares-grid {
     grid-template-columns: repeat(4, 1fr);
