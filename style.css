@@ -1839,7 +1839,7 @@ details.faq .faq-c {
     position: relative;
   }
   .ct-lado-box {
-    margin-top: 0;
+    margin-top: -125px; /* Sobe a coluna da direita para alinhar ao cabeçalho da seção de contato */
   }
   .pilares-grid {
     grid-template-columns: repeat(4, 1fr);
