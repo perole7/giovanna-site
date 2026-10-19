@@ -1401,6 +1401,10 @@ details.faq .faq-c {
 /* ========================================================
    CONTATO
    ======================================================== */
+#contato .lead {
+  max-width: 520px;
+}
+
 .ct-grid {
   display: grid;
   gap: 30px;
@@ -1754,14 +1758,77 @@ details.faq .faq-c {
   .topo-container {
     padding: 10px 16px;
     min-height: 72px;
+    justify-content: space-between;
   }
 
   .logo-img {
-    height: 58px;
+    height: 60px;
+    max-width: 210px;
   }
 
-  h1 { font-size: 1.85rem; }
-  h2 { font-size: 1.55rem; }
+  h1 { font-size: 1.75rem; line-height: 1.25; }
+  h2 { font-size: 1.5rem; line-height: 1.28; }
+
+  /* Hero Mobile */
+  .hero {
+    padding: 34px 0 44px;
+  }
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .hero-sub-slogan {
+    font-size: 1.05rem;
+    line-height: 1.5;
+  }
+  .hero-areas-check {
+    margin: 18px 0 22px 0;
+    gap: 10px;
+  }
+  .hero-areas-check li {
+    padding: 12px 14px;
+    gap: 12px;
+  }
+  .hero-check-ico {
+    width: 22px;
+    height: 22px;
+    font-size: 0.72rem;
+    margin-top: 1px;
+  }
+  .hero-areas-check li strong {
+    font-size: 0.9rem;
+  }
+  .hero-areas-check li p {
+    font-size: 0.81rem;
+    line-height: 1.45;
+  }
+  .hero-acoes {
+    flex-direction: column;
+    width: 100%;
+    max-width: 100%;
+    gap: 10px;
+  }
+  .hero-acoes .btn {
+    width: 100%;
+    padding: 13px 18px;
+    font-size: 0.75rem;
+  }
+  .perfil-card-clean {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+  .perfil-foto-clean-wrap {
+    max-height: 330px;
+  }
+  .perfil-info-clean {
+    padding: 18px 18px;
+  }
+  .perfil-nome-clean {
+    font-size: 1.25rem;
+  }
+  .perfil-resumo-clean {
+    font-size: 0.84rem;
+  }
 
   .judicial-fotos-dupla, .patologia-fotos-trio, .casos-imob-grid {
     grid-template-columns: 1fr;
@@ -1769,6 +1836,7 @@ details.faq .faq-c {
 
   .abas-direcionamento {
     grid-template-columns: 1fr;
+    gap: 10px;
   }
 
   .painel-intro-acoes {
@@ -1784,11 +1852,74 @@ details.faq .faq-c {
 
   .pilares-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 28px 16px;
+    gap: 22px 12px;
   }
 
   .pilares-linha {
     display: none; /* No mobile evita linha distorcida em grid 2 colunas */
+  }
+
+  .pilar-titulo {
+    font-size: 0.84rem;
+    letter-spacing: 0.08em;
+  }
+  .pilar-desc {
+    font-size: 0.78rem;
+    line-height: 1.4;
+  }
+
+  .sobre-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .sobre-foto-moldura {
+    max-width: 320px;
+    margin: 0 auto;
+  }
+
+  /* Contato Mobile */
+  #contato .lead {
+    max-width: 100%;
+  }
+  .ct-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .ct-lado-box {
+    margin-top: 0 !important;
+    padding: 24px 20px;
+    width: 100%;
+    max-width: 100%;
+  }
+  .ct-lado-box h3 {
+    font-size: 1.22rem;
+  }
+  .ct-lado-box p {
+    font-size: 0.85rem;
+  }
+  .ct-lista li {
+    font-size: 0.83rem;
+  }
+
+  .rod-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
+@media (max-width: 600px) {
+  .flutuantes-container {
+    bottom: 14px;
+    right: 14px;
+    gap: 10px;
+  }
+  .flut-btn {
+    width: 48px;
+    height: 48px;
+  }
+  .flut-btn svg {
+    width: 24px;
+    height: 24px;
   }
 }
 
@@ -1819,10 +1950,13 @@ details.faq .faq-c {
 
 @media (min-width: 901px) {
   .topo-container {
-    padding: 12px 24px;
+    justify-content: flex-start;
+    gap: 32px;
+    padding: 10px 24px;
+    min-height: 88px;
   }
   .logo-img {
-    height: 74px;
+    height: 82px;
   }
   .hero-grid {
     grid-template-columns: 1.15fr 0.85fr;
@@ -1834,12 +1968,14 @@ details.faq .faq-c {
   }
   .ct-grid {
     grid-template-columns: 1.15fr 0.85fr;
-    gap: 44px;
+    gap: 56px;
     align-items: start;
     position: relative;
   }
   .ct-lado-box {
-    margin-top: -125px; /* Sobe a coluna da direita para alinhar ao cabeçalho da seção de contato */
+    margin-top: -115px; /* Sobe a coluna da direita para alinhar ao cabeçalho da seção de contato */
+    margin-left: auto;
+    width: 100%;
   }
   .pilares-grid {
     grid-template-columns: repeat(4, 1fr);
